@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DK Creations – Handcrafted Fur Woolen Rangolis | Buy Online India</title>
+  <!-- SEO -->
+  <meta name="description" content="Buy beautiful handcrafted fur woolen rangolis online. Premium quality, reusable rangolis perfect for Diwali, Navratri & festive décor. Pan India delivery. Shop DK Creations."/>
+  <meta name="keywords" content="fur woolen rangoli, handmade rangoli, buy rangoli online, rangoli India, Diwali rangoli, festive rangoli, DK Creations"/>
+  <meta name="author" content="DK Creations"/>
+  <meta name="robots" content="index, follow"/>
+  <!-- Open Graph (WhatsApp, Facebook preview) -->
+  <meta property="og:title" content="DK Creations – Handcrafted Fur Woolen Rangolis"/>
+  <meta property="og:description" content="Premium handcrafted fur woolen rangolis for every Indian festival. Reusable, gift-ready & delivered Pan India."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://i.ibb.co/your-product-image.jpg"/>
+  <meta property="og:url" content="https://www.dkcreations.in"/>
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="DK Creations – Handcrafted Fur Woolen Rangolis"/>
+  <meta name="twitter:description" content="Premium handcrafted fur woolen rangolis for every Indian festival."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root {
+      --maroon:#6B1A2A; --maroon-deep:#4A0F1C; --gold:#C9960C; --gold-light:#E8B84B;
+      --cream:#FDF6EC; --cream-dark:#F5E9D4; --text:#2C1A10; --text-soft:#6B4C35; --white:#FFFFFF;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+
+    /* NAV */
+    nav{background:var(--maroon-deep);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(0,0,0,0.3);transition:top 0.3s;}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold-light);letter-spacing:1px;text-decoration:none;cursor:pointer;}
+    .nav-logo span{color:var(--white);}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--cream);text-decoration:none;font-size:0.9rem;font-weight:600;cursor:pointer;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--gold-light);}
+    .cart-btn{background:var(--gold);color:var(--maroon-deep);border:none;padding:0.5rem 1.1rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;display:flex;align-items:center;gap:0.5rem;transition:background 0.2s;}
+    .cart-btn:hover{background:var(--gold-light);}
+    .cart-count{background:var(--maroon);color:white;border-radius:50%;width:20px;height:20px;font-size:0.72rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-variant-numeric:lining-nums tabular-nums;}
+
+    /* PAGES */
+    .page{display:none;} .page.active{display:block;}
+    .footer-policy-links{margin-top:0.5rem;font-size:0.85rem;}
+    .footer-policy-links a{color:var(--gold-light,#d8b26a);text-decoration:none;cursor:pointer;}
+    .footer-policy-links a:hover{text-decoration:underline;}
+    .policy-page-inner{max-width:800px;margin:0 auto;padding:3rem 5% 5rem;}
+    .policy-back-btn{background:none;border:1px solid var(--maroon-deep,#6B1A2A);color:var(--maroon-deep,#6B1A2A);padding:0.5rem 1.2rem;border-radius:6px;cursor:pointer;font-size:0.9rem;margin-bottom:2rem;}
+    .policy-back-btn:hover{background:var(--maroon-deep,#6B1A2A);color:#fff;}
+    .policy-section{margin-bottom:2.5rem;scroll-margin-top:100px;}
+    .policy-section h2{font-family:'Cormorant Garamond',serif;color:var(--maroon-deep,#6B1A2A);font-size:1.6rem;margin-bottom:0.8rem;border-bottom:2px solid var(--cream-dark,#eee);padding-bottom:0.4rem;}
+    .policy-section p, .policy-section li{color:var(--text-soft,#444);line-height:1.7;font-size:0.96rem;}
+    .policy-section ul{padding-left:1.2rem;}
+    .policy-section a{color:var(--maroon-deep,#6B1A2A);}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--maroon-deep) 0%,var(--maroon) 60%,#8B2A3A 100%);min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 5%;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9960C' fill-opacity='0.07'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;opacity:0.4;}
+    .hero-content{position:relative;z-index:1;max-width:700px;}
+    .hero-badge{display:inline-block;background:rgba(201,150,12,0.15);border:1px solid var(--gold);color:var(--gold-light);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:0.4rem 1.2rem;border-radius:20px;margin-bottom:1.5rem;}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1.2rem;}
+    .hero h1 em{font-style:italic;color:var(--gold-light);}
+    .hero p{font-size:1.1rem;color:rgba(255,255,255,0.82);max-width:500px;margin:0 auto 2.5rem;}
+    .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--maroon-deep);padding:0.85rem 2.2rem;border-radius:4px;font-weight:700;font-size:0.95rem;cursor:pointer;border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 15px rgba(201,150,12,0.4);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,150,12,0.5);}
+    .btn-outline{border:2px solid rgba(255,255,255,0.5);color:var(--white);padding:0.85rem 2.2rem;border-radius:4px;font-weight:600;font-size:0.95rem;cursor:pointer;background:transparent;transition:border-color 0.2s,background 0.2s;}
+    .btn-outline:hover{border-color:var(--gold-light);background:rgba(201,150,12,0.1);}
+    .gold-divider{text-align:center;padding:1.5rem 0 0;color:var(--gold);font-size:1.4rem;letter-spacing:8px;opacity:0.6;}
+
+    /* SECTION COMMONS */
+    section{padding:5rem 5%;}
+    .section-label{display:block;font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--maroon-deep);line-height:1.2;margin-bottom:1rem;}
+    .section-sub{color:var(--text-soft);font-size:1rem;max-width:520px;}
+
+    /* PRODUCTS */
+    #products{background:var(--cream-dark);}
+    .products-header{text-align:center;margin-bottom:3rem;}
+    .products-header .section-sub{margin:0 auto;}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto;}
+    .product-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 16px rgba(107,26,42,0.08);transition:transform 0.25s,box-shadow 0.25s;cursor:pointer;}
+    .product-card:hover{transform:translateY(-5px);box-shadow:0 8px 28px rgba(107,26,42,0.15);}
+    .product-card-img{width:100%;height:240px;object-fit:contain;display:block;background:var(--cream-dark);padding:0.5rem;}
+    .product-card-placeholder{width:100%;height:240px;background:linear-gradient(135deg,#8B2A3A,#C9960C);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:3.8rem;transition:transform 0.3s;position:relative;overflow:hidden;}
+    .product-card:hover .product-card-placeholder{transform:scale(1.03);}
+    .product-card-placeholder p{font-size:0.72rem;font-weight:700;color:var(--white);margin-top:0.6rem;letter-spacing:2px;text-transform:uppercase;background:rgba(0,0,0,0.18);padding:0.25rem 0.8rem;border-radius:20px;}
+    .product-card-placeholder::after{content:'📷 Click to Add Photo';position:absolute;bottom:0;left:0;right:0;background:rgba(107,26,42,0.75);color:white;font-size:0.72rem;font-weight:700;text-align:center;padding:0.45rem;letter-spacing:1px;opacity:0;transition:opacity 0.2s;}
+    .product-card:hover .product-card-placeholder::after{opacity:1;}
+    .product-info{padding:0.9rem 1rem 1.1rem;}
+    .product-info h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.3rem;}
+    .product-info p{font-size:0.85rem;color:var(--text-soft);margin-bottom:1rem;}
+    .product-footer{display:flex;flex-direction:column;align-items:stretch;gap:0.6rem;margin-top:0.5rem;}
+    .price{font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-size:1.35rem;font-weight:800;color:var(--maroon);}
+    .price span{font-size:0.95rem;font-weight:700;}
+    .product-actions{display:flex;gap:0.5rem;width:100%;}
+    .btn-view{flex:1;background:transparent;border:2px solid var(--maroon);color:var(--maroon);padding:0.5rem 0.4rem;border-radius:4px;font-size:0.78rem;font-weight:700;cursor:pointer;transition:all 0.2s;text-align:center;white-space:nowrap;}
+    .btn-view:hover{background:var(--maroon);color:white;}
+    .btn-add-cart{flex:1;background:var(--maroon);color:var(--white);padding:0.5rem 0.4rem;border-radius:4px;font-size:0.78rem;font-weight:700;border:none;cursor:pointer;transition:background 0.2s;text-align:center;white-space:nowrap;}
+    .btn-add-cart:hover{background:var(--maroon-deep);}
+    .btn-add-cart.added{background:#2d7a3a;}
+
+    /* PRODUCT DETAIL — full page overlay */
+    #page-product{
+      position:fixed;inset:0;z-index:250;
+      background:var(--cream);
+      overflow-y:auto;
+      transform:translateX(100%);
+      transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);
+      display:block !important;
+    }
+    #page-product.active{transform:translateX(0);}
+    .product-detail-nav{
+      position:sticky;top:0;z-index:10;
+      background:var(--maroon-deep);
+      padding:0 5%;height:60px;
+      display:flex;align-items:center;gap:1rem;
+      box-shadow:0 2px 12px rgba(0,0,0,0.25);
+    }
+    .back-btn{
+      display:inline-flex;align-items:center;gap:0.5rem;
+      color:var(--cream);font-weight:700;font-size:0.95rem;
+      cursor:pointer;background:none;border:none;padding:0.4rem 0.8rem;
+      border-radius:4px;transition:background 0.2s;white-space:nowrap;
+    }
+    .back-btn:hover{background:rgba(255,255,255,0.12);}
+    .back-btn svg{width:18px;height:18px;flex-shrink:0;}
+    .back-btn-label{font-family:'Cormorant Garamond',serif;font-size:1rem;}
+    .product-detail-wrap{max-width:1050px;margin:0 auto;padding:2.5rem 5% 4rem;}
+    .product-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+
+    /* IMAGE GALLERY / SLIDER */
+    .gallery-wrap{display:flex;flex-direction:column;gap:0.8rem;}
+    .gallery-slider-wrap{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(107,26,42,0.15);width:100%;aspect-ratio:1;max-height:460px;background:linear-gradient(135deg,#f0e0c8,#e8c99a);}
+    .gallery-main{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6rem;flex-direction:column;overflow:hidden;}
+    .gallery-slides{display:flex;width:100%;height:100%;transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);}
+    .gallery-slide{min-width:100%;height:100%;object-fit:cover;display:block;flex-shrink:0;}
+    .gallery-slide-placeholder{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0;background:linear-gradient(135deg,#f0e0c8,#e8c99a);}
+    .gallery-main-placeholder p{font-size:0.85rem;color:var(--text-soft);margin-top:0.5rem;font-weight:600;}
+    /* Arrow buttons */
+    .slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.88);border:none;border-radius:50%;width:40px;height:40px;font-size:1.1rem;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,0.18);transition:background 0.2s,transform 0.2s;}
+    .slider-arrow:hover{background:white;transform:translateY(-50%) scale(1.08);}
+    .slider-arrow.prev{left:10px;}
+    .slider-arrow.next{right:10px;}
+    .slider-arrow.hidden{display:none;}
+    /* Dot indicators */
+    .slider-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:5;}
+    .slider-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.55);border:none;cursor:pointer;padding:0;transition:background 0.2s,transform 0.2s;}
+    .slider-dot.active{background:white;transform:scale(1.25);}
+    /* Thumbnails */
+    .gallery-thumbs{display:flex;gap:0.6rem;flex-wrap:wrap;}
+    .gallery-thumb{width:72px;height:72px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;background:linear-gradient(135deg,#f0e0c8,#e8c99a);display:flex;align-items:center;justify-content:center;font-size:1.8rem;}
+    .gallery-thumb.active{border-color:var(--gold);}
+    .gallery-thumb img{width:100%;height:100%;object-fit:cover;}
+
+    /* IMAGE UPLOAD UI */
+    .upload-section{margin-top:0.8rem;}
+    .upload-label{display:block;font-size:0.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-soft);margin-bottom:0.5rem;}
+    .upload-area{border:2px dashed var(--gold);border-radius:8px;padding:1rem;text-align:center;cursor:pointer;transition:background 0.2s;background:rgba(201,150,12,0.04);}
+    .upload-area:hover{background:rgba(201,150,12,0.08);}
+    .upload-area input{display:none;}
+    .upload-area p{font-size:0.82rem;color:var(--text-soft);}
+    .upload-area span{font-size:1.4rem;}
+    .uploaded-thumbs{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.6rem;}
+    .upload-area.drag-active{background:rgba(201,150,12,0.12);border-color:var(--maroon);}
+    .uploaded-thumb-wrap{position:relative;cursor:grab;}
+    .uploaded-thumb-wrap:active{cursor:grabbing;}
+    .uploaded-thumb-wrap img{width:60px;height:60px;object-fit:cover;border-radius:6px;border:2px solid var(--cream-dark);}
+    .remove-img-btn{position:absolute;top:-6px;right:-6px;background:var(--maroon);color:white;border:none;border-radius:50%;width:18px;height:18px;font-size:0.65rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;}
+
+    .detail-tag{display:inline-block;background:var(--cream-dark);color:var(--gold);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:20px;margin-bottom:1rem;border:1px solid var(--gold-light);}
+    .product-detail-info h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--maroon-deep);line-height:1.2;margin-bottom:0.8rem;}
+    .detail-price{font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-size:2.3rem;font-weight:800;color:var(--maroon);margin-bottom:1.2rem;}
+    .detail-price span{font-size:1.35rem;font-weight:700;}
+    .detail-desc{color:var(--text-soft);font-size:0.97rem;margin-bottom:1.8rem;line-height:1.8;}
+    .detail-features{margin-bottom:2rem;}
+    .detail-features h4{font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);margin-bottom:0.8rem;}
+    .feature-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+    .feature-list li{display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:var(--text);}
+    .feature-list li::before{content:'✦';color:var(--gold);font-size:0.7rem;flex-shrink:0;}
+    .qty-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .qty-label{font-weight:700;font-size:0.88rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:1px;}
+    .qty-control{display:flex;align-items:center;border:2px solid var(--cream-dark);border-radius:4px;overflow:hidden;}
+    .qty-btn{background:var(--cream-dark);border:none;width:36px;height:36px;font-size:1.1rem;font-weight:700;cursor:pointer;color:var(--maroon);transition:background 0.2s;}
+    .qty-btn:hover{background:#e0cdb8;}
+    .qty-num{width:44px;text-align:center;font-weight:700;font-size:1rem;color:var(--text);font-variant-numeric:lining-nums tabular-nums;}
+    .detail-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-detail-cart{flex:1;background:var(--maroon);color:white;border:none;padding:0.9rem 1.5rem;border-radius:4px;font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s,transform 0.2s;min-width:160px;}
+    .btn-detail-cart:hover{background:var(--maroon-deep);transform:translateY(-1px);}
+    .btn-detail-cart.added{background:#2d7a3a;}
+    .sticky-btn-cart.added{background:#2d7a3a;}
+    .btn-buy-now{flex:1;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--maroon-deep);border:none;padding:0.9rem 1.5rem;border-radius:4px;font-weight:700;font-size:0.95rem;cursor:pointer;transition:transform 0.2s;min-width:160px;}
+    .btn-buy-now:hover{transform:translateY(-1px);}
+
+    /* CART SIDEBAR */
+    .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+    .cart-overlay.open{opacity:1;pointer-events:all;}
+    .cart-sidebar{position:fixed;top:0;right:-440px;width:100%;max-width:440px;height:100vh;background:var(--white);z-index:400;display:flex;flex-direction:column;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 30px rgba(0,0,0,0.2);}
+    .cart-sidebar.open{right:0;}
+    .cart-header{background:var(--maroon-deep);color:white;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+    .cart-header h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;}
+    .cart-close{background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;}
+    .cart-items{flex:1;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:1rem;}
+    .cart-empty{text-align:center;padding:3rem 1rem;color:var(--text-soft);}
+    .cart-empty .empty-icon{font-size:3rem;margin-bottom:1rem;}
+    .cart-item{display:flex;gap:1rem;background:var(--cream);border-radius:8px;padding:0.9rem;align-items:center;}
+    .cart-item-icon{width:60px;height:60px;background:linear-gradient(135deg,#f0e0c8,#e8c99a);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;overflow:hidden;}
+    .cart-item-icon img{width:100%;height:100%;object-fit:cover;}
+    .cart-item-info{flex:1;}
+    .cart-item-info h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.2rem;}
+    .cart-item-price{font-weight:700;color:var(--maroon);font-size:0.9rem;font-variant-numeric:lining-nums tabular-nums;}
+    .cart-item-qty{display:flex;align-items:center;gap:0.4rem;margin-top:0.4rem;}
+    .cqty-btn{background:var(--cream-dark);border:none;width:26px;height:26px;border-radius:4px;font-size:0.9rem;font-weight:700;cursor:pointer;color:var(--maroon);}
+    .cqty-num{font-size:0.9rem;font-weight:700;width:28px;text-align:center;font-variant-numeric:lining-nums tabular-nums;}
+    .cart-item-remove{background:none;border:none;color:#c0392b;font-size:1.1rem;cursor:pointer;padding:0.2rem;}
+    .cart-footer{padding:1.2rem 1.5rem;border-top:2px solid var(--cream-dark);background:var(--white);}
+    .cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
+    .cart-total span{font-size:0.9rem;color:var(--text-soft);font-weight:600;}
+    .cart-total strong{font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-size:1.6rem;font-weight:800;color:var(--maroon);}
+    .btn-checkout{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--maroon-deep);border:none;padding:1rem;border-radius:4px;font-weight:700;font-size:1rem;cursor:pointer;transition:transform 0.2s;margin-bottom:0.8rem;}
+    .btn-checkout:hover{transform:translateY(-1px);}
+
+    /* CHECKOUT MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:none;align-items:center;justify-content:center;padding:1rem;}
+    .modal-overlay.open{display:flex;}
+    .modal{background:var(--white);border-radius:12px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+    .modal-header{background:var(--maroon-deep);color:white;padding:1.3rem 1.8rem;display:flex;align-items:center;justify-content:space-between;border-radius:12px 12px 0 0;}
+    .modal-header h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;}
+    .modal-close{background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;}
+    .modal-body{padding:1.8rem;}
+    .modal-section-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--maroon-deep);margin-bottom:1rem;padding-bottom:0.4rem;border-bottom:1px solid var(--cream-dark);}
+    .order-summary{background:var(--cream-dark);border-radius:8px;padding:1rem;margin-bottom:1.5rem;}
+    .order-summary-item{display:flex;justify-content:space-between;font-size:0.88rem;padding:0.3rem 0;color:var(--text);font-variant-numeric:lining-nums tabular-nums;}
+    .order-summary-total{display:flex;justify-content:space-between;font-weight:700;font-size:1rem;padding-top:0.6rem;margin-top:0.4rem;border-top:1px solid rgba(107,26,42,0.15);color:var(--maroon);font-variant-numeric:lining-nums tabular-nums;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+    .form-group label{font-size:0.82rem;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.5px;}
+    .form-group input,.form-group select,.form-group textarea{padding:0.7rem 0.9rem;border:2px solid var(--cream-dark);border-radius:4px;font-family:'Nunito',sans-serif;font-size:0.92rem;color:var(--text);background:var(--cream);transition:border-color 0.2s;outline:none;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+    .form-group input.error,.form-group select.error{border-color:#c0392b;}
+    .error-msg{font-size:0.78rem;color:#c0392b;margin-top:0.2rem;}
+    .btn-pay{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--maroon-deep);border:none;padding:1.1rem;border-radius:4px;font-weight:700;font-size:1.05rem;cursor:pointer;transition:transform 0.2s;margin-top:0.5rem;}
+    .btn-pay:hover{transform:translateY(-1px);}
+    .btn-pay:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+    .secure-note{text-align:center;font-size:0.78rem;color:var(--text-soft);margin-top:0.8rem;display:flex;align-items:center;justify-content:center;gap:0.4rem;}
+
+    /* ORDER SUCCESS */
+    .success-page{text-align:center;padding:3rem 2rem;}
+    .success-icon{font-size:4rem;margin-bottom:1rem;}
+    .success-page h2{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--maroon-deep);margin-bottom:0.8rem;}
+    .success-page p{color:var(--text-soft);font-size:0.95rem;margin-bottom:0.5rem;}
+    .order-id-box{background:var(--cream-dark);border-radius:8px;padding:1rem 1.5rem;margin:1.5rem auto;max-width:280px;border-left:3px solid var(--gold);}
+    .order-id-box span{font-size:0.78rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:1px;}
+    .order-id-box strong{display:block;font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-weight:800;font-size:1.15rem;color:var(--maroon-deep);}
+    .btn-continue{background:var(--maroon);color:white;border:none;padding:0.85rem 2rem;border-radius:4px;font-weight:700;font-size:0.95rem;cursor:pointer;margin-top:1rem;}
+
+    /* HOW TO ORDER */
+    #how-to-order{background:var(--cream);}
+    .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:900px;margin:3rem auto 0;}
+    .order-step{text-align:center;padding:2rem 1.5rem;background:var(--white);border-radius:8px;border-top:3px solid var(--gold);box-shadow:0 2px 12px rgba(107,26,42,0.06);}
+    .step-icon{font-size:2.2rem;margin-bottom:1rem;}
+    .step-num{display:inline-block;width:28px;height:28px;background:var(--maroon);color:var(--white);border-radius:50%;font-size:0.78rem;font-weight:700;line-height:28px;text-align:center;margin-bottom:0.8rem;}
+    .order-step h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.5rem;}
+    .order-step p{font-size:0.88rem;color:var(--text-soft);}
+
+    /* ABOUT */
+    #about{background:var(--maroon-deep);color:var(--white);}
+    .about-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    #about .section-title{color:var(--gold-light);}
+    .about-text p{color:rgba(255,255,255,0.82);margin-bottom:1rem;font-size:0.97rem;}
+    .about-highlight{display:flex;flex-direction:column;gap:1.2rem;}
+    .highlight-item{display:flex;align-items:flex-start;gap:1rem;background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);padding:1rem 1.2rem;border-radius:0 6px 6px 0;}
+    .highlight-icon{font-size:1.5rem;flex-shrink:0;}
+    .highlight-item h5{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--gold-light);margin-bottom:0.2rem;}
+    .highlight-item p{font-size:0.85rem;color:rgba(255,255,255,0.7);margin:0;}
+
+    /* CONTACT */
+    #contact{background:var(--cream-dark);text-align:center;}
+    .contact-inner{max-width:600px;margin:0 auto;}
+    .contact-inner .section-sub{margin:0 auto 2.5rem;}
+    .contact-cards{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .contact-card{background:var(--white);border-radius:8px;padding:1.5rem 2rem;box-shadow:0 2px 12px rgba(107,26,42,0.08);min-width:160px;}
+    .contact-card .icon{font-size:2rem;margin-bottom:0.5rem;}
+    .contact-card h5{font-weight:700;font-size:0.85rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.3rem;}
+    .contact-card p{font-size:0.9rem;color:var(--text);}
+    .about-extended{max-width:1000px;margin:0 auto;padding:2rem 1.5rem;}
+    .about-block{margin-bottom:3rem;text-align:center;}
+    .about-block p{max-width:700px;margin:0.8rem auto 0;color:var(--text-soft);font-size:0.97rem;line-height:1.6;}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1.5rem;}
+    .why-card{text-align:center;padding:1.8rem 1.2rem;background:var(--white);border-radius:8px;border-top:3px solid var(--gold);box-shadow:0 2px 12px rgba(107,26,42,0.06);}
+    .why-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.4rem;}
+    .why-card p{font-size:0.85rem;color:var(--text-soft);margin:0;}
+    .award-grid{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
+    .award-card{background:var(--white);border-radius:8px;padding:1.5rem 1.8rem;box-shadow:0 2px 12px rgba(107,26,42,0.08);max-width:340px;text-align:left;}
+    .award-card h5{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.3rem;}
+    .award-card p{font-size:0.85rem;color:var(--text-soft);margin:0;}
+    .stats-grid{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
+    .stat-card{background:var(--white);border-radius:8px;padding:1.3rem 1.8rem;box-shadow:0 2px 12px rgba(107,26,42,0.08);min-width:150px;text-align:center;}
+    .stat-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.2rem;}
+    .stat-card p{font-size:0.8rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.5px;margin:0;}
+    .contact-email-link{color:var(--maroon);font-weight:700;text-decoration:none;}
+    .contact-email-link:hover{text-decoration:underline;}
+
+    /* TOAST */
+    .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--maroon-deep);color:white;padding:0.8rem 1.8rem;border-radius:30px;font-weight:600;font-size:0.9rem;z-index:999;transition:transform 0.3s;border:1px solid var(--gold);white-space:nowrap;}
+    .toast.show{transform:translateX(-50%) translateY(0);}
+
+    /* FOOTER */
+    footer{background:var(--maroon-deep);color:rgba(255,255,255,0.6);text-align:center;padding:2rem 5%;font-size:0.85rem;}
+    footer strong{color:var(--gold-light);}
+
+    /* REVIEWS */
+    .reviews-section{padding:2.5rem 0 0;}
+    .reviews-section h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--maroon-deep);margin-bottom:1.2rem;padding-bottom:0.5rem;border-bottom:2px solid var(--cream-dark);}
+    .review-form{background:var(--cream-dark);border-radius:8px;padding:1.4rem;margin-bottom:1.5rem;}
+    .review-form h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--maroon-deep);margin-bottom:1rem;}
+    .star-picker{display:flex;gap:0.3rem;margin-bottom:0.8rem;cursor:pointer;}
+    .star-picker span{font-size:1.6rem;color:#ccc;transition:color 0.15s;user-select:none;}
+    .star-picker span.active,.star-picker span:hover~span{color:#ccc;}
+    .star-picker span.active{color:var(--gold);}
+    .review-name-input,.review-text-input{width:100%;padding:0.65rem 0.9rem;border:2px solid var(--cream-dark);border-radius:4px;font-family:'Nunito',sans-serif;font-size:0.9rem;color:var(--text);background:var(--white);outline:none;transition:border-color 0.2s;margin-bottom:0.7rem;}
+    .review-name-input:focus,.review-text-input:focus{border-color:var(--gold);}
+    .review-text-input{resize:vertical;min-height:80px;}
+    .btn-submit-review{background:var(--maroon);color:white;border:none;padding:0.6rem 1.4rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;transition:background 0.2s;}
+    .btn-submit-review:hover{background:var(--maroon-deep);}
+    .reviews-list{display:flex;flex-direction:column;gap:1rem;max-height:420px;overflow-y:auto;padding-right:4px;}
+    .review-card{background:var(--white);border-radius:8px;padding:1rem 1.2rem;box-shadow:0 2px 10px rgba(107,26,42,0.07);border-left:3px solid var(--gold);}
+    .review-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem;}
+    .review-author{font-weight:700;font-size:0.92rem;color:var(--maroon-deep);}
+    .review-stars{color:var(--gold);font-size:0.95rem;letter-spacing:1px;}
+    .review-date{font-size:0.75rem;color:var(--text-soft);margin-bottom:0.5rem;}
+    .review-body{font-size:0.88rem;color:var(--text-soft);line-height:1.65;}
+    .review-product-tag{font-size:0.72rem;font-weight:700;background:var(--cream-dark);color:var(--gold);padding:0.2rem 0.6rem;border-radius:10px;border:1px solid var(--gold-light);display:inline-block;margin-bottom:0.4rem;}
+    .no-reviews{color:var(--text-soft);font-size:0.9rem;text-align:center;padding:1.5rem 0;font-style:italic;}
+    /* Overall Reviews Section */
+    #overall-reviews{background:var(--cream);padding:5rem 5%;}
+    .overall-reviews-inner{max-width:1050px;margin:0 auto;}
+    .reviews-stats{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+    .avg-score{text-align:center;}
+    .avg-score .big-score{font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-size:3.6rem;font-weight:800;color:var(--maroon);line-height:1;}
+    .avg-score .big-stars{font-size:1.3rem;color:var(--gold);letter-spacing:2px;}
+    .avg-score p{font-size:0.8rem;color:var(--text-soft);margin-top:0.3rem;}
+    .rating-bars{flex:1;display:flex;flex-direction:column;gap:0.4rem;min-width:200px;}
+    .rating-bar-row{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--text-soft);}
+    .rating-bar-track{flex:1;height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden;}
+    .rating-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:4px;transition:width 0.5s;}
+
+    /* SORT DROPDOWN */
+    .sort-bar{display:flex;align-items:center;justify-content:center;gap:0.7rem;margin-bottom:2rem;}
+    .sort-bar-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);}
+    .sort-dropdown-wrap{position:relative;display:inline-block;}
+    .sort-trigger{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;border-radius:20px;border:2px solid var(--maroon);background:var(--white);color:var(--maroon);font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-family:'Nunito',sans-serif;}
+    .sort-trigger:hover{background:var(--maroon);color:var(--white);}
+    .sort-trigger .sort-arrow{transition:transform 0.2s;font-size:0.7rem;}
+    .sort-dropdown-wrap.open .sort-trigger{background:var(--maroon);color:var(--white);}
+    .sort-dropdown-wrap.open .sort-arrow{transform:rotate(180deg);}
+    .sort-options{display:none;position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--white);border:2px solid var(--cream-dark);border-radius:12px;box-shadow:0 8px 28px rgba(107,26,42,0.15);min-width:200px;z-index:100;overflow:hidden;}
+    .sort-dropdown-wrap.open .sort-options{display:block;}
+    .sort-option{display:block;width:100%;padding:0.65rem 1.2rem;border:none;background:none;text-align:left;font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:600;color:var(--text-soft);cursor:pointer;transition:background 0.15s,color 0.15s;}
+    .sort-option:hover{background:var(--cream-dark);color:var(--maroon);}
+    .sort-option.active{background:var(--maroon);color:var(--white);}
+
+    /* PRICE RANGE FILTER */
+    .price-filter-wrap{position:relative;display:inline-block;}
+    .price-filter-trigger{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 1.2rem;border-radius:20px;border:2px solid var(--maroon);background:var(--white);color:var(--maroon);font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;}
+    .price-filter-trigger:hover{background:var(--maroon);color:var(--white);}
+    .price-filter-wrap.open .price-filter-trigger{background:var(--maroon);color:var(--white);}
+    .price-filter-wrap.open .price-filter-arrow{transform:rotate(180deg);}
+    .price-filter-arrow{transition:transform 0.2s;font-size:0.7rem;}
+    .price-filter-panel{display:none;position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--white);border:2px solid var(--cream-dark);border-radius:12px;box-shadow:0 8px 28px rgba(107,26,42,0.15);width:270px;z-index:100;padding:1.3rem 1.3rem 1rem;}
+    .price-filter-wrap.open .price-filter-panel{display:block;}
+    .price-range-values{display:flex;justify-content:space-between;align-items:center;font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;color:var(--maroon-deep);font-size:0.95rem;font-weight:800;margin-bottom:1.1rem;}
+    .price-range-values .to-label{color:var(--text-soft);font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;}
+    .price-slider-track-wrap{position:relative;height:34px;margin-bottom:0.8rem;}
+    .price-slider-track{position:absolute;top:50%;left:0;right:0;height:5px;background:var(--cream-dark);border-radius:3px;transform:translateY(-50%);}
+    .price-slider-range-fill{position:absolute;top:50%;height:5px;background:var(--maroon);border-radius:3px;transform:translateY(-50%);}
+    .price-slider-track-wrap input[type=range]{position:absolute;top:0;left:0;width:100%;height:34px;margin:0;background:none;-webkit-appearance:none;appearance:none;pointer-events:none;}
+    .price-slider-track-wrap input[type=range]:focus{outline:none;}
+    .price-slider-track-wrap input[type=range]::-webkit-slider-runnable-track{background:transparent;height:34px;}
+    .price-slider-track-wrap input[type=range]::-moz-range-track{background:transparent;height:34px;border:none;}
+    .price-slider-track-wrap input[type=range]{touch-action:none;}
+    .price-slider-track-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;pointer-events:auto;touch-action:none;width:19px;height:19px;border-radius:50%;background:var(--white);border:3px solid var(--maroon);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.25);margin-top:8px;}
+    .price-slider-track-wrap input[type=range]::-moz-range-thumb{pointer-events:auto;touch-action:none;width:19px;height:19px;border-radius:50%;background:var(--white);border:3px solid var(--maroon);cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.25);}
+    .price-filter-actions{display:flex;gap:0.6rem;justify-content:flex-end;}
+    .price-filter-reset{background:transparent;border:2px solid var(--cream-dark);color:var(--text-soft);padding:0.4rem 0.95rem;border-radius:20px;font-size:0.78rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:border-color 0.2s,color 0.2s;}
+    .price-filter-reset:hover{border-color:var(--maroon);color:var(--maroon);}
+    .price-filter-apply{background:var(--maroon);color:white;border:none;padding:0.4rem 1.1rem;border-radius:20px;font-size:0.78rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:background 0.2s;}
+    .price-filter-apply:hover{background:var(--maroon-deep);}
+
+    /* REVIEW REPLY */
+    .review-reply-btn{background:none;border:none;color:var(--maroon);font-size:0.78rem;font-weight:700;cursor:pointer;padding:0.3rem 0;margin-top:0.4rem;text-decoration:underline;text-underline-offset:2px;}
+    .review-reply-btn:hover{color:var(--maroon-deep);}
+    .review-reply-form{background:rgba(201,150,12,0.06);border:1px solid var(--gold-light);border-radius:6px;padding:0.8rem;margin-top:0.6rem;display:none;}
+    .review-reply-form.open{display:block;}
+    .review-reply-form textarea{width:100%;padding:0.55rem 0.8rem;border:2px solid var(--cream-dark);border-radius:4px;font-family:'Nunito',sans-serif;font-size:0.85rem;color:var(--text);background:var(--white);outline:none;resize:vertical;min-height:64px;transition:border-color 0.2s;margin-bottom:0.5rem;}
+    .review-reply-form textarea:focus{border-color:var(--gold);}
+    .review-reply-form-btns{display:flex;gap:0.5rem;}
+    .btn-post-reply{background:var(--maroon);color:white;border:none;padding:0.45rem 1rem;border-radius:4px;font-size:0.8rem;font-weight:700;cursor:pointer;}
+    .btn-post-reply:hover{background:var(--maroon-deep);}
+    .btn-cancel-reply{background:transparent;border:2px solid var(--cream-dark);color:var(--text-soft);padding:0.45rem 0.9rem;border-radius:4px;font-size:0.8rem;font-weight:700;cursor:pointer;}
+    .review-owner-reply{background:rgba(107,26,42,0.05);border-left:3px solid var(--maroon);border-radius:0 6px 6px 0;padding:0.7rem 1rem;margin-top:0.7rem;}
+    .review-owner-reply-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--maroon);margin-bottom:0.3rem;}
+    .review-owner-reply p{font-size:0.85rem;color:var(--text);line-height:1.6;}
+
+    .mobile-nav-right{display:none;align-items:center;gap:0.6rem;}
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .nav-links{display:none;}
+      .mobile-nav-right{display:flex;}
+      .about-inner,.product-detail-grid{grid-template-columns:1fr;gap:2rem;}
+      .form-row{grid-template-columns:1fr;}
+      .hero{min-height:80vh;}
+      .back-btn-label{display:inline;}
+    }
+    @media(max-width:480px){
+      /* Base */
+      body{font-size:0.88rem;}
+
+      /* Nav */
+      .nav-logo{font-size:1.3rem;}
+      .cart-btn{font-size:0.78rem;padding:0.4rem 0.8rem;}
+
+      /* Hero */
+      .hero{padding:2.5rem 5%;min-height:70vh;}
+      .hero h1{font-size:2rem;}
+      .hero p{font-size:0.88rem;}
+      .hero-badge{font-size:0.68rem;}
+      .btn-primary,.btn-outline{font-size:0.82rem;padding:0.7rem 1.4rem;}
+
+      /* Section labels & titles */
+      .section-label{font-size:0.68rem;}
+      .section-title{font-size:1.5rem;}
+      .section-sub{font-size:0.85rem;}
+      section{padding:3rem 4%;}
+
+      /* Products grid */
+      .products-grid{grid-template-columns:repeat(2,1fr);gap:0.8rem;}
+      .product-card-img,.product-card-placeholder{height:130px;}
+      .product-info{padding:0.7rem 0.7rem 0.9rem;}
+      .product-info h3{font-size:0.92rem;margin-bottom:0.2rem;}
+      .product-info p{font-size:0.78rem;}
+      .card-stars{margin-bottom:0.2rem;}
+      .card-stars-val{font-size:0.72rem;}
+      .card-stars-count{font-size:0.65rem;}
+      .price{font-size:1.05rem;}
+      .product-footer{gap:0.45rem;margin-top:0.35rem;}
+      .btn-view,.btn-add-cart{font-size:0.68rem;padding:0.45rem 0.3rem;}
+
+      /* Product detail */
+      .product-detail-wrap{padding:1.2rem 4% 3rem;}
+      .product-detail-info h2{font-size:1.6rem;}
+      .detail-price{font-size:1.8rem;}
+      .detail-desc{font-size:0.85rem;}
+      .detail-tag{font-size:0.68rem;}
+      .feature-list li{font-size:0.82rem;}
+      .btn-detail-cart,.btn-buy-now{font-size:0.85rem;padding:0.8rem 1rem;}
+
+      /* Gallery slider */
+      .gallery-slider-wrap{max-height:300px;}
+
+      /* Cart sidebar */
+      .cart-sidebar{max-width:100%;}
+      .cart-header h3{font-size:1.1rem;}
+      .cart-item-info h4{font-size:0.88rem;}
+      .cart-item-price{font-size:0.82rem;}
+      .cart-total strong{font-size:1.4rem;}
+      .btn-checkout{font-size:0.88rem;}
+
+      /* How to order */
+      .order-grid{grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+      .order-step{padding:1.2rem 1rem;}
+      .order-step h4{font-size:0.95rem;}
+      .order-step p{font-size:0.78rem;}
+      .step-icon{font-size:1.6rem;}
+
+      /* About */
+      .about-inner{gap:1.5rem;}
+      .highlight-item h5{font-size:0.9rem;}
+      .highlight-item p{font-size:0.8rem;}
+
+      /* Contact */
+      .contact-card{padding:1rem 1.2rem;min-width:120px;}
+      .contact-card p{font-size:0.82rem;}
+
+      /* Reviews */
+      .review-author{font-size:0.85rem;}
+      .review-body{font-size:0.82rem;}
+      .avg-score .big-score{font-size:3rem;}
+      .reviews-section h3{font-size:1.2rem;}
+
+      /* Checkout modal */
+      .modal{border-radius:8px;}
+      .modal-header h3{font-size:1.2rem;}
+      .form-group label{font-size:0.78rem;}
+      .form-group input,.form-group select,.form-group textarea{font-size:0.85rem;}
+      .btn-pay{font-size:0.92rem;}
+
+      /* Sort bar */
+      .sort-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
+      .price-filter-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
+      .price-filter-panel{
+  position:fixed;
+  top:50%;
+  left:50%;
+  right:auto;
+  transform:translate(-50%,-50%);
+  width:90vw;
+  max-width:320px;
+  max-height:80vh;
+  overflow-y:auto;
+}
+      .price-slider-track-wrap input[type=range]::-webkit-slider-thumb{width:26px;height:26px;margin-top:4px;}
+      .price-slider-track-wrap input[type=range]::-moz-range-thumb{width:26px;height:26px;}
+      .price-slider-track-wrap{height:40px;}
+      .sort-bar{flex-wrap:wrap;}
+      /* Show hamburger, hide desktop nav links */
+      .mobile-nav-right{display:flex;}
+      .nav-links{display:none;}
+    }
+
+
+    /* STAR RATING ON CARDS */
+    .card-stars{display:flex;align-items:center;gap:0.3rem;margin-bottom:0.4rem;}
+    .card-stars-val{color:var(--gold);font-size:0.8rem;letter-spacing:0.5px;}
+    .card-stars-count{font-size:0.72rem;color:var(--text-soft);}
+
+    /* STICKY MOBILE BUY BAR */
+    .sticky-buy-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:220;background:var(--white);border-top:2px solid var(--cream-dark);padding:0.7rem 1rem;box-shadow:0 -4px 20px rgba(107,26,42,0.12);}
+    .sticky-buy-bar-inner{display:flex;align-items:center;gap:0.8rem;max-width:600px;margin:0 auto;}
+    .sticky-buy-price{font-family:'Nunito',sans-serif;font-variant-numeric:lining-nums tabular-nums;font-size:1.3rem;font-weight:800;color:var(--maroon);white-space:nowrap;}
+    .sticky-buy-price span{font-size:0.85rem;}
+    .sticky-btn-cart{flex:1;background:var(--maroon);color:white;border:none;padding:0.75rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;}
+    .sticky-btn-buy{flex:1;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--maroon-deep);border:none;padding:0.75rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;}
+    @media(max-width:480px){
+      .sticky-buy-bar{display:block;}
+      /* add bottom padding to product detail so bar doesn't cover buttons */
+      .product-detail-wrap{padding-bottom:90px;}
+    }
+
+    /* ANNOUNCEMENT BAR */
+    .announce-bar{display:none;background:linear-gradient(90deg,#7B1A2A,#C9960C,#7B1A2A);background-size:200% auto;animation:shimmer 4s linear infinite;color:white;position:sticky;top:0;z-index:201;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    @keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+    .announce-bar.visible{display:block;}
+    /* Desktop */
+    .announce-desktop{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:0.6rem 5%;flex-wrap:wrap;}
+    .announce-text{font-size:0.88rem;font-weight:700;letter-spacing:0.3px;text-align:center;}
+    .announce-text em{font-style:normal;color:var(--gold-light);}
+    .announce-code{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.15);border:1.5px dashed rgba(255,255,255,0.6);padding:0.25rem 0.8rem;border-radius:4px;font-weight:800;font-size:0.88rem;letter-spacing:1.5px;cursor:pointer;transition:background 0.2s;}
+    .announce-code:hover{background:rgba(255,255,255,0.25);}
+    .announce-code-label{font-size:0.72rem;font-weight:600;opacity:0.85;}
+    .announce-close{background:none;border:none;color:rgba(255,255,255,0.7);font-size:1.1rem;cursor:pointer;padding:0 0.3rem;line-height:1;transition:color 0.2s;position:absolute;right:1rem;}
+    .announce-close:hover{color:white;}
+    .announce-bar-inner{position:relative;display:flex;align-items:center;}
+    /* Mobile — scrolling ticker */
+    .announce-mobile{display:none;overflow:hidden;height:32px;align-items:center;}
+    .announce-ticker{display:flex;gap:3rem;white-space:nowrap;animation:ticker 20s linear infinite;font-size:0.78rem;font-weight:700;padding:0.3rem 0;align-items:center;}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .announce-ticker-item{display:flex;align-items:center;gap:0.5rem;}
+    .announce-ticker-code{background:rgba(255,255,255,0.2);border:1px dashed rgba(255,255,255,0.7);padding:0.1rem 0.5rem;border-radius:3px;font-weight:800;letter-spacing:1px;font-size:0.75rem;}
+    @media(max-width:480px){
+      .announce-desktop{display:none;}
+      .announce-mobile{display:flex;}
+      .announce-bar.visible nav{top:32px;}
+    }
+    /* Coupon input in checkout */
+    .coupon-row{display:flex;gap:0.6rem;margin-bottom:1rem;}
+    .coupon-input{flex:1;padding:0.6rem 0.8rem;border:1.5px solid var(--cream-dark);border-radius:4px;font-size:0.88rem;font-family:'Nunito',sans-serif;transition:border-color 0.2s;}
+    .coupon-input:focus{outline:none;border-color:var(--gold);}
+    .coupon-apply-btn{background:var(--maroon);color:white;border:none;padding:0.6rem 1.1rem;border-radius:4px;font-weight:700;font-size:0.85rem;cursor:pointer;white-space:nowrap;transition:background 0.2s;}
+    .coupon-apply-btn:hover{background:var(--maroon-deep);}
+    .coupon-msg{font-size:0.8rem;font-weight:700;margin-bottom:0.8rem;padding:0.4rem 0.8rem;border-radius:4px;display:none;}
+    .coupon-msg.success{display:block;color:#2d6a1f;background:#e9f7e3;border:1px solid #b5dfa8;}
+    .coupon-msg.error{display:block;color:#a32d2d;background:#fceaea;border:1px solid #f0b0b0;}
+    .order-summary-discount{display:flex;justify-content:space-between;color:#2d6a1f;font-weight:700;font-size:0.88rem;padding:0.3rem 0;border-top:1px dashed #b5dfa8;margin-top:0.3rem;}
+
+    /* Hamburger — hidden on desktop */
+    .mobile-cart-btn{background:var(--gold);color:var(--maroon-deep);border:none;padding:0.4rem 0.8rem;border-radius:4px;font-weight:700;font-size:0.85rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;}
+    .hamburger-btn{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:4px;width:34px;height:34px;}
+    .hamburger-btn span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all 0.3s ease;transform-origin:center;}
+    .hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .hamburger-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .hamburger-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--maroon-deep);z-index:199;flex-direction:column;box-shadow:0 8px 20px rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.1);}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu-link{padding:1rem 6%;color:var(--cream);font-size:0.95rem;font-weight:600;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.07);transition:background 0.2s;}
+    .mobile-menu-link:hover{background:rgba(255,255,255,0.08);color:var(--gold-light);}
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar" id="announceBar">
+  <div class="announce-bar-inner">
+    <!-- Desktop -->
+    <div class="announce-desktop">
+      <span class="announce-text" id="announceText">🎉 <em>Diwali Special!</em> Get 10% off on all rangolis — Use code at checkout</span>
+      <div class="announce-code" onclick="copyCode()" title="Click to copy">
+        <span class="announce-code-label">CODE:</span>
+        <span id="announceCode">DIWALI10</span>
+        <span style="font-size:0.75rem;opacity:0.8;">📋</span>
+      </div>
+      <span id="announceCopied" style="font-size:0.75rem;opacity:0;transition:opacity 0.3s;">✅ Copied!</span>
+    </div>
+    <!-- Mobile ticker -->
+    <div class="announce-mobile">
+      <div class="announce-ticker" id="announceTicker">
+        <span class="announce-ticker-item">🎉 Launch Offer! 10% off · Use code <span class="announce-ticker-code" id="announceCodeMobile">LAUNCH10</span></span>
+        <span class="announce-ticker-item">🚚 Free shipping above ₹1999 · Pan India delivery</span>
+        <!-- duplicate for seamless loop -->
+        <span class="announce-ticker-item">🎉 Launch Offer! 10% off · Use code <span class="announce-ticker-code">LAUNCH10</span></span>
+        <span class="announce-ticker-item">🚚 Free shipping above ₹1999 · Pan India delivery</span>
+      </div>
+    </div>
+    <button class="announce-close" onclick="closeAnnounce()" aria-label="Close">✕</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:0.5rem;">
+  <img src="https://i.ibb.co/2120s4qr/logo.png" alt="DK Creations" style="height:40px;width:40px;object-fit:cover;border-radius:8px;"/>
+  DK <span>Creations</span>
+</a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home');scrollToSection('products')">Shop</a></li>
+    <li><a onclick="showPage('home');scrollToSection('how-to-order')">How to Order</a></li>
+    <li><a onclick="showPage('home');scrollToSection('about')">About</a></li>
+    <li><a onclick="showPage('home');scrollToSection('contact')">Contact</a></li>
+    <li><a onclick="openTrackOrder()">Track Order</a></li>
+    <li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
+  </ul>
+  <!-- Mobile right side: cart + hamburger -->
+  <div class="mobile-nav-right">
+    <button class="cart-btn mobile-cart-btn" onclick="openCart()">🛒 <span class="cart-count" id="cartCountMobile">0</span></button>
+    <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- Mobile dropdown menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('products')">🛍️ Shop</a>
+  <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('how-to-order')">📋 How to Order</a>
+  <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('about')">🌸 About Us</a>
+  <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('contact')">📞 Contact</a>
+  <a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close" onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="empty-icon">🛍️</div><p>Your cart is empty.<br/>Add some beautiful rangolis!</p></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+    <div class="cart-shipping-row" id="cartShippingRow" style="display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;padding:0.4rem 0;border-bottom:1px dashed var(--cream-dark);margin-bottom:0.5rem;">
+      <span style="color:var(--text-soft);">🚚 Shipping</span>
+      <strong id="cartShippingAmt" style="color:var(--maroon);">₹99</strong>
+    </div>
+    <div class="cart-total" style="border-top:2px solid var(--gold);padding-top:0.6rem;"><span>Total Amount</span><strong id="cartTotal">₹0</strong></div>
+    <button class="btn-checkout" onclick="openCheckout()">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div>
+    <div class="modal-body" id="modalBody">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</div>
+<!-- TRACK ORDER MODAL -->
+<div class="modal-overlay" id="trackOrderModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Track Your Order</h3><button class="modal-close" onclick="closeTrackOrder()">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Order ID</label>
+        <input type="text" id="trackOrderId" placeholder="e.g. DKC1234567890"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="trackEmail" placeholder="The email used at checkout"/>
+      </div>
+      <button class="btn-pay" onclick="submitTrackOrder()">🔍 Track Order</button>
+      <div id="trackOrderResult" style="margin-top:1.2rem;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ HOME PAGE ══ -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Handcrafted with Love ✦</div>
+      <h1>Beautiful Rangolis,<br/><em>Crafted by Hand</em></h1>
+      <p>Premium fur woolen rangolis that bring warmth, colour, and festive joy to every corner of your home.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToSection('products')">Shop Now</button>
+        <button class="btn-outline" onclick="scrollToSection('contact')">Contact Us</button>
+      </div>
+    </div>
+  </section>
+  <div class="gold-divider">✦ ✦ ✦</div>
+
+  <section id="products">
+    <div class="products-header">
+      <span class="section-label">Our Collection</span>
+      <h2 class="section-title">Handcrafted Fur Woolen Rangolis</h2>
+      <p class="section-sub">Click any product to view all images and details.</p>
+    </div>
+    <div class="sort-bar">
+      <span class="sort-bar-label">Sort by:</span>
+      <div class="sort-dropdown-wrap" id="sortDropdown">
+        <button class="sort-trigger" onclick="toggleSortDropdown()">
+          <span id="sortLabel">✦ Featured</span>
+          <span class="sort-arrow">▼</span>
+        </button>
+        <div class="sort-options">
+          <button class="sort-option active" onclick="sortProducts('default')" id="sort-default">✦ Featured</button>
+          <button class="sort-option" onclick="sortProducts('price-asc')" id="sort-price-asc">Price: Low → High</button>
+          <button class="sort-option" onclick="sortProducts('price-desc')" id="sort-price-desc">Price: High → Low</button>
+          <button class="sort-option" onclick="sortProducts('az')" id="sort-az">A → Z</button>
+          <button class="sort-option" onclick="sortProducts('za')" id="sort-za">Z → A</button>
+          <button class="sort-option" onclick="sortProducts('bestseller')" id="sort-bestseller">🏆 Best Sellers</button>
+          <button class="sort-option" onclick="sortProducts('new')" id="sort-new">🆕 New Arrivals</button>
+          <button class="sort-option" onclick="sortProducts('toprated')" id="sort-toprated">⭐ Top Rated</button>
+          <button class="sort-option" onclick="sortProducts('mostloved')" id="sort-mostloved">💗 Most Loved</button>
+        </div>
+      </div>
+
+      <div class="price-filter-wrap" id="priceFilterWrap">
+        <button class="price-filter-trigger" onclick="togglePriceFilter()">
+          <span id="priceFilterLabel">₹0 - ₹5000</span>
+          <span class="price-filter-arrow">▼</span>
+        </button>
+        <div class="price-filter-panel" onclick="event.stopPropagation()">
+          <div class="price-range-values">
+            <span>₹<span id="priceMinVal">0</span></span>
+            <span class="to-label">to</span>
+            <span>₹<span id="priceMaxVal">5000</span></span>
+          </div>
+          <div class="price-slider-track-wrap">
+            <div class="price-slider-track"></div>
+            <div class="price-slider-range-fill" id="priceRangeFill"></div>
+            <input type="range" id="priceMinSlider" min="0" max="5000" step="50" value="0" oninput="handlePriceSlider('min')"/>
+            <input type="range" id="priceMaxSlider" min="0" max="5000" step="50" value="5000" oninput="handlePriceSlider('max')"/>
+          </div>
+          <div class="price-filter-actions">
+            <button class="price-filter-reset" onclick="resetPriceFilter()">Reset</button>
+            <button class="price-filter-apply" onclick="applyPriceFilter()">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <section id="how-to-order">
+    <div style="text-align:center">
+      <span class="section-label">Simple Process</span>
+      <h2 class="section-title">How to Order</h2>
+      <p class="section-sub" style="margin:0 auto">Ordering is quick, easy and 100% secure.</p>
+    </div>
+    <div class="order-grid">
+      <div class="order-step"><div class="step-icon">🛍️</div><div class="step-num">1</div><h4>Browse & Choose</h4><p>Explore our collection and pick the rangoli you love.</p></div>
+      <div class="order-step"><div class="step-icon">🛒</div><div class="step-num">2</div><h4>Add to Cart</h4><p>Add one or more items to your cart and review your order.</p></div>
+      <div class="order-step"><div class="step-icon">📋</div><div class="step-num">3</div><h4>Fill Delivery Details</h4><p>Enter your name, address, email and phone — all on this website.</p></div>
+      <div class="order-step"><div class="step-icon">💳</div><div class="step-num">4</div><h4>Pay Securely Online</h4><p>Pay via UPI, card, or netbanking through Razorpay. Get instant confirmation.</p></div>
+    </div>
+  </section>
+<section class="about-extended">
+    <div class="about-block">
+      <span class="section-label">Behind the Brand</span>
+      <h2 class="section-title">Business expertise, creative passion</h2>
+      <p>DK Creations is founded by an entrepreneur holding degrees in B.Com, M.Com, and an MBA in HR & Finance, along with professional training in Data Science. This unique blend of business expertise and creative passion allows us to maintain exceptional quality, professional customer service, and innovative handcrafted designs that our customers love.</p>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">Our Mission & Vision</span>
+      <h2 class="section-title">Preserving heritage, inspiring homes</h2>
+      <p>Our mission is to preserve the rich heritage of Indian handcrafted art by creating elegant, reusable, and premium-quality décor that enhances every celebration. Our vision is to become one of India's most trusted handcrafted décor brands by inspiring homes with timeless artistry, innovation, and exceptional craftsmanship.</p>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">Why Choose DK Creations?</span>
+      <h2 class="section-title">What sets us apart</h2>
+      <div class="why-grid">
+        <div class="why-card"><h4>100% Handmade</h4><p>Carefully handcrafted with precision, patience, and attention to detail.</p></div>
+        <div class="why-card"><h4>Premium Quality</h4><p>Carefully selected high-quality materials for durability and elegance.</p></div>
+        <div class="why-card"><h4>Unique Designs</h4><p>Traditional Indian artistry combined with modern design.</p></div>
+        <div class="why-card"><h4>Reusable & Eco-Friendly</h4><p>Easy to maintain and designed to be enjoyed for years.</p></div>
+        <div class="why-card"><h4>Customer Satisfaction</h4><p>Your happiness is our greatest achievement.</p></div>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">Our Journey</span>
+      <h2 class="section-title">Passion, dedication, and our customers</h2>
+      <p>From a small creative beginning to becoming a trusted handcrafted brand, our journey has been built on passion, dedication, and the love of our customers. We are proud to have showcased our collections in 12+ successful exhibitions, connecting with hundreds of customers along the way.</p>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">Awards & Recognition</span>
+      <h2 class="section-title">Our commitment, recognized</h2>
+      <div class="award-grid">
+        <div class="award-card"><h5>🏆 Siddhi Foundation Award — April 2026</h5><p>Honored for excellence in traditional handicrafts and artistic creativity.</p></div>
+        <div class="award-card"><h5>🏆 Pune Business Club Award — June 2026</h5><p>Recognized for outstanding entrepreneurship and premium product quality.</p></div>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">By The Numbers</span>
+      <div class="stats-grid">
+        <div class="stat-card"><h3>12+</h3><p>Successful Exhibitions</p></div>
+        <div class="stat-card"><h3>500+</h3><p>Happy Customers</p></div>
+        <div class="stat-card"><h3>100%</h3><p>Handmade Products</p></div>
+        <div class="stat-card"><h3>🇮🇳</h3><p>Made in India</p></div>
+      </div>
+    </div>
+
+    <div class="about-block">
+      <span class="section-label">Our Promise</span>
+      <h2 class="section-title">Handcrafted with love, for every celebration</h2>
+      <p>Whether it's Diwali, Navratri, weddings, housewarming ceremonies, or any special celebration, we are committed to delivering premium handcrafted products that make your moments more beautiful and memorable. Thank you for choosing DK Creations and supporting handmade artistry.</p>
+    </div>
+  </section>
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Made with passion,<br/>delivered with care</h2>
+        <p>DK Creations was born from a love for traditional Indian art. Every rangoli we make is carefully handcrafted using premium quality fur wool, bringing festive beauty into modern homes.</p>
+        <p>We believe home décor should tell a story — and ours is one of colour, culture, and craft.</p>
+      </div>
+      <div class="about-highlight">
+        <div class="highlight-item"><div class="highlight-icon">🧶</div><div><h5>Premium Fur Wool</h5><p>Only the finest quality fur wool used in every piece.</p></div></div>
+        <div class="highlight-item"><div class="highlight-icon">🤲</div><div><h5>100% Handmade</h5><p>Each rangoli crafted by skilled artisans with care.</p></div></div>
+        <div class="highlight-item"><div class="highlight-icon">🚚</div><div><h5>Pan India Delivery</h5><p>We ship to every corner of India, quickly and safely.</p></div></div>
+        <div class="highlight-item"><div class="highlight-icon">🎁</div><div><h5>Gift Ready</h5><p>Beautiful packaging — perfect for gifting on any occasion.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-inner">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">We'd love to hear from you</h2>
+      <p class="section-sub">Questions? Custom orders? We reply within hours.</p>
+      <div class="contact-cards">
+        <div class="contact-card"><div class="icon">📱</div><h5>Phone / WhatsApp</h5><p>+91 9823512225</p></div>
+        <div class="contact-card"><div class="icon">📧</div><h5>Email</h5><p><a class="contact-email-link" href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a></p></div>
+        <div class="contact-card"><div class="icon">📍</div><h5>Location</h5><p>Pune, India</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="overall-reviews">
+    <div class="overall-reviews-inner">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <span class="section-label">What Customers Say</span>
+        <h2 class="section-title">Overall Reviews</h2>
+        <p class="section-sub" style="margin:0 auto;">Real experiences from our happy customers across India.</p>
+      </div>
+      <div class="reviews-stats" id="overallStats"></div>
+      <div class="reviews-list" id="allReviewsList"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 <strong>DK Creations</strong> — Handcrafted Fur Woolen Rangolis. Made with ❤️ in Pune. · <a href="mailto:thedkcreations@gmail.com" style="color:var(--gold-light);text-decoration:none;">thedkcreations@gmail.com</a></p>
+    <p class="footer-policy-links">
+      <a onclick="showPage('policies');scrollToSection('policy-shipping')">Shipping Policy</a> ·
+      <a onclick="showPage('policies');scrollToSection('policy-refund')">Refund &amp; Cancellation Policy</a> ·
+      <a onclick="showPage('policies');scrollToSection('policy-terms')">Terms &amp; Conditions</a> ·
+      <a onclick="showPage('policies');scrollToSection('policy-privacy')">Privacy Policy</a>
+    </p>
+  </footer>
+</div><!-- end #page-home -->
+
+<!-- ══════════════ POLICIES PAGE ══════════════ -->
+<div id="page-policies" class="page">
+  <div class="policy-page-inner">
+    <button class="policy-back-btn" onclick="showPage('home')">← Back to Home</button>
+
+    <section id="policy-shipping" class="policy-section">
+      <h2>Shipping Policy</h2>
+      <p>We handcraft every rangoli to order, so please allow <strong>7–10 business days</strong> for your order to be prepared, packed, and shipped from Pune. Delivery times may vary slightly depending on your location and courier availability, especially during festive seasons when order volumes are high.</p>
+      <p>Once your order ships, you'll receive a confirmation with tracking details on the email/phone number provided at checkout. We currently ship <strong>Pan-India</strong>. All orders are <strong>prepaid</strong> — Cash on Delivery (COD) is not available at this time.</p>
+    </section>
+
+    <section id="policy-refund" class="policy-section">
+      <h2>Refund &amp; Cancellation Policy</h2>
+      <p>As each rangoli is handcrafted specifically for your order, <strong>we do not offer returns, refunds, or cancellations</strong> once an order has been placed and payment confirmed.</p>
+      <p>In the rare case your item arrives visibly damaged or defective in transit, please contact us within 48 hours of delivery at <a href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a> with photos of the damaged item and packaging, and we'll review it on a case-by-case basis.</p>
+    </section>
+
+    <section id="policy-terms" class="policy-section">
+      <h2>Terms &amp; Conditions</h2>
+      <p>By placing an order on this website, you agree to the following:</p>
+      <ul>
+        <li>All products are handcrafted, so minor variations in color, texture, or finish compared to the photos shown are natural and not considered defects.</li>
+        <li>Prices listed are in Indian Rupees (₹) and are inclusive of applicable taxes unless stated otherwise. Shipping charges (if any) are shown at checkout.</li>
+        <li>Orders are confirmed only after successful payment via our payment partner, Razorpay.</li>
+        <li>We reserve the right to refuse or cancel any order in cases of suspected fraud, unauthorized use of a payment method, or unavailability of the product/materials.</li>
+        <li>Product images are for representation purposes; actual product may vary slightly.</li>
+        <li>All content on this website (images, descriptions, branding) is the property of DK Creations and may not be reproduced without permission.</li>
+      </ul>
+    </section>
+
+    <section id="policy-privacy" class="policy-section">
+      <h2>Privacy Policy</h2>
+      <p>We collect only the information needed to process your order: your name, phone number, email address, and shipping address. This information is used solely to fulfil your order, send order updates, and respond to your queries.</p>
+      <p>Payments are processed securely by <strong>Razorpay</strong>; we do not see or store your card, UPI, or bank details on our servers. Your order details are stored securely and are not shared with third parties except as required to deliver your order (e.g. our courier partner) or comply with the law.</p>
+      <p>For any privacy-related questions or to request deletion of your data, contact us at <a href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a>.</p>
+    </section>
+  </div>
+</div><!-- end #page-policies -->
+
+<div id="page-product">
+  <!-- Sticky back-nav inside product page -->
+  <div class="product-detail-nav">
+    <button class="back-btn" onclick="closeProd()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      <span class="back-btn-label">Back to Shop</span>
+    </button>
+  </div>
+  <div class="product-detail-wrap">
+    <div class="product-detail-grid">
+      <!-- LEFT: Gallery -->
+      <div>
+        <div class="gallery-wrap">
+          <div class="gallery-slider-wrap" id="gallerySliderWrap">
+            <div class="gallery-main" id="galleryMain">
+              <!-- slides injected by JS -->
+            </div>
+            <button class="slider-arrow prev hidden" id="sliderPrev" onclick="sliderMove(-1)">&#8592;</button>
+            <button class="slider-arrow next hidden" id="sliderNext" onclick="sliderMove(1)">&#8594;</button>
+            <div class="slider-dots" id="sliderDots"></div>
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+          <div class="variant-info" id="variantInfo" style="display:none;margin-top:0.6rem;">
+            <span id="variantColor" style="font-weight:800;color:var(--maroon);"></span>
+            <p id="variantDesc" style="font-size:0.85rem;color:var(--text-soft);margin-top:0.2rem;"></p>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: Info -->
+      <div class="product-detail-info">
+        <div class="detail-tag" id="detailTag">Fur Woolen Rangoli</div>
+        <h2 id="detailName">Product Name</h2>
+        <div class="detail-price"><span>₹</span><span id="detailPrice">0</span></div>
+        <p class="detail-desc" id="detailDesc"></p>
+        <div class="detail-features">
+          <h4>What's Included</h4>
+          <ul class="feature-list" id="detailFeatures"></ul>
+        </div>
+        <div class="qty-row">
+          <span class="qty-label">Quantity</span>
+          <div class="qty-control">
+            <button class="qty-btn" onclick="changeQty(-1)">−</button>
+            <span class="qty-num" id="detailQty">1</span>
+            <button class="qty-btn" onclick="changeQty(1)">+</button>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
+          <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
+        </div>
+
+<!-- PER-PRODUCT REVIEWS -->
+        <div class="reviews-section" id="productReviewsSection">
+          <h3>⭐ Customer Reviews</h3>
+          <div class="review-form">
+            <h4>Write a Review</h4>
+            <div class="star-picker" id="starPicker">
+              <span data-val="1">★</span><span data-val="2">★</span><span data-val="3">★</span><span data-val="4">★</span><span data-val="5">★</span>
+            </div>
+            <input class="review-name-input" id="reviewName" type="text" placeholder="Your name"/>
+            <textarea class="review-text-input" id="reviewText" placeholder="Share your experience with this product…"></textarea>
+            <button class="btn-submit-review" onclick="submitProductReview()">Submit Review</button>
+          </div>
+          <div class="reviews-list" id="productReviewsList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><p>© 2025 <strong>DK Creations</strong> — Handcrafted Fur Woolen Rangolis. Made with ❤️ in Pune. · <a href="mailto:thedkcreations@gmail.com" style="color:var(--gold-light);text-decoration:none;">thedkcreations@gmail.com</a></p></footer>
+</div><!-- end #page-product -->
+
+<script>
+// ── PRODUCTS DATA ──
+const products = [
+{
+  id: 1,
+  name: "Lotus Bloom Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted lotus floral design made with premium fur wool. Perfect for pooja rooms, living spaces, and festive decorations.",
+
+  fullDesc: "Enhance your home décor with this elegant Lotus Bloom Fur Wool Rangoli featuring vibrant pink lotus flowers and lush green leaves. Handcrafted with premium fur wool, this 36 × 36 inch decorative piece is reusable, durable, and ideal for pooja rooms, festivals, entrances, and gifting.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Home & Festive Décor"
+  ],
+
+  images: ["https://i.ibb.co/PZMqDD5h/img1.jpg", "https://i.ibb.co/nsHY9xfb/img2.jpg"]},
+  {
+  id: 2,
+  name: "Royal Peacock Floral Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🌸",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Vibrant peacock-inspired floral rangoli handcrafted with premium fur wool. Perfect for festive décor, pooja rooms, and special occasions.",
+
+  fullDesc: "Add a grand festive touch to your home with this Royal Peacock Floral Fur Wool Rangoli. Featuring colorful peacock-feather motifs, layered floral petals, and intricate handcrafted detailing, this stunning 36 × 36 inch rangoli creates a beautiful centerpiece for pooja rooms, entrances, living spaces, and celebrations. Made from premium fur wool, it is reusable, durable, and designed to brighten every festive occasion with elegance and charm.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Peacock-Inspired Floral Design",
+    "Handcrafted & Reusable",
+    "Vibrant Multicolor Pattern",
+    "Ideal for Festivals & Home Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://i.ibb.co/JRJydVHM/img3.jpg", "https://i.ibb.co/HTqkyqdw/img4.jpg"]},
+  {
+  id: 3,
+  name: "Swami Samarth Lotus Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Divine Swami Samarth silhouette with a radiant lotus backdrop, handcrafted in premium fur wool for spiritual and festive décor.",
+
+  fullDesc: "Bring blessings and positive energy into your home with this beautifully handcrafted Swami Samarth Fur Wool Rangoli. Featuring the sacred silhouette of Swami Samarth seated in meditation against a vibrant lotus and halo-inspired design, this 36 × 36 inch rangoli creates a serene and devotional atmosphere. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, spiritual spaces, festivals, and special occasions.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Swami Samarth Spiritual Design",
+    "Handcrafted & Reusable",
+    "Vibrant Lotus & Halo Pattern",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://i.ibb.co/1Y0MKLVx/img5.jpg", "https://i.ibb.co/pBxzKZvw/img6.jpg"]},
+ {
+  id: 4,
+  name: "Shivling Lotus Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🔱",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Sacred Shivling design with a blooming lotus and radiant floral border, handcrafted in premium fur wool for spiritual décor.",
+
+  fullDesc: "Invoke divine blessings with this beautifully handcrafted Shivling Lotus Fur Wool Rangoli. Featuring a sacred Shivling, crescent moon, vibrant pink lotus, and radiant floral border, this 36 × 36 inch rangoli symbolizes devotion, positivity, and spiritual energy. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, Mahashivratri celebrations, festive decorations, and home entrances.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Sacred Shivling & Lotus Design",
+    "Handcrafted & Reusable",
+    "Bright Multicolor Pattern",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://i.ibb.co/YF51LtY9/img9.jpg", "https://i.ibb.co/nNk9VnMN/img10.jpg"]},
+  {
+  id: 5,
+  name: "Vitthal Rukmini Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🙏",
+  tag: "Best Seller",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Divine Vitthal-inspired design handcrafted with premium fur wool, bringing devotion and traditional charm to your home décor.",
+
+  fullDesc: "Celebrate the blessings of Lord Vitthal with this beautifully handcrafted Vitthal Fur Wool Rangoli. Featuring the iconic form of Vitthal adorned with traditional ornaments and vibrant colors, this 36 × 36 inch rangoli adds a spiritual and festive touch to pooja rooms, entrances, and celebration spaces. Made from premium fur wool, it is reusable, durable, and perfect for Ashadhi Ekadashi, Kartiki Ekadashi, festivals, and devotional décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Sacred Vitthal Design",
+    "Handcrafted & Reusable",
+    "Vibrant Traditional Colors",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://i.ibb.co/1G6Sc3cT/img7.jpg", "https://i.ibb.co/DHLvwDXc/img8.jpg"]
+},
+{
+  id: 6,
+  name: "Lotus Radiance Fur Wool Rangoli",
+  price: 999,
+  emoji: "🌸",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus rangoli with a vibrant mandala center, crafted from premium fur wool for festive and home décor.",
+
+  fullDesc: "Add a touch of tradition and elegance to your home with this Lotus Radiance Fur Wool Rangoli. Designed with beautifully layered pink lotus petals and a colorful mandala-inspired center, this handcrafted décor piece is made from premium fur wool. It is reusable, durable, and perfect for pooja rooms, entrances, Diwali, weddings, festivals, and special occasions.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Pooja Rooms, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/LXJC84JL/img11.jpg"]
+},
+{
+  id: 7,
+  name: "Peacock Tabla Fur Wool Rangoli",
+  price: 699,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted peacock and tabla-inspired fur wool rangoli, perfect for adding a traditional touch to your home décor.",
+
+  fullDesc: "Bring elegance and cultural charm to your home with this Peacock Tabla Fur Wool Rangoli. Featuring a vibrant peacock, traditional tabla-inspired design, and decorative floral border, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for pooja rooms, festive celebrations, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/x8KPppGd/img12.png"]
+},
+{
+  id: 8,
+  name: "Floral Corner Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌻",
+  tag: "New Arrival",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted corner rangoli featuring vibrant floral patterns, perfect for entrances and festive home décor.",
+
+  fullDesc: "Enhance the beauty of your entrance with this Floral Corner Fur Wool Rangoli. Designed with colorful sunflower-inspired motifs, lotus petals, and a decorative circular pattern, this handcrafted rangoli is made from premium fur wool. Its unique corner design makes it ideal for doorways, pooja rooms, festive celebrations, housewarming ceremonies, and everyday home décor.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft) (Corner Design)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Entrances, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/FLPtkfqb/img13.png",]
+},
+{
+  id: 9,
+  name: "Lotus Blossom Duo Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "Most Loved",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted rangoli featuring a large central floral motif surrounded by elegant lotus blooms for a graceful festive look.",
+
+  fullDesc: "Enhance your home décor with this Lotus Blossom Duo Fur Wool Rangoli, featuring a large blooming flower at the center encircled by lush green leaves and six beautifully crafted lotus flowers in two complementary sizes. Handcrafted using premium fur wool, this reusable and durable rangoli adds elegance to pooja rooms, entrances, festivals, weddings, and special occasions.",
+
+  features: [
+    "Center Flower: 12 × 12 inches (1 ft × 1 ft)",
+    "Outer Lotus Flowers: 6 × 6 inches (0.5 ft × 0.5 ft) each",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Rooms, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/4wpytmzM/img14.png"]
+},
+{
+  id: 10,
+  name: "Suswagatam Peacock Fur Wool Rangoli",
+  price: 699,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted 'Suswagatam' fur wool rangoli featuring a peacock, musical drums, and vibrant floral elements to warmly welcome your guests.",
+
+  fullDesc: "Welcome your guests in traditional style with this Suswagatam Peacock Fur Wool Rangoli. Designed with an elegant peacock, decorative musical drums, colorful peacock feathers, and the 'Suswagatam' welcome message, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for entrances, pooja rooms, festivals, weddings, housewarming ceremonies, and special occasions.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Entrances, Housewarming, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/FLN1QVPj/img15.png"]
+},
+{
+  id: 11,
+  name: "Radiant Floral Fur Wool Rangoli",
+  price: 499,
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted floral fur wool rangoli featuring vibrant layered petals and lush green accents for a timeless decorative look.",
+
+  fullDesc: "Brighten your home with this Radiant Floral Fur Wool Rangoli, beautifully handcrafted with colorful layered petals surrounding a striking pink floral center. Made from premium fur wool, this reusable and durable rangoli is perfect for pooja rooms, living spaces, festive celebrations, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/tpfKtpDK/img16.png"]
+},
+{
+  id: 12,
+  name: "Sunflower Bloom Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Simple and elegant handcrafted floral fur wool rangoli featuring vibrant yellow petals, perfect for everyday and festive décor.",
+
+  fullDesc: "Add a cheerful touch to your home with this Sunflower Bloom Fur Wool Rangoli. Featuring eight beautifully crafted yellow petals with a vibrant floral center, this handcrafted rangoli is made from premium fur wool. Lightweight, reusable, and durable, it is ideal for pooja rooms, entrances, festivals, and daily home decoration.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Home, Pooja Rooms & Festive Décor"
+  ],
+
+  images: ["https://i.ibb.co/hxDmmL0V/img17.png",]
+},
+{
+  id: 13,
+  name: "Rainbow Petal Fur Wool Rangoli",
+  price: 299,
+  emoji: "🌈",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Compact handcrafted floral fur wool rangoli featuring vibrant rainbow petals, perfect for small spaces and festive décor.",
+
+  fullDesc: "Brighten your home with this Rainbow Petal Fur Wool Rangoli. Featuring six colorful overlapping petals surrounding a vibrant circular center, this handcrafted rangoli is made from premium fur wool. Lightweight, reusable, and durable, it's perfect for pooja rooms, tabletops, entrances, festive celebrations, and everyday home decoration.",
+
+  features: [
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Small Spaces, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/yBs98W2p/img18.png",]
+},
+{
+  id: 14,
+  name: "Peacock Arch Fur Wool Rangoli",
+  price: 999,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted peacock arch fur wool rangoli, perfect for decorating pooja setups, plates, kalash, and festive displays.",
+
+  fullDesc: "Add a touch of tradition and elegance to your celebrations with this Peacock Arch Fur Wool Rangoli. Featuring two vibrant peacocks connected by a graceful arch with a decorative floral centerpiece, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for decorating pooja plates, kalash, diyas, idols, temples, and festive occasions.",
+
+  features: [
+    "Size: 30 × 18 inches (2.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Décor, Kalash, Diyas & Festivals"
+  ],
+
+  images: ["https://i.ibb.co/DgrKkm2p/img19.png"],
+},
+{
+  id: 15,
+  name: "Color Bloom Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌺",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Vibrant handcrafted floral fur wool rangoli featuring colorful layered petals for an elegant festive look.",
+
+  fullDesc: "Brighten your home with this Color Bloom Fur Wool Rangoli, featuring beautifully layered floral patterns in vibrant shades of yellow, pink, blue, purple, and green. Handcrafted using premium fur wool, this reusable and durable rangoli is perfect for pooja rooms, living spaces, festive celebrations, weddings, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/FqYNVZr5/img20.png"],
+},
+{
+  id: 16,
+  name: "Lotus Arch Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus arch fur wool rangoli designed to beautifully enhance pooja setups and festive decorations.",
+
+  fullDesc: "Create a divine ambiance with this Lotus Arch Fur Wool Rangoli. Featuring a graceful lotus-inspired arch with vibrant pink petals, decorative green leaves, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for framing idols, kalash, diyas, pooja mandaps, temples, and festive celebrations.",
+
+  features: [
+    "Size: 15 × 15 inches Square (1.25 ft × 1.25 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Mandaps, Idols, Kalash & Festivals"
+  ],
+
+  images: ["https://i.ibb.co/wZyYJDth/img21.png"],
+},
+{
+  id: 17,
+  name: "Heart Bloom Fur Wool Rangoli",
+  price: 299,
+  emoji: "💖",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Charming handcrafted heart-shaped floral fur wool rangoli, perfect for adding warmth and elegance to your home décor.",
+
+  fullDesc: "Celebrate love and creativity with this Heart Bloom Fur Wool Rangoli. Designed with alternating red and pink heart-shaped petals surrounding a vibrant floral center, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for festivals, anniversaries, Valentine's Day, birthdays, pooja rooms, and everyday home decoration.",
+
+  features: [
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Special Occasions & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/kFGY6Tq/img22.png"],
+},
+{
+  id: 18,
+  name: "Decorative Fur Wool Wall Hanging",
+  price: 899,
+  emoji: "🧵",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted decorative fur wool wall hanging featuring a vibrant geometric design to elevate your home décor.",
+
+  fullDesc: "Enhance your interiors with this Decorative Fur Wool Wall Hanging, featuring a striking geometric pattern handcrafted using premium fur wool. Reusable, durable, and easy to hang, it adds a traditional yet elegant touch to living rooms, pooja rooms, hallways, balconies, entrances, and festive decorations.",
+
+  features: [
+    "Size: 48 × 12 inches (4 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Wall Décor, Home Interiors & Festive Decoration"
+  ],
+
+  images: ["https://i.ibb.co/Ndc3KnQ2/img23.png"],
+},
+{
+  id: 19,
+  name: "Morya Ganesha Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🐘",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted Ganesha-themed fur wool rangoli featuring eight artistic Lord Ganesha motifs surrounding a vibrant 'Morya' centerpiece.",
+
+  fullDesc: "Celebrate the blessings of Lord Ganesha with this Morya Ganesha Fur Wool Rangoli. Featuring eight intricately designed Ganesha motifs arranged around a vibrant central 'Morya' design with a blooming lotus, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for Ganesh Chaturthi, pooja rooms, temples, festivals, housewarming ceremonies, and spiritual home décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Ganesh Chaturthi, Pooja Rooms & Festive Décor"
+  ],
+
+  images: ["https://i.ibb.co/bjPwsx7M/img25.jpg"],
+},
+{
+  id: 20,
+  name: "Veena Melody Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🎼",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted Veena-inspired fur wool rangoli featuring a lotus backdrop and peacock feather, symbolizing art, music, and wisdom.",
+
+  fullDesc: "Celebrate the beauty of Indian culture with this Veena Melody Fur Wool Rangoli. Featuring an elegant veena placed over a vibrant lotus-inspired floral design with a decorative peacock feather, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for Saraswati Pooja, Vasant Panchami, music rooms, pooja rooms, festivals, and traditional home décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Saraswati Pooja, Festivals & Home Décor"
+  ],
+
+  images: ["https://i.ibb.co/zHSRLKkN/img24.png"],
+},
+{
+  id: 21,
+  name: "Govinda Namam Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🛕",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Sacred handcrafted Govinda Namam fur wool rangoli featuring a vibrant floral border, perfect for spiritual and festive décor.",
+
+  fullDesc: "Bring divine blessings into your home with this Govinda Namam Fur Wool Rangoli. Featuring the sacred Govinda Namam symbol beautifully surrounded by vibrant floral petals, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for pooja rooms, temples, Vaikunta Ekadashi, Sri Venkateswara Swamy celebrations, housewarming ceremonies, and festive occasions.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Temples, Pooja Rooms & Spiritual Décor"
+  ],
+
+  images: ["https://i.ibb.co/S4jxLh9g/img26.png"],
+},
+{
+  id: 22,
+  name: "Floral Corner Rangoli Set",
+  price: 499,
+  emoji: "🌼",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted floral corner rangoli set with a matching center spiral, available in multiple vibrant color combinations.",
+
+  fullDesc: "Decorate your home beautifully with this handcrafted Floral Corner Rangoli Set. The set includes four floral corner pieces and one matching spiral centerpiece, making it perfect for framing pooja areas, entrances, stages, or festive decorations. Crafted from premium fur wool, it is reusable, durable, and available in multiple attractive color combinations to match your décor.",
+
+  features: [
+    "Corner Pieces: 18 × 18 inches (1.5 ft × 1.5 ft) each",
+    "Center Rangoli: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Available in Multiple Color Combinations",
+    "Ideal for Home & Festive Décor"
+  ],
+
+  images: [],
+
+  variants: [
+    {
+      color: "Orange & Yellow",
+      desc: "A bright orange and yellow combination that brings warmth and festive elegance to any space.",
+      images: ["https://i.ibb.co/FkB5LDFJ/file-00000000ac7071fb80ccb5e1dd94e4e5.png"]
+    },
+    {
+      color: "Red & Green",
+      desc: "A rich red and green color combination offering a bold and premium festive appearance.",
+      images: ["https://i.ibb.co/tpwpMnsp/file-00000000f7207206b64b0d17cb797191.png"]
+    },
+    {
+      color: "Red & White",
+      desc: "A classic red and white combination with green accents, perfect for traditional celebrations.",
+      images: ["https://i.ibb.co/hxLBSPy3/file-00000000812471fab81f865f4de6c821.png"]
+    },
+    {
+      color: "Orange & Green",
+      desc: "A vibrant orange and green combination inspired by festive floral decorations and traditional décor.",
+      images: ["https://i.ibb.co/Q38kMbcT/file-0000000062287207a4961d571c890731.png"]
+    },
+    {
+      color: "Orange & Pink",
+      desc: "A cheerful orange and pink combination that adds a colorful and elegant touch to festive decorations.",
+      images: ["https://i.ibb.co/6cZY4PYC/file-0000000005707207ae24c5711baf3cb2.png"]
+    }
+  ]
+},
+];
+
+// ── STATE ──
+let cart = [];
+let currentProductId = null;
+let detailQty = 1;
+
+// ╔══════════════════════════════════════════════════════════════╗
+// ║  PAYMENT FLOW — now verified server-side via /api functions  ║
+// ║  See DEPLOY.md for full setup. Summary:                      ║
+// ║  1. Razorpay Key ID/Secret + Supabase URL/Service Role Key    ║
+// ║     live in Vercel Environment Variables — NOT in this file. ║
+// ║  2. /api/create-order.js creates a real Razorpay order using ║
+// ║     a total computed from the server-side price list         ║
+// ║     (api/_lib/pricing.js) — the browser's total is never     ║
+// ║     trusted for the actual charge.                            ║
+// ║  3. /api/verify-payment.js checks Razorpay's HMAC signature   ║
+// ║     and only THEN saves the order to Supabase (using the      ║
+// ║     service role key, server-side). Nothing is marked "paid"  ║
+// ║     without a verified signature.                              ║
+// ║  4. Keep api/_lib/pricing.js's prices in sync with the        ║
+// ║     `products` array below whenever you change a price.       ║
+// ╚══════════════════════════════════════════════════════════════╝
+
+// ── EMAILJS (get an email alert for every order) ─────
+//   1. Sign up FREE at https://www.emailjs.com
+//   2. Email Services → Add New Service → connect Gmail or domain mail → copy Service ID
+//   3. Email Templates → Create New Template → paste HTML below → save → copy Template ID
+//   4. Account → General → copy Public Key
+//
+//   ── EMAIL TEMPLATE (paste into EmailJS template body, HTML mode) ──
+//   Subject: 🛒 New Order {{order_id}} — ₹{{total}} — DK Creations
+//
+//   <h2 style="color:#6B1A2A">New Order Received!</h2>
+//   <p><b>Order ID:</b> {{order_id}}</p>
+//   <p><b>Payment ID:</b> {{payment_id}}</p>
+//   <p><b>Date & Time:</b> {{datetime}}</p>
+//   <hr>
+//   <h3>Customer</h3>
+//   <p><b>Name:</b> {{customer_name}}</p>
+//   <p><b>Phone:</b> {{customer_phone}}</p>
+//   <p><b>Email:</b> {{customer_email}}</p>
+//   <hr>
+//   <h3>Delivery Address</h3>
+//   <p>{{address}}<br>{{city_state}} — {{pincode}}</p>
+//   <hr>
+//   <h3>Items Ordered</h3>
+//   <pre>{{items}}</pre>
+//   <h3>Total Paid: ₹{{total}}</h3>
+//   ── END TEMPLATE ──
+//
+const EMAILJS_SERVICE_ID  = 'service_7dfhi0q';   // ← REPLACE
+const EMAILJS_TEMPLATE_ID = 'template_7memcaf';  // ← REPLACE (owner notification template)
+const EMAILJS_PUBLIC_KEY  = '1edM2A78OF9b64X6M';   // ← REPLACE
+
+// ── STEP 3b: CUSTOMER CONFIRMATION EMAIL ────────────────────
+//   In EmailJS → Email Templates → Create ANOTHER New Template:
+//   Subject: ✅ Your DK Creations Order {{order_id}} is Confirmed!
+//
+//   <h2 style="color:#6B1A2A">Thank You for Your Order, {{customer_name}}! 🎉</h2>
+//   <p>We've received your order and it's being prepared with care.</p>
+//   <p><b>Order ID:</b> {{order_id}}</p>
+//   <p><b>Date:</b> {{datetime}}</p>
+//   <hr>
+//   <h3>Items Ordered</h3>
+//   <pre style="background:#FDF6EC;padding:1rem;border-radius:6px;">{{items}}</pre>
+//   <p><b>Total Paid: ₹{{total}}</b></p>
+//   <hr>
+//   <h3>Delivery To</h3>
+//   <p>{{address}}<br>{{city_state}} — {{pincode}}</p>
+//   <p style="margin-top:1rem;">📦 We will ship within <b>2–3 business days</b>.</p>
+//   <p>Questions? WhatsApp or email us at <a href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a></p>
+//   <p style="color:#999;font-size:0.85em;">DK Creations — Handcrafted Fur Woolen Rangolis, Pune</p>
+//   ── END CUSTOMER TEMPLATE ──
+//   Save it → copy the NEW Template ID → paste below:
+const EMAILJS_CUSTOMER_TEMPLATE_ID = 'template_um9qxei'; // ← REPLACE
+
+// ── STEP 4: YOUR EMAIL ───────────────────────────────────────
+//   The email address where you want order notifications sent.
+const OWNER_EMAIL = 'thedkcreations@gmail.com'; // ← REPLACE
+
+const SUPABASE_URL = 'https://iiczbrqexcfshmkwwxuv.supabase.co';           // ← REPLACE
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpY3picnFleGNmc2hta3d3eHV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3OTkzMzIsImV4cCI6MjEwMDM3NTMzMn0.Qg9YwOEzeYutEqGUGvDgsRxS04n56E3AZYdJyKaFQjI'; // ← REPLACE
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ════════════════════════════════════════════════════════════
+
+// ── SORT STATE ──
+let currentSort = 'default';
+
+// ── PRICE FILTER STATE ──
+const PRICE_FILTER_MIN = 0;
+const PRICE_FILTER_MAX = 5000;
+let appliedPriceMin = PRICE_FILTER_MIN;
+let appliedPriceMax = PRICE_FILTER_MAX;
+
+// ── SORT DROPDOWN ──
+function toggleSortDropdown() {
+  document.getElementById('sortDropdown').classList.toggle('open');
+}
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('sortDropdown');
+  if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+  const pf = document.getElementById('priceFilterWrap');
+  if (pf && !pf.contains(e.target)) pf.classList.remove('open');
+});
+
+// ── PRICE RANGE FILTER ──
+function togglePriceFilter() {
+  document.getElementById('priceFilterWrap').classList.toggle('open');
+}
+
+function updatePriceSliderUI(minVal, maxVal) {
+  document.getElementById('priceMinVal').textContent = minVal;
+  document.getElementById('priceMaxVal').textContent = maxVal;
+  const minPct = ((minVal - PRICE_FILTER_MIN) / (PRICE_FILTER_MAX - PRICE_FILTER_MIN)) * 100;
+  const maxPct = ((maxVal - PRICE_FILTER_MIN) / (PRICE_FILTER_MAX - PRICE_FILTER_MIN)) * 100;
+  const fill = document.getElementById('priceRangeFill');
+  fill.style.left = minPct + '%';
+  fill.style.right = (100 - maxPct) + '%';
+}
+
+function handlePriceSlider(which) {
+  const minSlider = document.getElementById('priceMinSlider');
+  const maxSlider = document.getElementById('priceMaxSlider');
+  let minVal = parseInt(minSlider.value, 10);
+  let maxVal = parseInt(maxSlider.value, 10);
+  // Prevent handles from crossing over each other
+  const gap = 50;
+  if (which === 'min' && minVal > maxVal - gap) {
+    minVal = maxVal - gap;
+    minSlider.value = minVal;
+  }
+  if (which === 'max' && maxVal < minVal + gap) {
+    maxVal = minVal + gap;
+    maxSlider.value = maxVal;
+  }
+  updatePriceSliderUI(minVal, maxVal);
+}
+// Bring the thumb you're actually touching to the front, so overlapping
+// handles on mobile don't block each other.
+['priceMinSlider', 'priceMaxSlider'].forEach(id => {
+  const el = document.getElementById(id);
+  const bringToFront = () => {
+    el.style.zIndex = 3;
+    document.getElementById(id === 'priceMinSlider' ? 'priceMaxSlider' : 'priceMinSlider').style.zIndex = 2;
+  };
+  el.addEventListener('touchstart', bringToFront, { passive: true });
+  el.addEventListener('mousedown', bringToFront);
+});
+
+function applyPriceFilter() {
+  appliedPriceMin = parseInt(document.getElementById('priceMinSlider').value, 10);
+  appliedPriceMax = parseInt(document.getElementById('priceMaxSlider').value, 10);
+  document.getElementById('priceFilterLabel').textContent = '₹' + appliedPriceMin + ' - ₹' + appliedPriceMax;
+  document.getElementById('priceFilterWrap').classList.remove('open');
+  renderProducts();
+}
+
+function resetPriceFilter() {
+  document.getElementById('priceMinSlider').value = PRICE_FILTER_MIN;
+  document.getElementById('priceMaxSlider').value = PRICE_FILTER_MAX;
+  updatePriceSliderUI(PRICE_FILTER_MIN, PRICE_FILTER_MAX);
+  appliedPriceMin = PRICE_FILTER_MIN;
+  appliedPriceMax = PRICE_FILTER_MAX;
+  document.getElementById('priceFilterLabel').textContent = '₹' + PRICE_FILTER_MIN + ' - ₹' + PRICE_FILTER_MAX;
+  document.getElementById('priceFilterWrap').classList.remove('open');
+  renderProducts();
+}
+
+const sortLabels = {
+  'default':    '✦ Featured',
+  'price-asc':  'Price: Low → High',
+  'price-desc': 'Price: High → Low',
+  'az':         'A → Z',
+  'za':         'Z → A',
+  'bestseller': '🏆 Best Sellers',
+  'new':        '🆕 New Arrivals',
+  'toprated':   '⭐ Top Rated',
+  'mostloved':  '💗 Most Loved'
+};
+
+function sortProducts(key) {
+  currentSort = key;
+  // Update active option
+  document.querySelectorAll('.sort-option').forEach(b => b.classList.remove('active'));
+  const activeBtn = document.getElementById('sort-' + key);
+  if (activeBtn) activeBtn.classList.add('active');
+  // Update trigger label
+  const labelEl = document.getElementById('sortLabel');
+  if (labelEl) labelEl.textContent = sortLabels[key] || '✦ Featured';
+  // Close dropdown
+  document.getElementById('sortDropdown').classList.remove('open');
+  renderProducts();
+}
+
+// ── RATING HELPER (shared by sorting + card display) ──
+function getAvgRating(p) {
+  const reviews = allReviews[p.id] || [];
+  return reviews.length > 0
+    ? reviews.reduce((s,r) => s + r.rating, 0) / reviews.length
+    : 0;
+}
+
+function getSortedProducts() {
+  let list = [...products];
+  switch(currentSort) {
+    case 'price-asc':   list.sort((a,b) => a.price - b.price); break;
+    case 'price-desc':  list.sort((a,b) => b.price - a.price); break;
+    case 'az':          list.sort((a,b) => a.name.localeCompare(b.name)); break;
+    case 'za':          list.sort((a,b) => b.name.localeCompare(a.name)); break;
+    case 'bestseller':  list = list.filter(p => p.isBestSeller); break;
+    case 'new':         list = list.filter(p => p.isNew); break;
+    case 'toprated':    list = list.filter(p => (allReviews[p.id]||[]).length > 0)
+                                    .sort((a,b) => getAvgRating(b) - getAvgRating(a));
+                         break;
+    case 'mostloved':   list = list.filter(p => p.isMostLoved); break;
+    default:            break; // original order
+  }
+  // Apply price range filter on top of whichever sort/filter is active
+  list = list.filter(p => p.price >= appliedPriceMin && p.price <= appliedPriceMax);
+  return list;
+}
+
+// ── RENDER PRODUCTS ──
+function renderProducts() {
+  const sorted = getSortedProducts();
+  const grid = document.getElementById('productsGrid');
+  if (sorted.length === 0) {
+    grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);padding:3rem;font-size:1rem;">No products found in this category.</p>';
+    return;
+  }
+  const gradients = [
+    'linear-gradient(135deg,#8B2A3A,#C9960C)',
+    'linear-gradient(135deg,#1a4a6b,#0c8b7a)',
+    'linear-gradient(135deg,#2A6B3A,#8BC90C)',
+    'linear-gradient(135deg,#6B2A8B,#C96C0C)',
+  ];
+  grid.innerHTML = sorted.map(p => {
+    const bg = gradients[(p.id - 1) % gradients.length];
+    const cardImages = getGalleryImages(p);
+    const imgHtml = cardImages.length > 0
+      ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}"/>`
+      : `<div class="product-card-placeholder" style="background:${bg}">${p.emoji}<p>${p.tag}</p></div>`;
+    const badge = p.isBestSeller ? '<span style="position:absolute;top:10px;left:10px;background:var(--gold);color:var(--maroon-deep);font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">🏆 BEST SELLER</span>' :
+                  p.isNew        ? '<span style="position:absolute;top:10px;left:10px;background:var(--maroon);color:white;font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">🆕 NEW</span>' :
+                  p.isMostLoved  ? '<span style="position:absolute;top:10px;left:10px;background:#C9376B;color:white;font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">💗 MOST LOVED</span>' : '';
+    // Star rating from reviews
+    const reviews = allReviews[p.id] || [];
+    const avgRating = getAvgRating(p);
+    const fullStars = Math.round(avgRating);
+    const starsHtml = reviews.length > 0
+      ? `<div class="card-stars">
+           <span class="card-stars-val">${'★'.repeat(fullStars)}${'☆'.repeat(5-fullStars)}</span>
+           <span class="card-stars-count">(${reviews.length})</span>
+         </div>`
+      : `<div class="card-stars"><span class="card-stars-val" style="color:#ccc">☆☆☆☆☆</span><span class="card-stars-count">No reviews yet</span></div>`;
+    // Top Rated badge — auto-computed, shown top-right so it can pair with the top-left badge
+    const topRatedBadge = (reviews.length >= 2 && avgRating >= 4.5)
+      ? '<span style="position:absolute;top:10px;right:10px;background:#1a4a6b;color:white;font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">⭐ TOP RATED</span>' : '';
+    // Cart quantity for this product (persistent state)
+    const cartQty = getCartQty(p.id);
+    const cartBtnLabel = cartQty > 0 ? `✓ In Cart (${cartQty})` : '+ Cart';
+    const cartBtnClass = cartQty > 0 ? 'btn-add-cart added' : 'btn-add-cart';
+    return `
+      <div class="product-card" onclick="openProduct(${p.id})" style="position:relative;">
+        ${badge}
+        ${topRatedBadge}
+        ${imgHtml}
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          ${starsHtml}
+          <div class="product-footer">
+            <div class="price"><span>₹</span>${p.price}</div>
+            <div class="product-actions" onclick="event.stopPropagation()">
+              <button class="btn-view" onclick="openProduct(${p.id})">View</button>
+              <button class="${cartBtnClass}" id="cardBtn${p.id}" onclick="addToCart(${p.id},1)">${cartBtnLabel}</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ── PAGE NAV ──
+function showPage(page) {
+  if (page === 'product') {
+    const el = document.getElementById('page-product');
+    el.classList.add('active');
+    el.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    const infoBar = document.getElementById('infoBar');
+    if (infoBar) infoBar.style.display = 'none';
+    const stickyBar = document.getElementById('stickyBuyBar');
+    if (stickyBar) stickyBar.style.display = 'block';
+  } else {
+    const prod = document.getElementById('page-product');
+    prod.classList.remove('active');
+    document.body.style.overflow = '';
+    const infoBar = document.getElementById('infoBar');
+    if (infoBar) infoBar.style.display = '';
+    const stickyBar = document.getElementById('stickyBuyBar');
+    if (stickyBar) stickyBar.style.display = 'none';
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
+}
+
+function closeProd() {
+  const el = document.getElementById('page-product');
+  el.classList.remove('active');
+  document.body.style.overflow = '';
+  const infoBar = document.getElementById('infoBar');
+  if (infoBar) infoBar.style.display = '';
+  const stickyBar = document.getElementById('stickyBuyBar');
+  if (stickyBar) stickyBar.style.display = 'none';
+  const home = document.getElementById('page-home');
+  if (!home.classList.contains('active')) home.classList.add('active');
+}
+function scrollToSection(id) {
+  setTimeout(() => { const el = document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);
+}
+
+// ── OPEN PRODUCT ──
+function openProduct(id) {
+  const p = products.find(x => x.id === id);
+  currentProductId = id;
+  detailQty = 1;
+  document.getElementById('detailQty').textContent = 1;
+  document.getElementById('detailTag').textContent = p.tag;
+  document.getElementById('detailName').textContent = p.name;
+  document.getElementById('detailPrice').textContent = p.price;
+  document.getElementById('detailDesc').textContent = p.fullDesc;
+  document.getElementById('detailFeatures').innerHTML = p.features.map(f=>`<li>${f}</li>`).join('');
+  // Sticky bar price
+  const stickyPrice = document.getElementById('stickyPrice');
+  if (stickyPrice) stickyPrice.textContent = p.price;
+  renderGallery(p);
+  currentStarRating = 0;
+  renderProductReviews(id);
+  showPage('product');
+  syncDetailButtons();
+  setTimeout(initStarPicker, 50);
+}
+
+// ── GALLERY / SLIDER ──
+let currentSlideIdx = 0;
+let sliderTouchStartX = 0;
+
+// Returns the full flat list of images to show in the slider.
+// If the product has variants, each variant's own images are concatenated in order.
+// Otherwise falls back to the product's plain images array (non-variant products).
+function getGalleryImages(p) {
+  if (p.variants && p.variants.length > 0) {
+    return p.variants.flatMap(v => v.images || []);
+  }
+  return p.images || [];
+}
+
+// Given a slide index, finds which variant (color) that slide belongs to —
+// this is what lets a color have 1, 3, 5, or any number of photos.
+function getVariantForSlide(p, slideIdx) {
+  if (!p.variants || p.variants.length === 0) return null;
+  let count = 0;
+  for (const v of p.variants) {
+    const len = (v.images || []).length;
+    if (slideIdx < count + len) return v;
+    count += len;
+  }
+  return null;
+}
+
+function renderGallery(p) {
+  const main = document.getElementById('galleryMain');
+  const thumbs = document.getElementById('galleryThumbs');
+  const prevBtn = document.getElementById('sliderPrev');
+  const nextBtn = document.getElementById('sliderNext');
+  const dots = document.getElementById('sliderDots');
+  currentSlideIdx = 0;
+  const galleryImages = getGalleryImages(p);
+
+  if (galleryImages.length === 0) {
+    main.innerHTML = `<div class="gallery-slide-placeholder"><span style="font-size:6rem">${p.emoji}</span><p class="gallery-main-placeholder" style="font-size:0.85rem;color:var(--text-soft);margin-top:0.5rem;font-weight:600;">Upload photos below</p></div>`;
+    thumbs.innerHTML = '';
+    prevBtn.classList.add('hidden');
+    nextBtn.classList.add('hidden');
+    dots.innerHTML = '';
+    updateVariantInfo(p.id);
+    return;
+  }
+
+  // Build slides strip
+  main.innerHTML = `<div class="gallery-slides" id="gallerySlides">${
+    galleryImages.map(src =>
+      `<img class="gallery-slide" src="${src}" alt="${p.name}"/>`
+    ).join('')
+  }</div>`;
+
+  // Arrows
+  prevBtn.classList.toggle('hidden', galleryImages.length <= 1);
+  nextBtn.classList.toggle('hidden', galleryImages.length <= 1);
+
+  // Dots
+  dots.innerHTML = galleryImages.length > 1
+    ? galleryImages.map((_,i) => `<button class="slider-dot ${i===0?'active':''}" onclick="goToSlide(${i},${p.id})"></button>`).join('')
+    : '';
+
+  // Thumbnails
+  thumbs.innerHTML = galleryImages.map((src,i) =>
+    `<div class="gallery-thumb ${i===0?'active':''}" onclick="goToSlide(${i},${p.id})" id="thumb${p.id}_${i}">
+       <img src="${src}" alt="thumb"/>
+     </div>`
+  ).join('');
+
+  // Touch swipe
+  const wrap = document.getElementById('gallerySliderWrap');
+  wrap.ontouchstart = e => { sliderTouchStartX = e.touches[0].clientX; };
+  wrap.ontouchend = e => {
+    const diff = sliderTouchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) sliderMove(diff > 0 ? 1 : -1);
+  };
+
+  updateVariantInfo(p.id);
+}
+
+function sliderMove(dir) {
+  const p = products.find(x => x.id === currentProductId);
+  const total = getGalleryImages(p).length;
+  if (!p || total <= 1) return;
+  currentSlideIdx = (currentSlideIdx + dir + total) % total;
+  applySlide(p.id, total);
+}
+
+function goToSlide(idx, pid) {
+  currentSlideIdx = idx;
+  const p = products.find(x => x.id === pid);
+  applySlide(pid, getGalleryImages(p).length);
+}
+
+function applySlide(pid, total) {
+  const slides = document.getElementById('gallerySlides');
+  if (slides) slides.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+  // Update dots
+  document.querySelectorAll('.slider-dot').forEach((d,i) => d.classList.toggle('active', i === currentSlideIdx));
+  // Update thumbs
+  document.querySelectorAll('.gallery-thumb').forEach((t,i) => t.classList.toggle('active', i === currentSlideIdx));
+  updateVariantInfo(pid);
+}
+
+// Show the color name + description for whichever slide is currently in view.
+// Uses getVariantForSlide so a color's description stays put across all of its photos.
+function updateVariantInfo(pid) {
+  const p = products.find(x => x.id === pid);
+  const info = document.getElementById('variantInfo');
+  if (!p || !info) return;
+  const variant = getVariantForSlide(p, currentSlideIdx);
+  if (variant) {
+    info.style.display = 'block';
+    document.getElementById('variantColor').textContent = `🎨 ${variant.color}`;
+    document.getElementById('variantDesc').textContent = variant.desc;
+    document.getElementById('detailDesc').textContent = variant.desc;
+  } else {
+    info.style.display = 'none';
+    document.getElementById('detailDesc').textContent = p.fullDesc;
+  }
+}
+
+function switchImg(src, idx, pid) {
+  goToSlide(idx, pid);
+}
+
+// ── IMAGE UPLOAD ──
+function handleDragOver(e) {
+  e.preventDefault();
+  document.getElementById('uploadDropArea').style.background = 'rgba(201,150,12,0.12)';
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('uploadDropArea').style.background = '';
+  const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+  processImageFiles(files);
+}
+
+function handleImageUpload(e) {
+  const files = Array.from(e.target.files);
+  processImageFiles(files);
+  e.target.value = '';
+}
+
+function processImageFiles(files) {
+  const p = products.find(x => x.id === currentProductId);
+  let loaded = 0;
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      p.images.push(ev.target.result);
+      loaded++;
+      currentSlideIdx = 0;
+      renderGallery(p);
+      renderUploadedThumbs(p);
+      renderProducts();
+      updateUploadCount(p);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function updateUploadCount(p) {
+  const el = document.getElementById('uploadCount');
+  if (!el) return;
+  if (p.images.length > 0) {
+    el.style.display = 'block';
+    el.textContent = `${p.images.length} image${p.images.length > 1 ? 's' : ''} uploaded · First image shown as main product photo`;
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function renderUploadedThumbs(p) {
+  const wrap = document.getElementById('uploadedThumbs');
+  if (p.images.length === 0) { wrap.innerHTML = ''; return; }
+  wrap.innerHTML = '<p style="width:100%;font-size:0.72rem;color:var(--text-soft);margin-bottom:0.4rem;">Drag to reorder · First image = main photo</p>' +
+  p.images.map((src,i) =>
+    `<div class="uploaded-thumb-wrap" draggable="true" ondragstart="thumbDragStart(${p.id},${i})" ondragover="thumbDragOver(event,${p.id},${i})" ondrop="thumbDrop(event,${p.id},${i})" id="thumbWrap${p.id}_${i}">
+       <img src="${src}" alt="uploaded"/>
+       <button class="remove-img-btn" onclick="removeImage(${p.id},${i})">✕</button>
+       ${i===0 ? '<span style="position:absolute;bottom:-2px;left:0;right:0;background:var(--gold);color:var(--maroon-deep);font-size:0.6rem;font-weight:700;text-align:center;border-radius:0 0 4px 4px;">MAIN</span>' : ''}
+     </div>`
+  ).join('');
+}
+
+let dragSrcIdx = null;
+let dragPid = null;
+
+function thumbDragStart(pid, idx) { dragPid = pid; dragSrcIdx = idx; }
+function thumbDragOver(e, pid, idx) { e.preventDefault(); }
+function thumbDrop(e, pid, idx) {
+  e.preventDefault();
+  if (dragPid !== pid || dragSrcIdx === idx) return;
+  const p = products.find(x => x.id === pid);
+  const moved = p.images.splice(dragSrcIdx, 1)[0];
+  p.images.splice(idx, 0, moved);
+  renderGallery(p);
+  renderUploadedThumbs(p);
+  renderProducts();
+  updateUploadCount(p);
+}
+
+function removeImage(pid, idx) {
+  const p = products.find(x => x.id === pid);
+  p.images.splice(idx, 1);
+  renderGallery(p);
+  renderUploadedThumbs(p);
+  renderProducts();
+}
+
+// ── QTY ──
+function changeQty(d) { detailQty = Math.max(1, detailQty + d); document.getElementById('detailQty').textContent = detailQty; }
+
+// ── CART STATE HELPERS ──
+function getCartQty(id) {
+  return cart.filter(x => x.id === id).reduce((s,x) => s + x.qty, 0);
+}
+
+function syncDetailButtons() {
+  if (currentProductId == null) return;
+  const qty = getCartQty(currentProductId);
+  const detailBtn = document.getElementById('detailCartBtn');
+  if (detailBtn) {
+    detailBtn.textContent = qty > 0 ? `✓ In Cart (${qty})` : '🛒 Add to Cart';
+    detailBtn.classList.toggle('added', qty > 0);
+  }
+  const stickyBtn = document.querySelector('.sticky-btn-cart');
+  if (stickyBtn) {
+    stickyBtn.textContent = qty > 0 ? `✓ In Cart (${qty})` : '🛒 Add to Cart';
+    stickyBtn.classList.toggle('added', qty > 0);
+  }
+}
+
+function syncCardButton(id) {
+  const btn = document.getElementById('cardBtn' + id);
+  if (!btn) return;
+  const qty = getCartQty(id);
+  btn.textContent = qty > 0 ? `✓ In Cart (${qty})` : '+ Cart';
+  btn.classList.toggle('added', qty > 0);
+}
+
+// ── ADD TO CART ──
+function addToCart(id, qty, variantColor = null) {
+  const p = products.find(x => x.id === id);
+  const variant = variantColor && p.variants ? p.variants.find(v => v.color === variantColor) : null;
+  const variantImage = (variant && variant.images && variant.images[0]) || (p.images && p.images[0]);
+  const cartKey = variantColor ? `${id}_${variantColor}` : `${id}`;
+  const existing = cart.find(x => x.cartKey === cartKey);
+  if (existing) existing.qty += qty; else cart.push({...p, qty, variantColor, variantImage, cartKey});
+  updateCartUI();
+  showToast(`${p.name}${variantColor ? ' - ' + variantColor : ''} added to cart 🛒`);
+  syncCardButton(id);
+  syncDetailButtons();
+}
+
+function addFromDetail() {
+  const p = products.find(x => x.id === currentProductId);
+  const variant = getVariantForSlide(p, currentSlideIdx);
+  addToCart(currentProductId, detailQty, variant ? variant.color : null);
+}
+
+function buyNow() {
+  const p = products.find(x => x.id === currentProductId);
+  const variant = getVariantForSlide(p, currentSlideIdx);
+  addToCart(currentProductId, detailQty, variant ? variant.color : null);
+  closeCart();
+  openCheckout();
+}
+
+// ── SHIPPING CONFIG ──
+const SHIPPING_CHARGE = 99;       // ₹99 per order
+const FREE_SHIPPING_ABOVE = 1999; // free above ₹1999
+
+function getShipping(subtotal) {
+  return subtotal >= FREE_SHIPPING_ABOVE ? 0 : SHIPPING_CHARGE;
+}
+
+// ── CART UI ──
+function updateCartUI() {
+  const total = cart.reduce((s,i) => s + i.qty, 0);
+  document.getElementById('cartCount').textContent = total;
+  const mob = document.getElementById('cartCountMobile');
+  if (mob) mob.textContent = total;
+  const el = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    el.innerHTML = `<div class="cart-empty"><div class="empty-icon">🛍️</div><p>Your cart is empty.<br/>Add some beautiful rangolis!</p></div>`;
+  } else {
+    el.innerHTML = cart.map(item => {
+      const imgHtml = item.variantImage || (item.images && item.images.length > 0 && item.images[0])
+        ? `<img src="${item.variantImage || item.images[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
+        : item.emoji;
+      const key = item.cartKey || item.id;
+      return `
+        <div class="cart-item">
+          <div class="cart-item-icon">${imgHtml}</div>
+          <div class="cart-item-info">
+            <h4>${item.name}${item.variantColor ? ` <span style="font-weight:600;color:var(--text-soft);font-size:0.8rem;">(${item.variantColor})</span>` : ''}</h4>
+            <div class="cart-item-price">₹${item.price} each · Total ₹${item.price * item.qty}</div>
+            <div class="cart-item-qty">
+              <button class="cqty-btn" onclick="updateCartQty('${key}',-1)">−</button>
+              <span class="cqty-num">${item.qty}</span>
+              <button class="cqty-btn" onclick="updateCartQty('${key}',1)">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" onclick="removeFromCart('${key}')">🗑</button>
+        </div>`;
+    }).join('');
+  }
+  const subtotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const shipping = cart.length === 0 ? 0 : getShipping(subtotal);
+  const grandTotal = subtotal + shipping;
+  const subtotalEl = document.getElementById('cartSubtotal');
+  if (subtotalEl) subtotalEl.textContent = '₹' + subtotal;
+  const shippingEl = document.getElementById('cartShippingAmt');
+  if (shippingEl) {
+    shippingEl.textContent = shipping === 0 ? '🎉 FREE' : '₹' + shipping;
+    shippingEl.style.color = shipping === 0 ? '#2d6a1f' : 'var(--maroon)';
+    // Show free shipping message if close to threshold
+    const remaining = FREE_SHIPPING_ABOVE - subtotal;
+    const shippingRow = document.getElementById('cartShippingRow');
+    if (shippingRow && shipping > 0 && remaining > 0) {
+      shippingRow.title = `Add ₹${remaining} more for free shipping!`;
+      // Add nudge text below shipping row if not already there
+      let nudge = document.getElementById('shippingNudge');
+      if (!nudge) {
+        nudge = document.createElement('div');
+        nudge.id = 'shippingNudge';
+        nudge.style.cssText = 'font-size:0.75rem;color:#854F0B;text-align:center;padding:0.3rem 0;background:#fdf3e0;border-radius:4px;margin-bottom:0.4rem;';
+        shippingRow.after(nudge);
+      }
+      nudge.textContent = `🛍️ Add ₹${remaining} more for FREE shipping!`;
+    } else {
+      const nudge = document.getElementById('shippingNudge');
+      if (nudge) nudge.remove();
+    }
+  }
+  document.getElementById('cartTotal').textContent = '₹' + grandTotal;
+}
+
+function updateCartQty(key, d) {
+  const item = cart.find(x => (x.cartKey || x.id) == key);
+  if (!item) return;
+  item.qty = Math.max(1, item.qty + d);
+  updateCartUI();
+  syncCardButton(item.id);
+  syncDetailButtons();
+}
+function removeFromCart(key) {
+  const item = cart.find(x => (x.cartKey || x.id) == key);
+  cart = cart.filter(x => (x.cartKey || x.id) != key);
+  updateCartUI();
+  if (item) syncCardButton(item.id);
+  syncDetailButtons();
+}
+function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
+function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+
+// ── CHECKOUT MODAL ──
+function openCheckout() {
+  if (cart.length === 0) { showToast('Your cart is empty!'); return; }
+  closeCart();
+  appliedCoupon = null;
+  const subtotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const shipping = getShipping(subtotal);
+  const total = subtotal + shipping;
+  const summaryRows = cart.map(i => `<div class="order-summary-item"><span>${i.name} × ${i.qty}</span><span>₹${i.price*i.qty}</span></div>`).join('');
+  const shippingRow = shipping === 0
+    ? `<div class="order-summary-item" style="color:#2d6a1f;font-weight:700;"><span>🚚 Shipping</span><span>FREE</span></div>`
+    : `<div class="order-summary-item"><span>🚚 Shipping</span><span>₹${shipping}</span></div>`;
+  document.getElementById('modalBody').innerHTML = `
+    <p class="modal-section-title">Order Summary</p>
+    <div class="order-summary" id="orderSummaryBox">
+      ${summaryRows}
+      ${shippingRow}
+      <div class="order-summary-total" id="orderTotal"><span>Total</span><span>₹${total}</span></div>
+    </div>
+    <p class="modal-section-title">Have a Coupon?</p>
+    <div class="coupon-row">
+      <input class="coupon-input" id="couponInput" type="text" placeholder="Enter coupon code e.g. DIWALI10" style="text-transform:uppercase"/>
+      <button class="coupon-apply-btn" onclick="applyCoupon()">Apply</button>
+    </div>
+    <div class="coupon-msg" id="couponMsg"></div>
+    <p class="modal-section-title">Delivery Details</p>
+    <div class="form-row">
+      <div class="form-group"><label>Full Name *</label><input type="text" id="f_name" placeholder="Your full name"/><span class="error-msg" id="e_name"></span></div>
+      <div class="form-group"><label>Phone Number *</label><input type="tel" id="f_phone" placeholder="10-digit mobile number"/><span class="error-msg" id="e_phone"></span></div>
+    </div>
+    <div class="form-group"><label>Email Address *</label><input type="email" id="f_email" placeholder="you@email.com"/><span class="error-msg" id="e_email"></span></div>
+    <div class="form-group"><label>Full Address *</label><textarea id="f_address" rows="2" placeholder="House no, Street, Area, Landmark"></textarea><span class="error-msg" id="e_address"></span></div>
+    <div class="form-row">
+      <div class="form-group"><label>State *</label>
+        <select id="f_state">
+          <option value="">Select State</option>
+          ${['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Delhi','Jammu & Kashmir','Ladakh'].map(s=>`<option>${s}</option>`).join('')}
+        </select>
+        <span class="error-msg" id="e_state"></span>
+      </div>
+      <div class="form-group"><label>Pincode *</label><input type="text" id="f_pincode" placeholder="6-digit pincode" maxlength="6"/><span class="error-msg" id="e_pincode"></span></div>
+    </div>
+    <button class="btn-pay" id="payBtn" onclick="validateAndPay()">🔒 Pay ₹${total} Securely</button>
+    <p class="secure-note">🔒 Secured by Razorpay · UPI · Cards · Netbanking</p>
+  `;
+  document.getElementById('checkoutModal').classList.add('open');
+}
+
+function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
+function openTrackOrder() {
+  document.getElementById('trackOrderModal').classList.add('open');
+  document.getElementById('trackOrderResult').innerHTML = '';
+  document.getElementById('trackOrderId').value = '';
+  document.getElementById('trackEmail').value = '';
+}
+function closeTrackOrder() {
+  document.getElementById('trackOrderModal').classList.remove('open');
+}
+
+async function submitTrackOrder() {
+  const orderId = document.getElementById('trackOrderId').value.trim();
+  const email = document.getElementById('trackEmail').value.trim();
+  const resultEl = document.getElementById('trackOrderResult');
+  if (!orderId || !email) {
+    resultEl.innerHTML = '<p style="color:#c0392b;font-size:0.85rem;">Please enter both your Order ID and email.</p>';
+    return;
+  }
+  resultEl.innerHTML = '<p style="color:var(--text-soft);font-size:0.85rem;">Searching…</p>';
+  try {
+    const res = await fetch('/api/track-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId, email })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.found) {
+      resultEl.innerHTML = '<p style="color:#c0392b;font-size:0.85rem;">No matching order found. Please check your Order ID and email and try again.</p>';
+      return;
+    }
+    const statusLabels = {
+      paid: '✅ Payment Confirmed',
+      processing: '🧵 Being Handcrafted',
+      shipped: '🚚 Shipped',
+      delivered: '📦 Delivered',
+      cancelled: '❌ Cancelled'
+    };
+    resultEl.innerHTML = `
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;">
+        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.4rem;">${statusLabels[data.order.status] || data.order.status}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${data.order.order_id}</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${data.order.items}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${data.order.total}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(data.order.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+      </div>`;
+  } catch (e) {
+    resultEl.innerHTML = '<p style="color:#c0392b;font-size:0.85rem;">Something went wrong. Please try again.</p>';
+  }
+}
+// ── FORM VALIDATION ──
+function validateAndPay() {
+  let valid = true;
+  const fields = [
+    { id:'f_name',    err:'e_name',    msg:'Please enter your name',                  check: v => v.trim().length > 1 },
+    { id:'f_phone',   err:'e_phone',   msg:'Enter a valid 10-digit number',            check: v => /^[6-9]\d{9}$/.test(v.trim()) },
+    { id:'f_email',   err:'e_email',   msg:'Enter a valid email address',              check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+    { id:'f_address', err:'e_address', msg:'Please enter your full address',           check: v => v.trim().length > 10 },
+    { id:'f_state',   err:'e_state',   msg:'Please select your state',                 check: v => v !== '' },
+    { id:'f_pincode', err:'e_pincode', msg:'Enter a valid 6-digit pincode',            check: v => /^\d{6}$/.test(v.trim()) },
+  ];
+  fields.forEach(f => {
+    const el = document.getElementById(f.id);
+    const errEl = document.getElementById(f.err);
+    if (!f.check(el.value)) {
+      el.classList.add('error'); errEl.textContent = f.msg; valid = false;
+    } else {
+      el.classList.remove('error'); errEl.textContent = '';
+    }
+  });
+  if (valid) initiateRazorpay();
+}
+
+// ── RAZORPAY PAYMENT (server-created order + server-verified signature) ──
+async function initiateRazorpay() {
+  const name    = document.getElementById('f_name').value.trim();
+  const email   = document.getElementById('f_email').value.trim();
+  const phone   = document.getElementById('f_phone').value.trim();
+  const address = document.getElementById('f_address').value.trim();
+  const state   = document.getElementById('f_state').value;
+  const pincode = document.getElementById('f_pincode').value.trim();
+
+  const items = cart.map(i => ({ id: i.id, qty: i.qty }));
+  const couponCode = appliedCoupon ? appliedCoupon.code : null;
+
+  const payBtn = document.getElementById('payBtn');
+  if (payBtn) { payBtn.disabled = true; payBtn.textContent = 'Preparing secure payment…'; }
+
+  // 1. Ask the SERVER to create the Razorpay order. The server recomputes
+  //    the total itself from its own price list — it never trusts a total
+  //    sent from the browser. This is also where a tampered/fake amount
+  //    would get rejected.
+  let orderInfo;
+  try {
+    const res = await fetch('/api/create-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items, couponCode }),
+    });
+    orderInfo = await res.json();
+    if (!res.ok) throw new Error(orderInfo.error || 'Could not start payment');
+  } catch (e) {
+    if (payBtn) { payBtn.disabled = false; payBtn.textContent = '🔒 Retry Payment'; }
+    showToast('Could not start payment: ' + e.message + '. Please try again.');
+    return; // No fallback "success" — if this fails, nothing is charged or recorded.
+  }
+
+  if (payBtn) { payBtn.disabled = false; payBtn.textContent = `🔒 Pay ₹${orderInfo.total} Securely`; }
+
+  const options = {
+    key: orderInfo.key_id,        // Public Key ID, returned by the server
+    amount: orderInfo.amount,     // Amount Razorpay will actually charge (from the order it created)
+    currency: orderInfo.currency,
+    name: 'DK Creations',
+    description: 'Handcrafted Fur Woolen Rangoli Order',
+    image: "https://i.ibb.co/2120s4qr/logo.png",
+    order_id: orderInfo.order_id, // Real Razorpay order id from the server
+    prefill: { name, email, contact: phone },
+    notes: { address, pincode, state },
+    theme: { color: '#6B1A2A' },
+    handler: async function(response) {
+      // 2. Payment popup reported success — but we do NOT trust that by
+      //    itself. Send it to the server for signature verification.
+      //    Only a server-side pass results in an order being saved/shown.
+      document.getElementById('modalBody').innerHTML = `
+        <div class="success-page">
+          <div class="success-icon">⏳</div>
+          <h2>Verifying your payment…</h2>
+          <p>Please don't close this window.</p>
+        </div>`;
+      try {
+        const verifyRes = await fetch('/api/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+            items,
+            couponCode,
+            customer: { name, email, phone, address, state, pincode },
+          }),
+        });
+        const verifyData = await verifyRes.json();
+        if (!verifyRes.ok || !verifyData.success) {
+          throw new Error(verifyData.error || 'Payment verification failed');
+        }
+        showOrderSuccess(verifyData.orderId, name, email, verifyData.total, verifyData.paymentId, {
+          items: [...cart], phone, address, state, pincode,
+        });
+      } catch (e) {
+        // Payment may have been deducted, but we could not verify it —
+        // never claim success in this case. Tell the customer clearly and
+        // give them a way to reach you instead of silently losing the order.
+        document.getElementById('modalBody').innerHTML = `
+          <div class="success-page">
+            <div class="success-icon">⚠️</div>
+            <h2>We couldn't confirm your payment</h2>
+            <p>If money was deducted, please contact us at
+               <a href="mailto:${OWNER_EMAIL}">${OWNER_EMAIL}</a> with your
+               payment ID: <strong>${response.razorpay_payment_id || 'N/A'}</strong>
+               and we'll sort it out right away.</p>
+          </div>`;
+      }
+    },
+    modal: {
+      ondismiss: function() { showToast('Payment cancelled. You can try again.'); }
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.on('payment.failed', function(resp) {
+    showToast('Payment failed: ' + resp.error.description);
+  });
+  rzp.open();
+}
+
+
+// ── EMAILJS INIT ──
+function initEmailJS() {
+  if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+}
+
+// ── SEND ORDER NOTIFICATION EMAIL ──
+function sendOrderEmail(orderData) {
+  if (typeof emailjs === 'undefined' || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+    console.log('EmailJS not configured yet — skipping email. Order data:', orderData);
+    return;
+  }
+  const itemsList = orderData.items.map(i => `${i.name} × ${i.qty} = ₹${i.price * i.qty}`).join('\n');
+  const now = new Date();
+  const datetime = now.toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short' });
+
+  const baseParams = {
+    order_id:        orderData.orderId,
+    payment_id:      orderData.paymentId,
+    datetime:        datetime,
+    customer_name:   orderData.name,
+    customer_phone:  orderData.phone,
+    customer_email:  orderData.email,
+    address:         orderData.address,
+    city_state:      orderData.state,
+    pincode:         orderData.pincode,
+    items:           itemsList,
+    total:           orderData.total,
+  };
+
+  // 1. Send notification email to OWNER
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    ...baseParams,
+    to_email: OWNER_EMAIL,
+  })
+    .then(() => console.log('✅ Owner notification email sent!'))
+    .catch(err => console.error('❌ Owner email failed:', err));
+
+  // 2. Send confirmation email to CUSTOMER
+  if (EMAILJS_CUSTOMER_TEMPLATE_ID !== 'YOUR_CUSTOMER_TEMPLATE_ID' && orderData.email) {
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CUSTOMER_TEMPLATE_ID, {
+      ...baseParams,
+      to_email: orderData.email,
+    })
+      .then(() => console.log('✅ Customer confirmation email sent to:', orderData.email))
+      .catch(err => console.error('❌ Customer email failed:', err));
+  }
+}
+
+// ── ORDER SUCCESS ──
+// details = { items, phone, address, state, pincode } — collected BEFORE
+// the checkout DOM was replaced by the "verifying payment" screen, since
+// those form fields no longer exist by the time this runs.
+function showOrderSuccess(orderId, name, email, total, paymentId, details) {
+  const { items, phone, address, state, pincode } = details;
+  const orderData = { orderId, name, email, phone, address, state, pincode, total, paymentId, items };
+
+  // Order is already verified + saved server-side (in /api/verify-payment).
+  // All that's left client-side is the owner/customer email notification.
+  sendOrderEmail(orderData);
+
+  cart = [];
+  updateCartUI();
+  closeCheckout();
+  document.getElementById('checkoutModal').classList.add('open');
+  document.getElementById('modalBody').innerHTML = `
+    <div class="success-page">
+      <div class="success-icon">🎉</div>
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you, <strong>${name}</strong>! Your order has been confirmed.</p>
+      <p>A confirmation email will be sent to <strong>${email}</strong></p>
+      <div class="order-id-box">
+        <span>Order ID</span>
+        <strong>${orderId}</strong>
+        <span style="margin-top:0.4rem;display:block;">Payment ID</span>
+        <strong style="font-size:0.95rem">${paymentId}</strong>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-soft);">Total Paid: <strong style="color:var(--maroon)">₹${total}</strong></p>
+      <p style="font-size:0.85rem;color:var(--text-soft);margin-top:0.5rem;">We will ship your order within 2–3 business days. 📦</p>
+      <button class="btn-continue" onclick="closeCheckout();showPage('home')">Continue Shopping</button>
+    </div>`;
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── REVIEWS ──
+// Storage: reviews keyed by product id
+// ── REVIEWS (Supabase-backed, shared across all visitors) ──
+let allReviews = {};        // { productId: [ {id, name, rating, review_text, created_at, reply, reply_at} ] }
+let currentStarRating = 0;
+let isAdminMode = false;
+
+async function fetchAllReviews() {
+  const { data, error } = await supabaseClient
+    .from('reviews')
+    .select('*')
+    .order('created_at', { ascending: false });
+  if (error) { console.error('Failed to load reviews:', error.message); return; }
+  allReviews = {};
+  (data || []).forEach(r => {
+    if (!allReviews[r.product_id]) allReviews[r.product_id] = [];
+    allReviews[r.product_id].push(r);
+  });
+}
+
+function initStarPicker() {
+  const stars = document.querySelectorAll('#starPicker span');
+  stars.forEach(s => {
+    s.addEventListener('mouseover', () => highlightStars(+s.dataset.val));
+    s.addEventListener('mouseout', () => highlightStars(currentStarRating));
+    s.addEventListener('click', () => { currentStarRating = +s.dataset.val; highlightStars(currentStarRating); });
+  });
+  highlightStars(0);
+}
+
+function highlightStars(n) {
+  document.querySelectorAll('#starPicker span').forEach((s,i) => {
+    s.classList.toggle('active', i < n);
+  });
+}
+
+async function submitProductReview() {
+  const name = document.getElementById('reviewName').value.trim();
+  const text = document.getElementById('reviewText').value.trim();
+  if (!name) { showToast('Please enter your name.'); return; }
+  if (!currentStarRating) { showToast('Please select a star rating.'); return; }
+  if (!text) { showToast('Please write a review.'); return; }
+  const pid = String(currentProductId);
+
+  const { data, error } = await supabaseClient
+    .from('reviews')
+    .insert({ product_id: pid, name, rating: currentStarRating, review_text: text })
+    .select()
+    .single();
+
+  if (error) { showToast('Sorry, something went wrong saving your review.'); console.error(error); return; }
+
+  if (!allReviews[pid]) allReviews[pid] = [];
+  allReviews[pid].unshift(data);
+
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewText').value = '';
+  currentStarRating = 0;
+  highlightStars(0);
+  renderProductReviews(pid);
+  renderOverallReviews();
+  renderProducts();
+  showToast('Thank you for your review! 🌟');
+}
+
+function reviewCardHtml(r, scope, tagHtml) {
+  const replyBtn = isAdminMode ? `
+      <button class="review-reply-btn" onclick="toggleReplyForm('${scope}','${r.id}')">${r.reply ? '✏️ Edit Reply' : '💬 Reply'}</button>
+      <div class="review-reply-form" id="replyForm_${scope}_${r.id}">
+        <textarea id="replyText_${scope}_${r.id}" placeholder="Write your response to this review…">${r.reply ? escHtml(r.reply) : ''}</textarea>
+        <div class="review-reply-form-btns">
+          <button class="btn-post-reply" onclick="postReply('${scope}','${r.id}')">Post Reply</button>
+          <button class="btn-cancel-reply" onclick="toggleReplyForm('${scope}','${r.id}')">Cancel</button>
+        </div>
+      </div>` : '';
+  return `
+    <div class="review-card">
+      <div class="review-card-top">
+        <span class="review-author">${escHtml(r.name)}</span>
+        <span class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</span>
+      </div>
+      ${tagHtml || ''}
+      <div class="review-date">${new Date(r.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</div>
+      <div class="review-body">${escHtml(r.review_text)}</div>
+      ${r.reply ? `
+        <div class="review-owner-reply">
+          <div class="review-owner-reply-label">🏷️ Response from DK Creations</div>
+          <p>${escHtml(r.reply)}</p>
+        </div>` : ''}
+      ${replyBtn}
+    </div>`;
+}
+
+function renderProductReviews(pid) {
+  const list = document.getElementById('productReviewsList');
+  const reviews = allReviews[pid] || [];
+  if (reviews.length === 0) {
+    list.innerHTML = '<p class="no-reviews">No reviews yet — be the first to review this product!</p>';
+    return;
+  }
+  list.innerHTML = reviews.map(r => reviewCardHtml(r, 'prod')).join('');
+}
+
+function renderOverallReviews() {
+  const statsEl = document.getElementById('overallStats');
+  const listEl = document.getElementById('allReviewsList');
+  const combined = [];
+  products.forEach(p => {
+    (allReviews[p.id] || []).forEach(r => combined.push({...r, productName: p.name}));
+  });
+  combined.sort((a,b) => new Date(b.created_at) - new Date(a.created_at));
+
+  const adminToggle = `<button class="review-reply-btn" onclick="toggleAdminMode()">${isAdminMode ? '🔓 Seller mode on — log out' : '🔒 Seller login'}</button>`;
+
+  if (combined.length === 0) {
+    statsEl.innerHTML = adminToggle;
+    listEl.innerHTML = '<p class="no-reviews">No reviews yet. Purchase a product and share your experience!</p>';
+    return;
+  }
+  const avg = (combined.reduce((s,r) => s + r.rating, 0) / combined.length).toFixed(1);
+  const counts = [5,4,3,2,1].map(n => ({ n, c: combined.filter(r => r.rating === n).length }));
+  statsEl.innerHTML = `
+    <div class="avg-score">
+      <div class="big-score">${avg}</div>
+      <div class="big-stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</div>
+      <p>${combined.length} review${combined.length > 1 ? 's' : ''}</p>
+    </div>
+    <div class="rating-bars">
+      ${counts.map(x => `
+        <div class="rating-bar-row">
+          <span>${x.n}★</span>
+          <div class="rating-bar-track"><div class="rating-bar-fill" style="width:${combined.length ? Math.round(x.c/combined.length*100) : 0}%"></div></div>
+          <span>${x.c}</span>
+        </div>`).join('')}
+    </div>
+    ${adminToggle}`;
+
+  listEl.innerHTML = combined.map(r =>
+    reviewCardHtml(r, 'overall', `<span class="review-product-tag">${escHtml(r.productName)}</span>`)
+  ).join('');
+}
+
+function toggleReplyForm(scope, reviewId) {
+  const form = document.getElementById(`replyForm_${scope}_${reviewId}`);
+  if (form) form.classList.toggle('open');
+}
+
+function toggleAdminMode() {
+  if (isAdminMode) {
+    isAdminMode = false;
+    sessionStorage.removeItem('dkAdminPasscode');
+    if (currentProductId) renderProductReviews(currentProductId);
+    renderOverallReviews();
+    return;
+  }
+  const passcode = prompt('Enter seller passcode to reply to reviews:');
+  if (!passcode) return;
+  sessionStorage.setItem('dkAdminPasscode', passcode);
+  isAdminMode = true; // the real check happens the moment you post a reply — wrong passcode gets rejected then
+  if (currentProductId) renderProductReviews(currentProductId);
+  renderOverallReviews();
+}
+
+async function postReply(scope, reviewId) {
+  const textarea = document.getElementById(`replyText_${scope}_${reviewId}`);
+  const replyText = textarea ? textarea.value.trim() : '';
+  if (!replyText) { showToast('Please write a reply before posting.'); return; }
+  const passcode = sessionStorage.getItem('dkAdminPasscode') || '';
+
+  const res = await fetch('/api/admin-reply', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ reviewId, replyText, passcode })
+  });
+
+  if (res.status === 401) {
+    showToast('Incorrect passcode — seller login cancelled.');
+    isAdminMode = false;
+    sessionStorage.removeItem('dkAdminPasscode');
+    if (currentProductId) renderProductReviews(currentProductId);
+    renderOverallReviews();
+    return;
+  }
+  if (!res.ok) { showToast('Something went wrong posting the reply.'); return; }
+
+  await fetchAllReviews();
+  if (currentProductId) renderProductReviews(currentProductId);
+  renderOverallReviews();
+  showToast('Reply posted successfully! ✅');
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── HAMBURGER MENU ──
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburgerBtn');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburgerBtn').classList.remove('open');
+}
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburgerBtn');
+  if (menu && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+// ──────────────────────────────────────────────
+// ⚙️  FESTIVE SETTINGS — EDIT THIS SECTION ONLY
+// ──────────────────────────────────────────────
+const FESTIVE_CONFIG = {
+  active: true,           // ← true = show bar, false = hide bar
+  message: '🎉 <em>Launch Offer!</em> Get 10% off on all rangolis — Use code at checkout',
+  code: 'LAUNCH10',       // ← the coupon code customers type
+  discount: 10,           // ← percentage discount (10 = 10% off)
+  // Add more codes below if you want multiple coupons active at once:
+  extraCodes: [
+    // { code: 'NAVRATRI15', discount: 15 },
+    // { code: 'SAVE50', flat: 50 },   // flat ₹50 off (use flat instead of pct)
+  ]
+};
+// ──────────────────────────────────────────────
+
+// All valid coupon codes (auto-built from FESTIVE_CONFIG)
+const COUPONS = FESTIVE_CONFIG.active
+  ? [
+      { code: FESTIVE_CONFIG.code.toUpperCase(), pct: FESTIVE_CONFIG.discount },
+      ...FESTIVE_CONFIG.extraCodes.map(c => ({
+        code: c.code.toUpperCase(),
+        pct: c.discount || 0,
+        flat: c.flat || 0
+      }))
+    ]
+  : [];
+
+let appliedCoupon = null;
+
+// ── ANNOUNCEMENT BAR ──
+function initAnnounceBar() {
+  const bar = document.getElementById('announceBar');
+  if (!FESTIVE_CONFIG.active) { bar.classList.remove('visible'); return; }
+  // Update text and code from config
+  document.getElementById('announceText').innerHTML = FESTIVE_CONFIG.message;
+  document.getElementById('announceCode').textContent = FESTIVE_CONFIG.code;
+  document.getElementById('announceCodeMobile').textContent = FESTIVE_CONFIG.code;
+  // Update mobile ticker text too
+  document.querySelectorAll('.announce-ticker-item')[0].innerHTML =
+    `🎉 ${FESTIVE_CONFIG.message.replace(/<[^>]+>/g,'')} · Use code <span class="announce-ticker-code">${FESTIVE_CONFIG.code}</span>`;
+  document.querySelectorAll('.announce-ticker-item')[3].innerHTML =
+    `🎉 ${FESTIVE_CONFIG.message.replace(/<[^>]+>/g,'')} · Use code <span class="announce-ticker-code">${FESTIVE_CONFIG.code}</span>`;
+  bar.classList.add('visible');
+  // Push nav down
+  adjustNavTop();
+}
+
+function adjustNavTop() {
+  const bar = document.getElementById('announceBar');
+  const nav = document.querySelector('nav');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (bar.classList.contains('visible')) {
+    const h = bar.offsetHeight;
+    nav.style.top = h + 'px';
+    if (mobileMenu) mobileMenu.style.top = (h + 68) + 'px';
+  } else {
+    nav.style.top = '0';
+    if (mobileMenu) mobileMenu.style.top = '68px';
+  }
+}
+
+function closeAnnounce() {
+  const bar = document.getElementById('announceBar');
+  bar.classList.remove('visible');
+  adjustNavTop();
+}
+
+function copyCode() {
+  const code = FESTIVE_CONFIG.code;
+  navigator.clipboard.writeText(code).catch(()=>{});
+  const copied = document.getElementById('announceCopied');
+  copied.style.opacity = '1';
+  setTimeout(() => { copied.style.opacity = '0'; }, 2000);
+  showToast(`Coupon code ${code} copied! 🎉`);
+}
+
+// ── COUPON LOGIC ──
+function applyCoupon() {
+  const input = document.getElementById('couponInput').value.trim().toUpperCase();
+  const msg = document.getElementById('couponMsg');
+  const found = COUPONS.find(c => c.code === input);
+  if (!found) {
+    msg.className = 'coupon-msg error';
+    msg.textContent = '❌ Invalid coupon code. Please check and try again.';
+    appliedCoupon = null;
+    refreshOrderSummary();
+    return;
+  }
+  appliedCoupon = found;
+  const rawTotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const discount = found.flat ? found.flat : Math.round(rawTotal * found.pct / 100);
+  const newTotal = rawTotal - discount;
+  msg.className = 'coupon-msg success';
+  msg.textContent = found.flat
+    ? `✅ Coupon applied! ₹${discount} off. You pay ₹${newTotal}`
+    : `✅ Coupon applied! ${found.pct}% off — You save ₹${discount}. You pay ₹${newTotal}`;
+  refreshOrderSummary();
+}
+
+function refreshOrderSummary() {
+  const subtotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const shipping = getShipping(subtotal);
+  const discount = appliedCoupon
+    ? (appliedCoupon.flat || Math.round(subtotal * appliedCoupon.pct / 100))
+    : 0;
+  const finalTotal = subtotal + shipping - discount;
+  const box = document.getElementById('orderSummaryBox');
+  const payBtn = document.getElementById('payBtn');
+  if (!box) return;
+  // Remove old discount/final rows
+  box.querySelectorAll('.order-summary-discount, .order-summary-final').forEach(el => el.remove());
+  document.getElementById('orderTotal').innerHTML = `<span>Subtotal + Shipping</span><span>₹${subtotal + shipping}</span>`;
+  if (discount > 0) {
+    const discRow = document.createElement('div');
+    discRow.className = 'order-summary-discount';
+    discRow.innerHTML = `<span>🎉 Discount (${appliedCoupon.code})</span><span>− ₹${discount}</span>`;
+    box.appendChild(discRow);
+    const finalRow = document.createElement('div');
+    finalRow.className = 'order-summary-total order-summary-final';
+    finalRow.style.cssText = 'border-top:2px solid var(--gold);margin-top:0.4rem;font-size:1.05rem;';
+    finalRow.innerHTML = `<span>You Pay</span><span>₹${finalTotal}</span>`;
+    box.appendChild(finalRow);
+  }
+  if (payBtn) payBtn.textContent = `🔒 Pay ₹${finalTotal} Securely`;
+}
+
+// ── INIT ──
+updatePriceSliderUI(PRICE_FILTER_MIN, PRICE_FILTER_MAX);
+renderProducts();
+initEmailJS();
+initStarPicker();
+fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); });
+initAnnounceBar();
+window.addEventListener('resize', adjustNavTop);
+</script>
+
+<!-- STICKY MOBILE BUY BAR -->
+<div class="sticky-buy-bar" id="stickyBuyBar" style="display:none;">
+  <div class="sticky-buy-bar-inner">
+    <div class="sticky-buy-price"><span>₹</span><span id="stickyPrice">0</span></div>
+    <button class="sticky-btn-cart" onclick="addFromDetail()">🛒 Add to Cart</button>
+    <button class="sticky-btn-buy" onclick="buyNow()">⚡ Buy Now</button>
+  </div>
+</div>
+</body>
+</html>

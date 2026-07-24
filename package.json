@@ -1,0 +1,9 @@
+{
+  "name": "dk-creations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DK Creations — handcrafted fur woolen rangoli store",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
