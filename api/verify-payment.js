@@ -33,6 +33,36 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // 0. Checkout requires login. We never trust a user id sent by the
+    //    browser — instead we take the customer's Supabase session token
+    //    (sent as "Authorization: Bearer <token>") and ask Supabase who
+    //    it actually belongs to. Only a valid, currently-logged-in user
+    //    can have their order recorded.
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const authHeader = req.headers.authorization || '';
+    const accessToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+    let userId = null;
+    if (accessToken && supabaseUrl && serviceKey) {
+      try {
+        const userRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
+          headers: { apikey: serviceKey, Authorization: `Bearer ${accessToken}` },
+        });
+        if (userRes.ok) {
+          const userData = await userRes.json();
+          userId = userData.id || null;
+        }
+      } catch (e) {
+        console.warn('Could not verify login session:', e);
+      }
+    }
+
+    if (!userId) {
+      res.status(401).json({ error: 'Please log in to complete checkout' });
+      return;
+    }
+
     // 1. Recompute the total from the trusted price list (same as create-order).
     const calc = computeTotal(items, couponCode);
     if (!calc.valid) {
@@ -67,9 +97,6 @@ module.exports = async (req, res) => {
     // 3. Signature is genuine — now save to Supabase using the service
     //    role key (server-side only, bypasses RLS safely) so the public
     //    anon key on the front end no longer needs insert access at all.
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
     let saved = false;
     if (supabaseUrl && serviceKey) {
       const orderId = 'DKC' + razorpay_order_id.replace('order_', '');
@@ -80,6 +107,7 @@ module.exports = async (req, res) => {
       const row = {
         order_id: orderId,
         payment_id: razorpay_payment_id,
+        user_id: userId,
         customer_name: customer.name,
         customer_phone: customer.phone,
         customer_email: customer.email || '',

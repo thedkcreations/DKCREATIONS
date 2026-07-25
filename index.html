@@ -631,6 +631,7 @@
     <li><a onclick="showPage('home');scrollToSection('about')">About</a></li>
     <li><a onclick="showPage('home');scrollToSection('contact')">Contact</a></li>
     <li><a onclick="openTrackOrder()">Track Order</a></li>
+    <li><a onclick="handleAccountClick()" id="navAccountLink">👤 Login</a></li>
     <li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
   </ul>
   <!-- Mobile right side: cart + hamburger -->
@@ -648,6 +649,7 @@
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('about')">🌸 About Us</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('contact')">📞 Contact</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
+  <a class="mobile-menu-link" id="mobileAccountLink" onclick="closeMobileMenu();handleAccountClick()">👤 Login</a>
 </div>
 
 <!-- CART -->
@@ -692,6 +694,46 @@
       </div>
       <button class="btn-pay" onclick="submitTrackOrder()">🔍 Track Order</button>
       <div id="trackOrderResult" style="margin-top:1.2rem;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL (LOGIN / SIGNUP) -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal">
+    <div class="modal-header"><h3 id="authModalTitle">Login</h3><button class="modal-close" onclick="closeAuthModal()">✕</button></div>
+    <div class="modal-body">
+      <p id="authModalNote" style="font-size:0.85rem;color:var(--text-soft);margin-bottom:1rem;"></p>
+      <div class="form-group" id="authNameGroup" style="display:none;">
+        <label>Full Name *</label>
+        <input type="text" id="auth_name" placeholder="Your full name"/>
+        <span class="error-msg" id="e_auth_name"></span>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="auth_email" placeholder="you@email.com"/>
+        <span class="error-msg" id="e_auth_email"></span>
+      </div>
+      <div class="form-group">
+        <label>Password *</label>
+        <input type="password" id="auth_password" placeholder="At least 6 characters"/>
+        <span class="error-msg" id="e_auth_password"></span>
+      </div>
+      <button class="btn-pay" id="authSubmitBtn" onclick="submitAuth()">Login</button>
+      <p style="text-align:center;font-size:0.85rem;margin-top:1rem;">
+        <span id="authToggleText">New here?</span>
+        <a href="javascript:void(0)" onclick="toggleAuthMode()" style="color:var(--maroon-deep);font-weight:700;" id="authToggleLink">Create an account</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MY ORDERS MODAL -->
+<div class="modal-overlay" id="myOrdersModal">
+  <div class="modal">
+    <div class="modal-header"><h3>My Orders</h3><button class="modal-close" onclick="closeMyOrders()">✕</button></div>
+    <div class="modal-body" id="myOrdersBody">
+      <p style="text-align:center;color:var(--text-soft);">Loading…</p>
     </div>
   </div>
 </div>
@@ -911,8 +953,9 @@
       <ul>
         <li>All products are handcrafted, so minor variations in color, texture, or finish compared to the photos shown are natural and not considered defects.</li>
         <li>Prices listed are in Indian Rupees (₹) and are inclusive of applicable taxes unless stated otherwise. Shipping charges (if any) are shown at checkout.</li>
+        <li>A registered account is required to place an order. You are responsible for keeping your login credentials confidential and for all activity under your account.</li>
         <li>Orders are confirmed only after successful payment via our payment partner, Razorpay.</li>
-        <li>We reserve the right to refuse or cancel any order in cases of suspected fraud, unauthorized use of a payment method, or unavailability of the product/materials.</li>
+        <li>We reserve the right to refuse or cancel any order in cases of suspected fraud, unauthorized use of a payment method or account, or unavailability of the product/materials.</li>
         <li>Product images are for representation purposes; actual product may vary slightly.</li>
         <li>All content on this website (images, descriptions, branding) is the property of DK Creations and may not be reproduced without permission.</li>
       </ul>
@@ -920,9 +963,9 @@
 
     <section id="policy-privacy" class="policy-section">
       <h2>Privacy Policy</h2>
-      <p>We collect only the information needed to process your order: your name, phone number, email address, and shipping address. This information is used solely to fulfil your order, send order updates, and respond to your queries.</p>
-      <p>Payments are processed securely by <strong>Razorpay</strong>; we do not see or store your card, UPI, or bank details on our servers. Your order details are stored securely and are not shared with third parties except as required to deliver your order (e.g. our courier partner) or comply with the law.</p>
-      <p>For any privacy-related questions or to request deletion of your data, contact us at <a href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a>.</p>
+      <p>To check out, you'll need to create an account with your email address and a password. We use this to authenticate you, keep your order history linked to your account, and let you view past orders. We collect the information needed to process your order: your name, phone number, email address, and shipping address. This information is used solely to fulfil your order, send order updates, maintain your account, and respond to your queries.</p>
+      <p>Payments are processed securely by <strong>Razorpay</strong>; we do not see or store your card, UPI, or bank details on our servers. Your password is never visible to us — it is stored securely by our authentication provider, Supabase. Your order and account details are stored securely and are not shared with third parties except as required to deliver your order (e.g. our courier partner) or comply with the law.</p>
+      <p>For any privacy-related questions, or to request deletion of your account and data, contact us at <a href="mailto:thedkcreations@gmail.com">thedkcreations@gmail.com</a>.</p>
     </section>
   </div>
 </div><!-- end #page-policies -->
@@ -1635,6 +1678,157 @@ const SUPABASE_URL = 'https://iiczbrqexcfshmkwwxuv.supabase.co';           // �
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpY3picnFleGNmc2hta3d3eHV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3OTkzMzIsImV4cCI6MjEwMDM3NTMzMn0.Qg9YwOEzeYutEqGUGvDgsRxS04n56E3AZYdJyKaFQjI'; // ← REPLACE
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// ── ACCOUNTS: LOGIN REQUIRED AT CHECKOUT, ORDER HISTORY SAVED ──
+// Customers must be logged in (Supabase Auth) to complete checkout.
+// Orders are linked to their account (user_id) so "My Orders" can
+// show their history. Guests can still use "Track Order" by ID+email.
+let currentUser = null;
+let authMode = 'login'; // 'login' | 'signup'
+let pendingCheckoutAfterLogin = false;
+
+async function initAuth() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  currentUser = session ? session.user : null;
+  updateAuthUI();
+  supabaseClient.auth.onAuthStateChange((_event, session) => {
+    currentUser = session ? session.user : null;
+    updateAuthUI();
+  });
+}
+
+function updateAuthUI() {
+  const label = currentUser
+    ? `👤 ${((currentUser.user_metadata && currentUser.user_metadata.full_name) || currentUser.email).split(' ')[0]}`
+    : '👤 Login';
+  const navLink = document.getElementById('navAccountLink');
+  const mobileLink = document.getElementById('mobileAccountLink');
+  if (navLink) navLink.textContent = label;
+  if (mobileLink) mobileLink.textContent = label;
+}
+
+function handleAccountClick() {
+  if (currentUser) {
+    const wantsOrders = confirm(`Logged in as ${currentUser.email}\n\nOK = View My Orders\nCancel = Log Out`);
+    if (wantsOrders) { openMyOrders(); } else { logout(); }
+  } else {
+    openAuthModal('login');
+  }
+}
+
+function openAuthModal(mode) {
+  authMode = mode;
+  document.getElementById('authModal').classList.add('open');
+  renderAuthMode();
+}
+function closeAuthModal() {
+  document.getElementById('authModal').classList.remove('open');
+  pendingCheckoutAfterLogin = false;
+}
+function toggleAuthMode() {
+  authMode = authMode === 'login' ? 'signup' : 'login';
+  renderAuthMode();
+}
+function renderAuthMode() {
+  const isSignup = authMode === 'signup';
+  document.getElementById('authModalTitle').textContent = isSignup ? 'Create Account' : 'Login';
+  document.getElementById('authNameGroup').style.display = isSignup ? 'block' : 'none';
+  document.getElementById('authSubmitBtn').textContent = isSignup ? 'Create Account' : 'Login';
+  document.getElementById('authToggleText').textContent = isSignup ? 'Already have an account?' : 'New here?';
+  document.getElementById('authToggleLink').textContent = isSignup ? 'Login' : 'Create an account';
+  document.getElementById('authModalNote').textContent = pendingCheckoutAfterLogin
+    ? "Please log in to continue to checkout — we'll save your order history to your account."
+    : '';
+  ['e_auth_name','e_auth_email','e_auth_password'].forEach(id => { document.getElementById(id).textContent = ''; });
+}
+
+async function submitAuth() {
+  const isSignup = authMode === 'signup';
+  const name = document.getElementById('auth_name').value.trim();
+  const email = document.getElementById('auth_email').value.trim();
+  const password = document.getElementById('auth_password').value;
+
+  let valid = true;
+  if (isSignup) {
+    if (name.length < 2) { document.getElementById('e_auth_name').textContent = 'Please enter your name'; valid = false; }
+    else { document.getElementById('e_auth_name').textContent = ''; }
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('e_auth_email').textContent = 'Enter a valid email'; valid = false;
+  } else { document.getElementById('e_auth_email').textContent = ''; }
+  if (password.length < 6) {
+    document.getElementById('e_auth_password').textContent = 'At least 6 characters'; valid = false;
+  } else { document.getElementById('e_auth_password').textContent = ''; }
+  if (!valid) return;
+
+  const btn = document.getElementById('authSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Please wait…';
+
+  try {
+    if (isSignup) {
+      const { data, error } = await supabaseClient.auth.signUp({
+        email, password, options: { data: { full_name: name } }
+      });
+      if (error) throw error;
+      if (!data.session) {
+        showToast('Account created! Please check your email to confirm, then log in.');
+        closeAuthModal();
+        return;
+      }
+    } else {
+      const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+    }
+    const wasPending = pendingCheckoutAfterLogin;
+    pendingCheckoutAfterLogin = false;
+    closeAuthModal();
+    showToast(isSignup ? 'Account created! You are now logged in.' : 'Logged in successfully!');
+    if (wasPending) openCheckout();
+  } catch (e) {
+    showToast(e.message || 'Something went wrong. Please try again.');
+  } finally {
+    btn.disabled = false; btn.textContent = isSignup ? 'Create Account' : 'Login';
+  }
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  currentUser = null;
+  updateAuthUI();
+  showToast('Logged out.');
+}
+
+// ── MY ORDERS (reads via the logged-in user's own session; Supabase
+//    Row Level Security ensures they only ever see their own rows) ──
+async function openMyOrders() {
+  document.getElementById('myOrdersModal').classList.add('open');
+  const body = document.getElementById('myOrdersBody');
+  body.innerHTML = '<p style="text-align:center;color:var(--text-soft);">Loading…</p>';
+  try {
+    const { data, error } = await supabaseClient
+      .from('orders')
+      .select('order_id,items,total,status,created_at')
+      .eq('user_id', currentUser.id)
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    if (!data || data.length === 0) {
+      body.innerHTML = '<p style="text-align:center;color:var(--text-soft);">No orders yet. Once you check out, your orders will show up here.</p>';
+      return;
+    }
+    const statusLabels = { paid: '✅ Confirmed', processing: '🧵 Being Handcrafted', shipped: '🚚 Shipped', delivered: '📦 Delivered', cancelled: '❌ Cancelled' };
+    body.innerHTML = data.map(o => `
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;margin-bottom:0.8rem;">
+        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.3rem;">${statusLabels[o.status] || o.status}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${o.order_id}</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${o.items}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${o.total}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(o.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+      </div>`).join('');
+  } catch (e) {
+    body.innerHTML = '<p style="text-align:center;color:#c0392b;">Could not load your orders. Please try again.</p>';
+  }
+}
+function closeMyOrders() { document.getElementById('myOrdersModal').classList.remove('open'); }
+
 // ════════════════════════════════════════════════════════════
 
 // ── SORT STATE ──
@@ -2259,6 +2453,12 @@ function closeCart() { document.getElementById('cartSidebar').classList.remove('
 // ── CHECKOUT MODAL ──
 function openCheckout() {
   if (cart.length === 0) { showToast('Your cart is empty!'); return; }
+  if (!currentUser) {
+    closeCart();
+    pendingCheckoutAfterLogin = true;
+    openAuthModal('login');
+    return;
+  }
   closeCart();
   appliedCoupon = null;
   const subtotal = cart.reduce((s,i) => s + i.price*i.qty, 0);
@@ -2283,10 +2483,10 @@ function openCheckout() {
     <div class="coupon-msg" id="couponMsg"></div>
     <p class="modal-section-title">Delivery Details</p>
     <div class="form-row">
-      <div class="form-group"><label>Full Name *</label><input type="text" id="f_name" placeholder="Your full name"/><span class="error-msg" id="e_name"></span></div>
+      <div class="form-group"><label>Full Name *</label><input type="text" id="f_name" value="${(currentUser.user_metadata && currentUser.user_metadata.full_name) || ''}" placeholder="Your full name"/><span class="error-msg" id="e_name"></span></div>
       <div class="form-group"><label>Phone Number *</label><input type="tel" id="f_phone" placeholder="10-digit mobile number"/><span class="error-msg" id="e_phone"></span></div>
     </div>
-    <div class="form-group"><label>Email Address *</label><input type="email" id="f_email" placeholder="you@email.com"/><span class="error-msg" id="e_email"></span></div>
+    <div class="form-group"><label>Email Address *</label><input type="email" id="f_email" value="${currentUser.email || ''}" placeholder="you@email.com"/><span class="error-msg" id="e_email"></span></div>
     <div class="form-group"><label>Full Address *</label><textarea id="f_address" rows="2" placeholder="House no, Street, Area, Landmark"></textarea><span class="error-msg" id="e_address"></span></div>
     <div class="form-row">
       <div class="form-group"><label>State *</label>
@@ -2396,11 +2596,22 @@ async function initiateRazorpay() {
   //    the total itself from its own price list — it never trusts a total
   //    sent from the browser. This is also where a tampered/fake amount
   //    would get rejected.
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) {
+    if (payBtn) { payBtn.disabled = false; payBtn.textContent = `🔒 Pay Securely`; }
+    showToast('Your session expired — please log in again.');
+    closeCheckout();
+    pendingCheckoutAfterLogin = true;
+    openAuthModal('login');
+    return;
+  }
+  const authHeaders = { Authorization: `Bearer ${session.access_token}` };
+
   let orderInfo;
   try {
     const res = await fetch('/api/create-order', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...authHeaders },
       body: JSON.stringify({ items, couponCode }),
     });
     orderInfo = await res.json();
@@ -2437,7 +2648,7 @@ async function initiateRazorpay() {
       try {
         const verifyRes = await fetch('/api/verify-payment', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...authHeaders },
           body: JSON.stringify({
             razorpay_order_id: response.razorpay_order_id,
             razorpay_payment_id: response.razorpay_payment_id,
@@ -2922,6 +3133,7 @@ function refreshOrderSummary() {
 updatePriceSliderUI(PRICE_FILTER_MIN, PRICE_FILTER_MAX);
 renderProducts();
 initEmailJS();
+initAuth();
 initStarPicker();
 fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); });
 initAnnounceBar();

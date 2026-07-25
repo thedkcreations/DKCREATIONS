@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
       return;
     }
 
-    const supabaseUrl = process.env.https://iiczbrqexcfshmkwwxuv.supabase.co;
+    const supabaseUrl = process.env.SUPABASE_URL;
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     if (!supabaseUrl || !serviceKey) {
       res.status(500).json({ error: 'Server not configured' });

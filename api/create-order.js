@@ -14,6 +14,32 @@ module.exports = async (req, res) => {
   }
 
   try {
+    // Checkout requires login — verify the customer's Supabase session
+    // token before we even create a payment order for them.
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const authHeader = req.headers.authorization || '';
+    const accessToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+    let userId = null;
+    if (accessToken && supabaseUrl && serviceKey) {
+      try {
+        const userRes = await fetch(`${supabaseUrl}/auth/v1/user`, {
+          headers: { apikey: serviceKey, Authorization: `Bearer ${accessToken}` },
+        });
+        if (userRes.ok) {
+          const userData = await userRes.json();
+          userId = userData.id || null;
+        }
+      } catch (e) {
+        console.warn('Could not verify login session:', e);
+      }
+    }
+    if (!userId) {
+      res.status(401).json({ error: 'Please log in to checkout' });
+      return;
+    }
+
     const { items, couponCode } = req.body || {};
 
     const calc = computeTotal(items, couponCode);
