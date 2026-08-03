@@ -1816,12 +1816,14 @@ async function openMyOrders() {
     }
     const statusLabels = { paid: '✅ Confirmed', processing: '🧵 Being Handcrafted', shipped: '🚚 Shipped', delivered: '📦 Delivered', cancelled: '❌ Cancelled' };
     body.innerHTML = data.map(o => `
-      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;margin-bottom:0.8rem;">
-        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.3rem;">${statusLabels[o.status] || o.status}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${o.order_id}</strong></p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${o.items}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${o.total}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(o.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1.2rem 1.2rem 1rem;margin-bottom:0.8rem;">
+        ${renderOrderTracker(o.status)}
+        <div style="border-top:1px solid rgba(107,26,42,0.15);margin-top:1.1rem;padding-top:0.9rem;">
+          <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${o.order_id}</strong></p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${o.items}</p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${o.total}</p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(o.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+        </div>
       </div>`).join('');
   } catch (e) {
     body.innerHTML = '<p style="text-align:center;color:#c0392b;">Could not load your orders. Please try again.</p>';
@@ -2515,6 +2517,47 @@ function closeTrackOrder() {
   document.getElementById('trackOrderModal').classList.remove('open');
 }
 
+function renderOrderTracker(status) {
+  if (status === 'cancelled') {
+    return `
+      <div style="text-align:center;padding:0.6rem 0;">
+        <div style="font-size:1.8rem;">❌</div>
+        <p style="font-weight:800;color:#c0392b;margin-top:0.3rem;">Order Cancelled</p>
+      </div>`;
+  }
+
+  const steps = [
+    { key: 'paid',       label: 'Order Placed', icon: '✅' },
+    { key: 'processing', label: 'Processing',   icon: '🧵' },
+    { key: 'shipped',    label: 'Shipped',       icon: '🚚' },
+    { key: 'delivered',  label: 'Delivered',     icon: '📦' }
+  ];
+  const order = steps.map(s => s.key);
+  const currentIndex = Math.max(order.indexOf(status), 0);
+
+  return `
+    <div style="display:flex;align-items:flex-start;">
+      ${steps.map((s, i) => {
+        const done = i <= currentIndex;
+        const isLast = i === steps.length - 1;
+        return `
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;">
+          <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+            background:${done ? 'var(--maroon)' : '#fff'};
+            border:2px solid ${done ? 'var(--maroon)' : 'var(--cream-dark)'};
+            color:${done ? '#fff' : 'var(--text-soft)'};font-size:1rem;z-index:2;">
+            ${done ? '✓' : ''}
+          </div>
+          ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 17px);width:calc(100% - 34px);height:3px;
+            background:${i < currentIndex ? 'var(--maroon)' : 'var(--cream-dark)'};z-index:1;"></div>` : ''}
+          <p style="font-size:0.72rem;font-weight:${done ? '800' : '600'};margin-top:0.4rem;color:${done ? 'var(--maroon-deep)' : 'var(--text-soft)'};line-height:1.2;">
+            ${s.icon} ${s.label}
+          </p>
+        </div>`;
+      }).join('')}
+    </div>`;
+}
+
 async function submitTrackOrder() {
   const orderId = document.getElementById('trackOrderId').value.trim();
   const email = document.getElementById('trackEmail').value.trim();
@@ -2543,12 +2586,14 @@ async function submitTrackOrder() {
       cancelled: '❌ Cancelled'
     };
     resultEl.innerHTML = `
-      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;">
-        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.4rem;">${statusLabels[data.order.status] || data.order.status}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${data.order.order_id}</strong></p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${data.order.items}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${data.order.total}</p>
-        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(data.order.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1.2rem 1.2rem 1rem;">
+        ${renderOrderTracker(data.order.status)}
+        <div style="border-top:1px solid rgba(107,26,42,0.15);margin-top:1.1rem;padding-top:0.9rem;">
+          <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${data.order.order_id}</strong></p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${data.order.items}</p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${data.order.total}</p>
+          <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(data.order.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
+        </div>
       </div>`;
   } catch (e) {
     resultEl.innerHTML = '<p style="color:#c0392b;font-size:0.85rem;">Something went wrong. Please try again.</p>';
