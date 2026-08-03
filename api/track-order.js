@@ -22,8 +22,13 @@ module.exports = async (req, res) => {
       return;
     }
 
+    // Order IDs are "DKC" + the Razorpay order id, which contains mixed-case
+    // letters (e.g. DKCQZq1a2B3cD4wX). Using eq. after forcing .toUpperCase()
+    // broke every lookup, since the stored value is never all-uppercase.
+    // ilike does a case-insensitive match, so the customer can type/paste
+    // the ID in any case and it still matches.
     const url = `${supabaseUrl}/rest/v1/orders`
-      + `?order_id=eq.${encodeURIComponent(orderId.trim().toUpperCase())}`
+      + `?order_id=ilike.${encodeURIComponent(orderId.trim())}`
       + `&customer_email=ilike.${encodeURIComponent(email.trim())}`
       + `&select=order_id,items,total,status,created_at`;
 

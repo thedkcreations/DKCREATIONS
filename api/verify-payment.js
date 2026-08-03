@@ -8,6 +8,71 @@
 const crypto = require('crypto');
 const { computeTotal } = require('./_lib/pricing');
 
+// Sends the customer confirmation + owner notification emails via Resend's
+// HTTP API (no npm package needed, just fetch — matches the rest of this
+// project's style). Never throws: if email fails, we log it and move on —
+// the order itself is already safely saved, so a broken inbox shouldn't
+// make the customer think their payment failed.
+async function sendOrderEmails({ orderId, customer, itemsList, total }) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.RESEND_FROM_EMAIL; // e.g. "DK Creations <orders@yourdomain.com>"
+  const ownerEmail = process.env.OWNER_EMAIL; // where YOU want new-order alerts
+
+  if (!apiKey || !fromEmail) {
+    console.warn('RESEND_API_KEY / RESEND_FROM_EMAIL not set — skipping order emails.');
+    return;
+  }
+
+  const send = async (to, subject, html) => {
+    try {
+      const r = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({ from: fromEmail, to, subject, html }),
+      });
+      if (!r.ok) {
+        console.error('Resend email failed:', to, await r.text());
+      }
+    } catch (e) {
+      console.error('Resend email error:', to, e);
+    }
+  };
+
+  const itemsHtml = itemsList.replace(/ \| /g, '<br>');
+
+  // 1. Confirmation to the customer (only if they gave an email at checkout)
+  if (customer.email) {
+    await send(
+      customer.email,
+      `Order Confirmed — ${orderId}`,
+      `<h2>Thank you for your order, ${customer.name}!</h2>
+       <p>Your order <strong>${orderId}</strong> has been confirmed.</p>
+       <p><strong>Items:</strong><br>${itemsHtml}</p>
+       <p><strong>Total:</strong> ₹${total}</p>
+       <p>We'll notify you again once it ships. You can track your order anytime
+       using your Order ID and email on our website.</p>
+       <p>— DK Creations</p>`
+    );
+  }
+
+  // 2. New-order alert to you (the shop owner)
+  if (ownerEmail) {
+    await send(
+      ownerEmail,
+      `New Order — ${orderId} (₹${total})`,
+      `<h2>New order received</h2>
+       <p><strong>Order ID:</strong> ${orderId}</p>
+       <p><strong>Customer:</strong> ${customer.name} · ${customer.phone} · ${customer.email || 'no email'}</p>
+       <p><strong>Address:</strong> ${customer.address || ''}, ${customer.state || ''} ${customer.pincode || ''}</p>
+       <p><strong>Items:</strong><br>${itemsHtml}</p>
+       <p><strong>Total:</strong> ₹${total}</p>`
+    );
+  }
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
@@ -98,12 +163,12 @@ module.exports = async (req, res) => {
     //    role key (server-side only, bypasses RLS safely) so the public
     //    anon key on the front end no longer needs insert access at all.
     let saved = false;
-    if (supabaseUrl && serviceKey) {
-      const orderId = 'DKC' + razorpay_order_id.replace('order_', '');
-      const itemsList = (items || [])
-        .map((i) => `#${i.id} x${i.qty}`)
-        .join(' | ');
+    const orderId = 'DKC' + razorpay_order_id.replace('order_', '');
+    const itemsList = (items || [])
+      .map((i) => `#${i.id} x${i.qty}`)
+      .join(' | ');
 
+    if (supabaseUrl && serviceKey) {
       const row = {
         order_id: orderId,
         payment_id: razorpay_payment_id,
@@ -143,9 +208,19 @@ module.exports = async (req, res) => {
       console.warn('Supabase not configured — order was verified but not saved to DB.');
     }
 
+    // Fire off the confirmation/notification emails. This runs regardless
+    // of `saved` — the payment is real either way, and you still want the
+    // alert even if the DB write happened to fail.
+    await sendOrderEmails({
+      orderId,
+      customer,
+      itemsList,
+      total: calc.total,
+    });
+
     res.status(200).json({
       success: true,
-      orderId: 'DKC' + razorpay_order_id.replace('order_', ''),
+      orderId,
       paymentId: razorpay_payment_id,
       total: calc.total,
       savedToDb: saved,
