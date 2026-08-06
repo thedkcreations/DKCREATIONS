@@ -348,7 +348,13 @@
     .rating-bar-row{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--text-soft);}
     .rating-bar-track{flex:1;height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden;}
     .rating-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:4px;transition:width 0.5s;}
-
+     .search-bar-wrap{display:flex;align-items:center;gap:0.5rem;max-width:420px;margin:0 auto 1.2rem;padding:0.55rem 1rem;border-radius:24px;border:2px solid var(--maroon);background:var(--white);transition:box-shadow 0.2s;}
+.search-bar-wrap:focus-within{box-shadow:0 0 0 3px rgba(139,42,58,0.15);}
+.search-icon{font-size:0.9rem;opacity:0.6;flex-shrink:0;}
+.search-input{flex:1;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:0.9rem;color:var(--maroon);background:transparent;min-width:0;}
+.search-input::placeholder{color:var(--text-soft);}
+.search-clear-btn{border:none;background:none;cursor:pointer;color:var(--text-soft);font-size:0.85rem;flex-shrink:0;padding:0.1rem 0.3rem;line-height:1;}
+.search-clear-btn:hover{color:var(--maroon);}
     /* SORT DROPDOWN */
     .sort-bar{display:flex;align-items:center;justify-content:center;gap:0.7rem;margin-bottom:2rem;}
     .sort-bar-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);}
@@ -498,7 +504,9 @@
       .form-group label{font-size:0.78rem;}
       .form-group input,.form-group select,.form-group textarea{font-size:0.85rem;}
       .btn-pay{font-size:0.92rem;}
-
+/* Search bar */
+.search-bar-wrap{max-width:100%;margin:0 1rem 1rem;padding:0.5rem 0.9rem;}
+.search-input{font-size:16px;}
       /* Sort bar */
       .sort-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
       .price-filter-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
@@ -762,6 +770,11 @@
       <h2 class="section-title">Handcrafted Fur Woolen Rangolis</h2>
       <p class="section-sub">Click any product to view all images and details.</p>
     </div>
+    <div class="search-bar-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="productSearchInput" class="search-input" placeholder="Search products… (e.g. lotus, peacock, diya)" oninput="handleSearchInput(this.value)"/>
+  <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" style="display:none;" aria-label="Clear search">✕</button>
+</div>
     <div class="sort-bar">
       <span class="sort-bar-label">Sort by:</span>
       <div class="sort-dropdown-wrap" id="sortDropdown">
@@ -1593,6 +1606,372 @@ const products = [
     }
   ]
 },
+{
+  id: 23,
+  name: "Lotus Garden Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus garden fur wool rangoli featuring blooming lotus flowers and graceful buds, perfect for festive and spiritual décor.",
+
+  fullDesc: "Bring serenity and elegance into your home with this Lotus Garden Fur Wool Rangoli. Designed with a large blooming lotus surrounded by graceful lotus buds on vibrant green stems, this handcrafted rangoli is made from premium fur wool. The bright orange circular background beautifully highlights the floral design, making it ideal for pooja rooms, festivals, entrances, weddings, housewarming ceremonies, and traditional home décor. Reusable, durable, and crafted with intricate detailing for a premium finish.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Beautiful Lotus Garden Design",
+    "Premium Circular Finish",
+    "Perfect for Pooja Rooms, Festivals & Home Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/orange%20lotus.jpeg"
+  ]
+},
+{
+  id: 24,
+  name: "Hibiscus Bloom Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🌺",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted hibiscus floral fur wool rangoli featuring vibrant blooms and auspicious traditional elements for festive home décor.",
+
+  fullDesc: "Enhance your festive celebrations with this beautifully handcrafted Hibiscus Bloom Fur Wool Rangoli. Showcasing a stunning arrangement of vibrant hibiscus flowers complemented by colorful floral accents and lush green detailing, this premium fur wool rangoli brings elegance and traditional charm to any space. Designed for pooja rooms, Ganesh Chaturthi, Diwali, housewarming ceremonies, temple entrances, and festive décor, it is reusable, durable, and crafted with exceptional attention to detail for a rich and premium finish.",
+
+  features: [
+    "Size: 48 × 36 inches (4 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Elegant Hibiscus Floral Design",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/hibiscus%202.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/hibuscus.jpeg"
+  ]
+},
+{
+  id: 25,
+  name: "Red Lotus Backdrop Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Grand handcrafted red lotus backdrop fur wool rangoli, perfect for Ganesh Chaturthi, pooja mandaps, and festive décor.",
+
+  fullDesc: "Transform your festive celebrations with this stunning Red Lotus Backdrop Fur Wool Rangoli. Featuring a magnificent blooming red lotus with lush green leaves, this handcrafted masterpiece is made from premium fur wool to create an elegant backdrop for Lord Ganesha, temples, pooja mandaps, weddings, housewarming ceremonies, and festive decorations. Reusable, durable, and intricately crafted, it adds a rich traditional charm to every celebration.",
+
+  features: [
+    "Size: 48 × 48 inches (4 ft × 4 ft)",
+    "Material: Premium Fur Wool",
+    "Grand Red Lotus Backdrop Design",
+    "Handcrafted & Reusable",
+    "Perfect for Ganesh Chaturthi, Pooja Mandaps & Festivals",
+    "Premium Quality Finish",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/big%20lotus.jpeg"
+  ]
+},
+{
+  id: 26,
+  name: "Lotus Garden Backdrop Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus garden backdrop fur wool rangoli featuring blooming pink lotus flowers, perfect for festive and spiritual décor.",
+
+  fullDesc: "Enhance your festive celebrations with this beautifully handcrafted Lotus Garden Backdrop Fur Wool Rangoli. Featuring three vibrant blooming lotus flowers surrounded by lush green leaves on a rich golden backdrop, this premium fur wool creation adds a graceful and devotional touch to any space. Perfect as a backdrop for Lord Ganesha, pooja mandaps, temples, housewarming ceremonies, weddings, and festive home décor. Crafted with premium fur wool, it is reusable, durable, and designed to create a stunning traditional ambiance.",
+
+  features: [
+    "Size: 48 × 72 inches (4 ft × 6 ft)",
+    "Material: Premium Fur Wool",
+    "Three Lotus Floral Backdrop Design",
+    "Handcrafted & Reusable",
+    "Perfect for Ganesh Chaturthi, Pooja Mandaps & Festivals",
+    "Premium Quality Finish",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/lotus%20backdrop.jpeg"
+  ]
+},
+{
+  id: 27,
+  name: "Shivling Lotus Backdrop Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🔱",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Grand handcrafted Shivling and lotus backdrop fur wool rangoli, perfect for Mahashivratri, pooja rooms, temples, and festive décor.",
+
+  fullDesc: "Create a divine spiritual ambiance with this beautifully handcrafted Shivling Lotus Backdrop Fur Wool Rangoli. Featuring a majestic Shivling adorned with sacred Tripundra, a vibrant pink lotus backdrop, Trishul-inspired elements, and a hibiscus flower, this premium fur wool masterpiece symbolizes devotion, purity, and divine blessings. Ideal as a backdrop for pooja mandaps, temples, Mahashivratri celebrations, Shravan month, housewarming ceremonies, and festive home décor. Crafted using premium fur wool, it is reusable, durable, and designed to make every celebration truly auspicious.",
+
+  features: [
+    "Size: 48 × 48 inches (4 ft × 4 ft)",
+    "Material: Premium Fur Wool",
+    "Shivling & Lotus Backdrop Design",
+    "Handcrafted & Reusable",
+    "Perfect for Mahashivratri, Temples & Pooja Mandaps",
+    "Premium Quality Finish",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/shivling%20lotus.jpeg"
+  ]
+},
+{
+  id: 28,
+  name: "Light Pink Lotus Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted light pink lotus fur wool rangoli, perfect for pooja rooms, festive décor, and spiritual celebrations.",
+
+  fullDesc: "Add a touch of elegance and serenity to your home with this Light Pink Lotus Fur Wool Rangoli. Featuring a graceful blooming lotus with soft light pink petals and vibrant green leaves, this handcrafted rangoli is made from premium fur wool for a rich and luxurious finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, temples, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home decoration.",
+
+  features: [
+    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Light Pink Lotus Design",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/light%20pink%20lotus.jpeg"]
+},
+{
+  id: 29,
+  name: "Dark Pink Lotus Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted dark pink lotus fur wool rangoli, perfect for pooja rooms, festive décor, and spiritual celebrations.",
+
+  fullDesc: "Bring elegance and vibrance to your home with this Dark Pink Lotus Fur Wool Rangoli. Featuring a beautifully blooming lotus with rich dark pink petals and lush green leaves, this handcrafted rangoli is made from premium fur wool for a luxurious finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, temples, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home decoration.",
+
+  features: [
+    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Dark Pink Lotus Design",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: [
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/dark%20pink%20lotus.jpeg"
+  ]
+},
+{
+  id: 30,
+  name: "Dual Tone Lotus Fur Wool Rangoli",
+  price: 699,
+  emoji: "🪷",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted dual-tone lotus fur wool rangoli featuring elegant red and pink petals, perfect for festive and spiritual décor.",
+
+  fullDesc: "Enhance your home with this beautifully handcrafted Dual Tone Lotus Fur Wool Rangoli. Featuring a striking lotus design with rich red and soft pink petals outlined in white fur wool, this unique rangoli creates a vibrant and elegant look. The decorative hanging tassels add a traditional touch, making it perfect for pooja rooms, temple entrances, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home décor. Crafted from premium fur wool, it is reusable, durable, and designed to elevate every celebration.",
+
+  features: [
+    "Size: 30 × 24 inches (2.5 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Dual Tone Lotus Design",
+    "Handcrafted & Reusable",
+    "Decorative Hanging Tassels",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/2%20colour%20lotus.jpeg"]
+},
+{
+  id: 31,
+  name: "Orange Kalash Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪔",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted orange kalash fur wool rangoli featuring sacred mango leaves and a coconut, perfect for festive and spiritual décor.",
+
+  fullDesc: "Welcome prosperity and auspiciousness into your home with this Orange Kalash Fur Wool Rangoli. Featuring a traditional orange kalash adorned with sacred mango leaves, a coconut, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, Ganesh Chaturthi, Diwali, Varalakshmi Vratham, Navratri, housewarming ceremonies, and festive home decoration.",
+
+  features: [
+    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Traditional Orange Kalash Design",
+    "Handcrafted & Reusable",
+    "Sacred Swastik, Coconut & Mango Leaves",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/orange%20kalash.jpeg"]
+},
+{
+  id: 32,
+  name: "Yellow Kalash Fur Wool Rangoli",
+  price: 499,
+  emoji: "🏺",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted yellow kalash fur wool rangoli featuring sacred mango leaves and a coconut, perfect for festive and spiritual décor.",
+
+  fullDesc: "Invite prosperity and positive energy into your home with this Yellow Kalash Fur Wool Rangoli. Designed with a traditional yellow kalash, sacred mango leaves, a coconut, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool for a vibrant and elegant finish. Reusable, durable, and lightweight, it is perfect for pooja rooms, Varalakshmi Vratham, Ganesh Chaturthi, Diwali, Navratri, housewarming ceremonies, and festive home decoration.",
+
+  features: [
+    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Traditional Yellow Kalash Design",
+    "Handcrafted & Reusable",
+    "Sacred Swastik, Coconut & Mango Leaves",
+    "Perfect for Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/yellow%20kalash.jpeg"]
+},
+{
+  id: 33,
+  name: "Half Flower Fur Wool Rangoli",
+  price: 299,
+  priceNote: "Set of 2 half flower rangolis",
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted half flower fur wool rangoli, perfect for decorating staircases, entrances, corners, and festive spaces.",
+
+  fullDesc: "Enhance your home décor with this Half Flower Fur Wool Rangoli. Featuring a vibrant half-flower design in bright yellow and orange shades with a bold black outline, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Designed especially for staircases, entrances, doorway corners, pooja rooms, festive celebrations, and housewarming ceremonies, it is reusable, durable, and easy to place, adding a traditional charm to every occasion.",
+
+  features: [
+    "Size: 18 × 12 inches (1.5 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Half Flower Design",
+    "Handcrafted & Reusable",
+    "Perfect for Staircases, Entrances & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/half%20flower.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/half%20flower%202.jpeg"]
+},
+{
+  id: 34,
+  name: "Four Flower Set Fur Wool Rangoli",
+  price: 999,
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted four flower corner fur wool rangoli set, perfect for decorating pooja rooms, entrances, staircases, and festive spaces.",
+
+  fullDesc: "Decorate your home with this elegant Four Flower Corner Set Fur Wool Rangoli. Featuring four vibrant floral corner pieces connected by graceful green swirl patterns, this handcrafted rangoli creates a stunning decorative frame for diyas, lamps, kalash, idols, and pooja setups. Made from premium fur wool, it is reusable, durable, and ideal for Diwali, Ganesh Chaturthi, housewarming ceremonies, weddings, and festive home décor.",
+
+  features: [
+    "Each Flower: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Four Flower Corner Set Design",
+    "Handcrafted & Reusable",
+    "Perfect for Diyas, Lamps, Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/4%20flowers.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/4%20flowers%202.jpeg"]
+},
+{
+  id: 35,
+  name: "Lotus Floral Corner Fur Wool Rangoli",
+  price: 299,
+  priceNote: "Set of 4 corner rangolis",
+  emoji: "🌸",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted lotus floral corner fur wool rangoli, perfect for decorating entrances, pooja rooms, and festive corners.",
+
+  fullDesc: "Enhance your festive décor with this Lotus Floral Corner Fur Wool Rangoli. Featuring a vibrant floral mandala, graceful lotus petals, and decorative corner accents, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Lightweight, reusable, and durable, it is ideal for entrances, pooja rooms, stages, staircases, weddings, and festive celebrations.",
+
+  features: [
+    "Size: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Lotus Floral Corner Design",
+    "Handcrafted & Reusable",
+    "Perfect for Entrances, Pooja Rooms & Festive Décor",
+    "Durable & Long-lasting",
+    "Premium Quality Finish",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/corner.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/corner%202.jpeg"]
+},
+
 ];
 
 // ── STATE ──
@@ -1836,6 +2215,20 @@ function closeMyOrders() { document.getElementById('myOrdersModal').classList.re
 // ── SORT STATE ──
 let currentSort = 'default';
 
+// ── SEARCH STATE ──
+let currentSearch = '';
+function handleSearchInput(val) {
+  currentSearch = val.trim().toLowerCase();
+  document.getElementById('searchClearBtn').style.display = currentSearch ? 'inline-block' : 'none';
+  renderProducts();
+}
+function clearSearch() {
+  currentSearch = '';
+  document.getElementById('productSearchInput').value = '';
+  document.getElementById('searchClearBtn').style.display = 'none';
+  renderProducts();
+}
+
 // ── PRICE FILTER STATE ──
 const PRICE_FILTER_MIN = 0;
 const PRICE_FILTER_MAX = 5000;
@@ -1968,17 +2361,27 @@ function getSortedProducts() {
   }
   // Apply price range filter on top of whichever sort/filter is active
   list = list.filter(p => p.price >= appliedPriceMin && p.price <= appliedPriceMax);
-  return list;
+if (currentSearch) {
+  list = list.filter(p =>
+    (p.name || '').toLowerCase().includes(currentSearch) ||
+    (p.shortDesc || '').toLowerCase().includes(currentSearch) ||
+    (p.fullDesc || '').toLowerCase().includes(currentSearch)
+  );
+}
+return list;
 }
 
 // ── RENDER PRODUCTS ──
 function renderProducts() {
   const sorted = getSortedProducts();
   const grid = document.getElementById('productsGrid');
-  if (sorted.length === 0) {
-    grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);padding:3rem;font-size:1rem;">No products found in this category.</p>';
-    return;
-  }
+ if (sorted.length === 0) {
+  const msg = currentSearch
+    ? `No products found matching "${currentSearch}". Try a different search term.`
+    : 'No products found in this category.';
+  grid.innerHTML = `<p style="text-align:center;color:var(--text-soft);padding:3rem;font-size:1rem;">${msg}</p>`;
+  return;
+}
   const gradients = [
     'linear-gradient(135deg,#8B2A3A,#C9960C)',
     'linear-gradient(135deg,#1a4a6b,#0c8b7a)',
