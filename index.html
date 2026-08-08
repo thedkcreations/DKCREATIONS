@@ -596,6 +596,53 @@
     .mobile-menu.open{display:flex;}
     .mobile-menu-link{padding:1rem 6%;color:var(--cream);font-size:0.95rem;font-weight:600;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.07);transition:background 0.2s;}
     .mobile-menu-link:hover{background:rgba(255,255,255,0.08);color:var(--gold-light);}
+    /* WISHLIST HEART ON CARD */
+.wishlist-heart-btn{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:transform 0.15s,background 0.2s;color:#c0392b;}
+.wishlist-heart-btn:hover{transform:scale(1.12);}
+.wishlist-heart-btn.active{background:#c0392b;color:#fff;}
+.product-card{position:relative;}
+/* WISHLIST NAV BUTTON */
+.wishlist-btn{background:none;border:2px solid var(--gold);color:var(--gold-light);padding:0.5rem 0.9rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:background 0.2s,color 0.2s;}
+.wishlist-btn:hover{background:var(--gold);color:var(--maroon-deep);}
+.wishlist-count{background:var(--maroon);color:white;border-radius:50%;width:20px;height:20px;font-size:0.72rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-variant-numeric:lining-nums tabular-nums;}
+.mobile-wishlist-btn{background:none;border:2px solid var(--gold);color:var(--gold-light);padding:0.45rem 0.7rem;border-radius:4px;font-weight:700;font-size:0.85rem;cursor:pointer;display:flex;align-items:center;gap:0.35rem;}
+/* WISHLIST SIDEBAR (mirrors cart sidebar) */
+.wishlist-sidebar{position:fixed;top:0;right:-440px;width:100%;max-width:440px;height:100vh;background:var(--white);z-index:400;display:flex;flex-direction:column;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 30px rgba(0,0,0,0.2);}
+.wishlist-sidebar.open{right:0;}
+.wishlist-header{background:var(--maroon-deep);color:white;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.wishlist-header h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;}
+.wishlist-close{background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;}
+.wishlist-items{flex:1;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:1rem;}
+.wishlist-empty{text-align:center;padding:3rem 1rem;color:var(--text-soft);}
+.wishlist-empty .empty-icon{font-size:3rem;margin-bottom:1rem;}
+.wishlist-item{display:flex;gap:1rem;background:var(--cream);border-radius:8px;padding:0.9rem;align-items:center;}
+.wishlist-item-icon{width:60px;height:60px;background:linear-gradient(135deg,#f0e0c8,#e8c99a);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;overflow:hidden;}
+.wishlist-item-icon img{width:100%;height:100%;object-fit:cover;}
+.wishlist-item-info{flex:1;}
+.wishlist-item-info h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.2rem;cursor:pointer;}
+.wishlist-item-price{font-weight:700;color:var(--maroon);font-size:0.9rem;margin-bottom:0.5rem;}
+.wishlist-item-actions{display:flex;gap:0.5rem;}
+.wishlist-item-actions .btn-add-cart{padding:0.4rem 0.7rem;font-size:0.75rem;}
+.wishlist-item-remove{background:none;border:none;color:#c0392b;font-size:1.1rem;cursor:pointer;padding:0.2rem;align-self:flex-start;}
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:250;cursor:pointer;text-decoration:none;animation:wa-pulse 2.4s infinite;}
+.whatsapp-float svg{width:30px;height:30px;}
+@keyframes wa-pulse{0%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0.55);}70%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0);}}
+@media (max-width:600px){.whatsapp-float{width:52px;height:52px;bottom:16px;right:16px;}.whatsapp-float svg{width:26px;height:26px;}}
+/* PRODUCT STRIPS: New Arrivals / Most Loved / Recently Viewed / Related */
+.product-strip{display:flex;gap:1.2rem;overflow-x:auto;padding:0.5rem 5% 1.5rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
+.product-strip::-webkit-scrollbar{height:8px;}
+.product-strip::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
+.product-strip .mini-card{flex:0 0 220px;scroll-snap-align:start;}
+@media (max-width:600px){.product-strip .mini-card{flex:0 0 165px;}.product-strip .mini-card .product-card-img,.product-strip .mini-card .product-card-placeholder{height:130px;}}
+.related-products-section{padding:2.5rem 0 0;}
+.related-products-section h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--maroon-deep);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--cream-dark);}
+.related-products-section .product-strip{padding:0.5rem 0 1rem;}
+/* TRUST BADGES IN CHECKOUT */
+.trust-badges-row{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin:1rem 0 0.3rem;padding:0.8rem;background:var(--cream-dark);border-radius:8px;}
+.trust-badge{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:var(--text-soft);}
+.trust-badge .trust-badge-icon{font-size:1rem;}
+@media(max-width:480px){.trust-badges-row{gap:0.7rem;padding:0.6rem;}.trust-badge{font-size:0.7rem;}}
   </style>
 </head>
 <body>
@@ -640,11 +687,13 @@
     <li><a onclick="showPage('home');scrollToSection('contact')">Contact</a></li>
     <li><a onclick="openTrackOrder()">Track Order</a></li>
     <li><a onclick="handleAccountClick()" id="navAccountLink">👤 Login</a></li>
-    <li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
+<li><button class="wishlist-btn" onclick="openWishlist()">♡ Wishlist <span class="wishlist-count" id="wishlistCount">0</span></button></li>
+<li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
   </ul>
   <!-- Mobile right side: cart + hamburger -->
   <div class="mobile-nav-right">
-    <button class="cart-btn mobile-cart-btn" onclick="openCart()">🛒 <span class="cart-count" id="cartCountMobile">0</span></button>
+  <button class="mobile-wishlist-btn" onclick="openWishlist()">♡ <span class="wishlist-count" id="wishlistCountMobile">0</span></button>
+  <button class="cart-btn mobile-cart-btn" onclick="openCart()">🛒 <span class="cart-count" id="cartCountMobile">0</span></button>
     <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -656,8 +705,9 @@
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('how-to-order')">📋 How to Order</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('about')">🌸 About Us</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('contact')">📞 Contact</a>
-  <a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
-  <a class="mobile-menu-link" id="mobileAccountLink" onclick="closeMobileMenu();handleAccountClick()">👤 Login</a>
+<a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
+<a class="mobile-menu-link" onclick="closeMobileMenu();openWishlist()">♡ Wishlist</a>
+<a class="mobile-menu-link" id="mobileAccountLink" onclick="closeMobileMenu();handleAccountClick()">👤 Login</a>  
 </div>
 
 <!-- CART -->
@@ -677,7 +727,14 @@
     <button class="btn-checkout" onclick="openCheckout()">Proceed to Checkout →</button>
   </div>
 </div>
-
+<!-- WISHLIST -->
+<div class="cart-overlay" id="wishlistOverlay" onclick="closeWishlist()"></div>
+<div class="wishlist-sidebar" id="wishlistSidebar">
+  <div class="wishlist-header"><h3>♡ Your Wishlist</h3><button class="wishlist-close" onclick="closeWishlist()">✕</button></div>
+  <div class="wishlist-items" id="wishlistItems">
+    <div class="wishlist-empty"><div class="empty-icon">💗</div><p>Your wishlist is empty.<br/>Tap the heart on any product to save it here.</p></div>
+  </div>
+</div>
 <!-- CHECKOUT MODAL -->
 <div class="modal-overlay" id="checkoutModal">
   <div class="modal">
@@ -764,17 +821,45 @@
   </section>
   <div class="gold-divider">✦ ✦ ✦</div>
 
+  <div class="search-bar-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="productSearchInput" class="search-input" placeholder="Search products… (e.g. lotus, peacock, diya)" oninput="handleSearchInput(this.value)"/>
+    <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" style="display:none;" aria-label="Clear search">✕</button>
+  </div>
+
+<!-- RECENTLY VIEWED -->
+<section id="recentlyViewedSection" style="display:none;">
+  <div class="products-header">
+    <span class="section-label">Welcome Back</span>
+    <h2 class="section-title">Recently Viewed</h2>
+  </div>
+  <div class="product-strip" id="recentlyViewedStrip"></div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section id="newArrivalsSection">
+  <div class="products-header">
+    <span class="section-label">Just In</span>
+    <h2 class="section-title">🆕 New Arrivals</h2>
+  </div>
+  <div class="product-strip" id="newArrivalsStrip"></div>
+</section>
+
+<!-- MOST LOVED -->
+<section id="mostLovedSection">
+  <div class="products-header">
+    <span class="section-label">Customer Favorites</span>
+    <h2 class="section-title">💗 Most Loved</h2>
+  </div>
+  <div class="product-strip" id="mostLovedStrip"></div>
+</section>
   <section id="products">
     <div class="products-header">
       <span class="section-label">Our Collection</span>
       <h2 class="section-title">Handcrafted Fur Woolen Rangolis</h2>
       <p class="section-sub">Click any product to view all images and details.</p>
     </div>
-    <div class="search-bar-wrap">
-  <span class="search-icon">🔍</span>
-  <input type="text" id="productSearchInput" class="search-input" placeholder="Search products… (e.g. lotus, peacock, diya)" oninput="handleSearchInput(this.value)"/>
-  <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" style="display:none;" aria-label="Clear search">✕</button>
-</div>
+    
     <div class="sort-bar">
       <span class="sort-bar-label">Sort by:</span>
       <div class="sort-dropdown-wrap" id="sortDropdown">
@@ -1030,9 +1115,10 @@
           </div>
         </div>
         <div class="detail-actions">
-          <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
-          <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
-        </div>
+  <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
+  <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
+  <button class="wishlist-heart-btn" id="detailHeartBtn" style="position:static;width:44px;height:44px;font-size:1.3rem;flex-shrink:0;" onclick="toggleWishlist(currentProductId)" aria-label="Toggle wishlist">♡</button>
+</div>
 
 <!-- PER-PRODUCT REVIEWS -->
         <div class="reviews-section" id="productReviewsSection">
@@ -1046,7 +1132,13 @@
             <textarea class="review-text-input" id="reviewText" placeholder="Share your experience with this product…"></textarea>
             <button class="btn-submit-review" onclick="submitProductReview()">Submit Review</button>
           </div>
-          <div class="reviews-list" id="productReviewsList"></div>
+         <div class="reviews-list" id="productReviewsList"></div>
+        </div>
+
+        <!-- RELATED PRODUCTS -->
+        <div class="related-products-section" id="relatedProductsSection">
+          <h3>You May Also Like</h3>
+          <div class="product-strip" id="relatedProductsStrip"></div>
         </div>
       </div>
     </div>
@@ -1078,7 +1170,7 @@ const products = [
     "Ideal for Home & Festive Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img1.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img1-2.jpg"]},
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img1.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img1-2.jpg"]},
   {
   id: 2,
   name: "Royal Peacock Floral Fur Wool Rangoli",
@@ -1104,7 +1196,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img2.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img2-2.jpg"]},
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img2.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img2-2.jpg"]},
   {
   id: 3,
   name: "Swami Samarth Lotus Fur Wool Rangoli",
@@ -1130,7 +1222,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img3.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img3-2.jpg"]},
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img3.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img3-2.jpg"]},
  {
   id: 4,
   name: "Shivling Lotus Fur Wool Rangoli",
@@ -1156,7 +1248,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img5.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img5-2.jpg"]},
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img5.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img5-2.jpg"]},
   {
   id: 5,
   name: "Vitthal Rukmini Fur Wool Rangoli",
@@ -1182,7 +1274,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img4.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img4-2.jpg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img4.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img4-2.jpg"]
 },
 {
   id: 6,
@@ -1205,7 +1297,7 @@ const products = [
     "Ideal for Pooja Rooms, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img6.jpg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img6.jpg"]
 },
 {
   id: 7,
@@ -1228,7 +1320,7 @@ const products = [
     "Perfect for Festivals, Pooja Rooms & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img7.png"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img7.png"]
 },
 {
   id: 8,
@@ -1251,7 +1343,7 @@ const products = [
     "Perfect for Entrances, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img8.png",]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img8.png",]
 },
 {
   id: 9,
@@ -1275,7 +1367,7 @@ const products = [
     "Perfect for Pooja Rooms, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img9.png"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img9.png"]
 },
 {
   id: 10,
@@ -1298,7 +1390,7 @@ const products = [
     "Ideal for Entrances, Housewarming, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img10.png"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img10.png"]
 },
 {
   id: 11,
@@ -1321,7 +1413,7 @@ const products = [
     "Perfect for Festivals, Pooja Rooms & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img16.png"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img16.png"]
 },
 {
   id: 12,
@@ -1344,7 +1436,7 @@ const products = [
     "Perfect for Home, Pooja Rooms & Festive Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img17.png",]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img17.png",]
 },
 {
   id: 13,
@@ -1367,7 +1459,7 @@ const products = [
     "Perfect for Small Spaces, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img18.png",]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img18.png",]
 },
 {
   id: 14,
@@ -1390,7 +1482,7 @@ const products = [
     "Perfect for Pooja Décor, Kalash, Diyas & Festivals"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img19.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img19.png"],
 },
 {
   id: 15,
@@ -1413,7 +1505,7 @@ const products = [
     "Perfect for Festivals, Pooja Rooms & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img20.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img20.png"],
 },
 {
   id: 16,
@@ -1436,7 +1528,7 @@ const products = [
     "Perfect for Pooja Mandaps, Idols, Kalash & Festivals"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img21.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img21.png"],
 },
 {
   id: 17,
@@ -1459,7 +1551,7 @@ const products = [
     "Perfect for Festivals, Special Occasions & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img22.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img22.png"],
 },
 {
   id: 18,
@@ -1482,7 +1574,7 @@ const products = [
     "Perfect for Wall Décor, Home Interiors & Festive Decoration"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img23.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img23.png"],
 },
 {
   id: 19,
@@ -1505,7 +1597,7 @@ const products = [
     "Perfect for Ganesh Chaturthi, Pooja Rooms & Festive Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img25.jpg"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img25.jpg"],
 },
 {
   id: 20,
@@ -1528,7 +1620,7 @@ const products = [
     "Perfect for Saraswati Pooja, Festivals & Home Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img24.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img24.png"],
 },
 {
   id: 21,
@@ -1551,7 +1643,7 @@ const products = [
     "Perfect for Temples, Pooja Rooms & Spiritual Décor"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img26.png"],
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/img26.png"],
 },
 {
   id: 22,
@@ -1582,27 +1674,27 @@ const products = [
     {
       color: "Orange & Yellow",
       desc: "A bright orange and yellow combination that brings warmth and festive elegance to any space.",
-      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000ac7071fb80ccb5e1dd94e4e5.png"]
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/file-00000000ac7071fb80ccb5e1dd94e4e5.png"]
     },
     {
       color: "Red & Green",
       desc: "A rich red and green color combination offering a bold and premium festive appearance.",
-      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000f7207206b64b0d17cb797191.png"]
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/file-00000000f7207206b64b0d17cb797191.png"]
     },
     {
       color: "Red & White",
       desc: "A classic red and white combination with green accents, perfect for traditional celebrations.",
-      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000812471fab81f865f4de6c821.png"]
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/file-00000000812471fab81f865f4de6c821.png"]
     },
     {
       color: "Orange & Green",
       desc: "A vibrant orange and green combination inspired by festive floral decorations and traditional décor.",
-      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-0000000062287207a4961d571c890731.png"]
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/file-0000000062287207a4961d571c890731.png"]
     },
     {
       color: "Orange & Pink",
       desc: "A cheerful orange and pink combination that adds a colorful and elegant touch to festive decorations.",
-      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-0000000005707207ae24c5711baf3cb2.png"]
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/file-0000000005707207ae24c5711baf3cb2.png"]
     }
   ]
 },
@@ -1632,7 +1724,7 @@ const products = [
   ],
 
   images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/orange%20lotus.jpeg"
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/orange%20lotus.jpeg"
   ]
 },
 {
@@ -1661,7 +1753,7 @@ const products = [
   ],
 
   images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/hibiscus%202.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/hibuscus.jpeg"
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/hibiscus%202.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/hibuscus.jpeg"
   ]
 },
 {
@@ -1690,7 +1782,7 @@ const products = [
   ],
 
   images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/big%20lotus.jpeg"
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/big%20lotus.jpeg"
   ]
 },
 {
@@ -1719,7 +1811,7 @@ const products = [
   ],
 
   images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/lotus%20backdrop.jpeg"
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/lotus%20backdrop.jpeg"
   ]
 },
 {
@@ -1748,7 +1840,7 @@ const products = [
   ],
 
   images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/shivling%20lotus.jpeg"
+    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/shivling%20lotus.jpeg"
   ]
 },
 {
@@ -1776,7 +1868,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/light%20pink%20lotus.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/light%20pink%20lotus.jpeg"]
 },
 {
   id: 29,
@@ -1803,9 +1895,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: [
-    "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/dark%20pink%20lotus.jpeg"
-  ]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/dark%20pink%20lotus.jpeg"]
 },
 {
   id: 30,
@@ -1832,7 +1922,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/2%20colour%20lotus.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/2%20colour%20lotus.jpeg"]
 },
 {
   id: 31,
@@ -1859,7 +1949,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/orange%20kalash.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/orange%20kalash.jpeg"]
 },
 {
   id: 32,
@@ -1886,7 +1976,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/yellow%20kalash.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/yellow%20kalash.jpeg"]
 },
 {
   id: 33,
@@ -1914,7 +2004,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/half%20flower.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/half%20flower%202.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/half%20flower.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/half%20flower%202.jpeg"]
 },
 {
   id: 34,
@@ -1941,7 +2031,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/4%20flowers.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/4%20flowers%202.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/4%20flowers.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/4%20flowers%202.jpeg"]
 },
 {
   id: 35,
@@ -1969,7 +2059,7 @@ const products = [
     "Pan India Delivery"
   ],
 
-  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/corner.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/corner%202.jpeg"]
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/corner.jpeg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/1-35/corner%202.jpeg"]
 },
 
 ];
@@ -1978,6 +2068,8 @@ const products = [
 let cart = [];
 let currentProductId = null;
 let detailQty = 1;
+let wishlist = JSON.parse(localStorage.getItem('dkWishlist') || '[]');
+let recentlyViewed = JSON.parse(localStorage.getItem('dkRecentlyViewed') || '[]');
 
 // ╔══════════════════════════════════════════════════════════════╗
 // ║  PAYMENT FLOW — now verified server-side via /api functions  ║
@@ -2220,13 +2312,29 @@ let currentSearch = '';
 function handleSearchInput(val) {
   currentSearch = val.trim().toLowerCase();
   document.getElementById('searchClearBtn').style.display = currentSearch ? 'inline-block' : 'none';
+  toggleFeaturedRowsForSearch();
   renderProducts();
 }
 function clearSearch() {
   currentSearch = '';
   document.getElementById('productSearchInput').value = '';
   document.getElementById('searchClearBtn').style.display = 'none';
+  toggleFeaturedRowsForSearch();
   renderProducts();
+}
+// Hides New Arrivals / Most Loved / Recently Viewed while actively searching,
+// so the search results don't feel disconnected from unrelated rows above.
+function toggleFeaturedRowsForSearch() {
+  const hide = currentSearch.length > 0;
+  const newArrivals = document.getElementById('newArrivalsSection');
+  const mostLoved = document.getElementById('mostLovedSection');
+  const recentlyViewed = document.getElementById('recentlyViewedSection');
+  if (newArrivals) newArrivals.style.display = hide ? 'none' : '';
+  if (mostLoved) mostLoved.style.display = hide ? 'none' : '';
+  if (recentlyViewed) {
+    if (hide) recentlyViewed.style.display = 'none';
+    else renderRecentlyViewed(); // restores correct show/hide state based on actual history
+  }
 }
 
 // ── PRICE FILTER STATE ──
@@ -2414,10 +2522,13 @@ function renderProducts() {
     const cartQty = getCartQty(p.id);
     const cartBtnLabel = cartQty > 0 ? `✓ In Cart (${cartQty})` : '+ Cart';
     const cartBtnClass = cartQty > 0 ? 'btn-add-cart added' : 'btn-add-cart';
+     const wlActive = isWishlisted(p.id);
+    const heartTop = topRatedBadge ? 50 : 10;
     return `
       <div class="product-card" onclick="openProduct(${p.id})" style="position:relative;">
         ${badge}
         ${topRatedBadge}
+        <button class="wishlist-heart-btn${wlActive ? ' active' : ''}" id="heartBtn${p.id}" style="top:${heartTop}px;" onclick="event.stopPropagation();toggleWishlist(${p.id})" aria-label="Toggle wishlist">${wlActive ? '♥' : '♡'}</button>
         ${imgHtml}
         <div class="product-info">
           <h3>${p.name}</h3>
@@ -2493,6 +2604,9 @@ function openProduct(id) {
   renderProductReviews(id);
   showPage('product');
   syncDetailButtons();
+  syncHeartButtons(id);
+  trackRecentlyViewed(id);
+  renderRelatedProducts(id);
   setTimeout(initStarPicker, 50);
 }
 
@@ -2854,6 +2968,179 @@ function removeFromCart(key) {
 }
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+// ── WISHLIST ──
+function isWishlisted(id) { return wishlist.includes(id); }
+
+function saveWishlist() { localStorage.setItem('dkWishlist', JSON.stringify(wishlist)); }
+
+function toggleWishlist(id) {
+  if (id == null) return;
+  const idx = wishlist.indexOf(id);
+  const p = products.find(x => x.id === id);
+  if (idx > -1) {
+    wishlist.splice(idx, 1);
+    showToast(`${p ? p.name : 'Item'} removed from wishlist`);
+  } else {
+    wishlist.push(id);
+    showToast(`${p ? p.name : 'Item'} added to wishlist ♥`);
+  }
+  saveWishlist();
+  updateWishlistUI();
+  syncHeartButtons(id);
+  renderNewArrivals();
+  renderMostLoved();
+  renderRecentlyViewed();
+  if (currentProductId != null) renderRelatedProducts(currentProductId);
+}
+
+function syncHeartButtons(id) {
+  const active = isWishlisted(id);
+  const cardBtn = document.getElementById('heartBtn' + id);
+  if (cardBtn) { cardBtn.classList.toggle('active', active); cardBtn.textContent = active ? '♥' : '♡'; }
+  if (currentProductId === id) {
+    const detailBtn = document.getElementById('detailHeartBtn');
+    if (detailBtn) { detailBtn.classList.toggle('active', active); detailBtn.textContent = active ? '♥' : '♡'; }
+  }
+}
+
+function updateWishlistUI() {
+  const count = wishlist.length;
+  const countEl = document.getElementById('wishlistCount');
+  if (countEl) countEl.textContent = count;
+  const countElMob = document.getElementById('wishlistCountMobile');
+  if (countElMob) countElMob.textContent = count;
+  renderWishlist();
+}
+
+function renderWishlist() {
+  const el = document.getElementById('wishlistItems');
+  if (!el) return;
+  const items = wishlist.map(id => products.find(p => p.id === id)).filter(Boolean);
+  if (items.length === 0) {
+    el.innerHTML = `<div class="wishlist-empty"><div class="empty-icon">💗</div><p>Your wishlist is empty.<br/>Tap the heart on any product to save it here.</p></div>`;
+    return;
+  }
+  el.innerHTML = items.map(p => {
+    const imgList = getGalleryImages(p);
+    const imgHtml = imgList.length > 0
+      ? `<img src="${imgList[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
+      : (p.emoji || '💗');
+    return `
+      <div class="wishlist-item">
+        <div class="wishlist-item-icon">${imgHtml}</div>
+        <div class="wishlist-item-info">
+          <h4 onclick="closeWishlist();openProduct(${p.id})">${p.name}</h4>
+          <div class="wishlist-item-price">₹${p.price}</div>
+          <div class="wishlist-item-actions">
+            <button class="btn-add-cart" onclick="moveWishlistToCart(${p.id})">+ Add to Cart</button>
+          </div>
+        </div>
+        <button class="wishlist-item-remove" onclick="toggleWishlist(${p.id})" aria-label="Remove from wishlist">🗑</button>
+      </div>`;
+  }).join('');
+}
+
+function moveWishlistToCart(id) {
+  addToCart(id, 1);
+  openCart();
+  closeWishlist();
+}
+
+function openWishlist() {
+  document.getElementById('wishlistSidebar').classList.add('open');
+  document.getElementById('wishlistOverlay').classList.add('open');
+}
+function closeWishlist() {
+  document.getElementById('wishlistSidebar').classList.remove('open');
+  document.getElementById('wishlistOverlay').classList.remove('open');
+}
+// ── SHARED MINI CARD (used by New Arrivals / Most Loved / Recently Viewed / Related) ──
+function buildMiniCard(p) {
+  const cardImages = getGalleryImages(p);
+  const imgHtml = cardImages.length > 0
+    ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}"/>`
+    : `<div class="product-card-placeholder" style="background:linear-gradient(135deg,#8B2A3A,#C9960C)">${p.emoji}<p>${p.tag}</p></div>`;
+  const reviews = allReviews[p.id] || [];
+  const avgRating = getAvgRating(p);
+  const fullStars = Math.round(avgRating);
+  const starsHtml = reviews.length > 0
+    ? `<div class="card-stars"><span class="card-stars-val">${'★'.repeat(fullStars)}${'☆'.repeat(5-fullStars)}</span><span class="card-stars-count">(${reviews.length})</span></div>`
+    : `<div class="card-stars"><span class="card-stars-val" style="color:#ccc">☆☆☆☆☆</span><span class="card-stars-count">No reviews yet</span></div>`;
+  const wlActive = isWishlisted(p.id);
+  return `
+    <div class="product-card mini-card" onclick="openProduct(${p.id})">
+      <button class="wishlist-heart-btn${wlActive ? ' active' : ''}" style="top:10px;" onclick="event.stopPropagation();toggleWishlist(${p.id})" aria-label="Toggle wishlist">${wlActive ? '♥' : '♡'}</button>
+      ${imgHtml}
+      <div class="product-info">
+        <h3>${p.name}</h3>
+        ${starsHtml}
+        <div class="product-footer">
+          <div class="price"><span>₹</span>${p.price}</div>
+          <div class="product-actions" onclick="event.stopPropagation()">
+            <button class="btn-view" onclick="openProduct(${p.id})">View</button>
+            <button class="btn-add-cart" onclick="addToCart(${p.id},1)">+ Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── NEW ARRIVALS: most recently added products (highest id = added last) ──
+function getNewArrivals(limit = 6) {
+  return [...products].sort((a, b) => b.id - a.id).slice(0, limit);
+}
+function renderNewArrivals() {
+  const el = document.getElementById('newArrivalsStrip');
+  if (!el) return;
+  el.innerHTML = getNewArrivals(6).map(buildMiniCard).join('');
+}
+
+// ── MOST LOVED: uses your existing isMostLoved flag, ranked by rating ──
+function getMostLoved(limit = 6) {
+  let list = products.filter(p => p.isMostLoved);
+  if (list.length < 3) list = [...products];
+  return [...list].sort((a, b) => getAvgRating(b) - getAvgRating(a)).slice(0, limit);
+}
+function renderMostLoved() {
+  const el = document.getElementById('mostLovedStrip');
+  if (!el) return;
+  el.innerHTML = getMostLoved(6).map(buildMiniCard).join('');
+}
+
+// ── RECENTLY VIEWED: tracked in localStorage, updated every time a product opens ──
+function trackRecentlyViewed(id) {
+  recentlyViewed = recentlyViewed.filter(x => x !== id);
+  recentlyViewed.unshift(id);
+  recentlyViewed = recentlyViewed.slice(0, 10);
+  localStorage.setItem('dkRecentlyViewed', JSON.stringify(recentlyViewed));
+  renderRecentlyViewed();
+}
+function renderRecentlyViewed() {
+  const section = document.getElementById('recentlyViewedSection');
+  const el = document.getElementById('recentlyViewedStrip');
+  if (!el || !section) return;
+  const items = recentlyViewed.map(id => products.find(p => p.id === id)).filter(Boolean);
+  if (items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  el.innerHTML = items.map(buildMiniCard).join('');
+}
+
+// ── RELATED PRODUCTS: same tag as current product, falls back to others if not enough matches ──
+function getRelatedProducts(id, limit = 4) {
+  const current = products.find(p => p.id === id);
+  if (!current) return [];
+  let related = products.filter(p => p.id !== id && p.tag === current.tag);
+  if (related.length < limit) {
+    const extra = products.filter(p => p.id !== id && p.tag !== current.tag);
+    related = related.concat(extra);
+  }
+  return related.slice(0, limit);
+}
+function renderRelatedProducts(id) {
+  const el = document.getElementById('relatedProductsStrip');
+  if (!el) return;
+  el.innerHTML = getRelatedProducts(id, 4).map(buildMiniCard).join('');
+}
 
 // ── CHECKOUT MODAL ──
 function openCheckout() {
@@ -2902,6 +3189,11 @@ function openCheckout() {
         <span class="error-msg" id="e_state"></span>
       </div>
       <div class="form-group"><label>Pincode *</label><input type="text" id="f_pincode" placeholder="6-digit pincode" maxlength="6"/><span class="error-msg" id="e_pincode"></span></div>
+    </div>
+    <div class="trust-badges-row">
+      <span class="trust-badge"><span class="trust-badge-icon">🔒</span> Secure Payments via Razorpay</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🧵</span> Handmade in Pune</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🚚</span> Ships in 2–3 Days</span>
     </div>
     <button class="btn-pay" id="payBtn" onclick="validateAndPay()">🔒 Pay ₹${total} Securely</button>
     <p class="secure-note">🔒 Secured by Razorpay · UPI · Cards · Netbanking</p>
@@ -3583,8 +3875,12 @@ renderProducts();
 initEmailJS();
 initAuth();
 initStarPicker();
-fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); });
+fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); renderMostLoved(); });
 initAnnounceBar();
+updateWishlistUI();
+renderNewArrivals();
+renderMostLoved();
+renderRecentlyViewed();
 window.addEventListener('resize', adjustNavTop);
 </script>
 
@@ -3596,5 +3892,9 @@ window.addEventListener('resize', adjustNavTop);
     <button class="sticky-btn-buy" onclick="buyNow()">⚡ Buy Now</button>
   </div>
 </div>
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/9823512225?text=Hi%20DK%20Creations!%20I%27d%20like%20to%20know%20more%20about%20your%20rangolis." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16.004 3C9.377 3 4 8.373 4 15c0 2.362.687 4.564 1.872 6.416L4 29l7.771-1.82A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.94 0-3.75-.55-5.29-1.5l-.38-.226-4.61 1.08 1.096-4.49-.246-.4A9.71 9.71 0 0 1 5.25 15c0-5.93 4.823-10.75 10.754-10.75S26.75 9.07 26.75 15 21.936 24.75 16.004 24.75zm5.94-8.05c-.325-.163-1.924-.95-2.222-1.058-.298-.108-.516-.163-.734.163-.217.325-.84 1.058-1.03 1.276-.19.217-.38.244-.705.081-.325-.163-1.372-.505-2.613-1.611-.966-.86-1.618-1.923-1.808-2.248-.19-.325-.02-.5.143-.663.146-.146.325-.38.488-.57.163-.19.217-.325.325-.542.108-.217.054-.407-.027-.57-.081-.163-.734-1.767-1.006-2.42-.265-.637-.535-.55-.734-.56l-.625-.011c-.217 0-.57.081-.868.407-.298.325-1.138 1.112-1.138 2.712 0 1.6 1.165 3.146 1.328 3.363.163.217 2.293 3.5 5.556 4.91.776.335 1.382.535 1.854.685.779.248 1.487.213 2.047.129.624-.093 1.924-.786 2.195-1.546.271-.76.271-1.412.19-1.547-.081-.136-.298-.217-.624-.38z"/></svg>
+</a>
 </body>
 </html>
