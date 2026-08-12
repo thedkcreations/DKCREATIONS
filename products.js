@@ -15,7 +15,7 @@ const products = [
   fullDesc: "Enhance your home décor with this elegant Lotus Bloom Fur Wool Rangoli featuring vibrant pink lotus flowers and lush green leaves. Handcrafted with premium fur wool, this 36 × 36 inch decorative piece is reusable, durable, and ideal for pooja rooms, festivals, entrances, and gifting.",
 
   features: [
-    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Ideal for Home & Festive Décor"
@@ -37,7 +37,7 @@ const products = [
   fullDesc: "Add a grand festive touch to your home with this Royal Peacock Floral Fur Wool Rangoli. Featuring colorful peacock-feather motifs, layered floral petals, and intricate handcrafted detailing, this stunning 36 × 36 inch rangoli creates a beautiful centerpiece for pooja rooms, entrances, living spaces, and celebrations. Made from premium fur wool, it is reusable, durable, and designed to brighten every festive occasion with elegance and charm.",
 
   features: [
-    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Peacock-Inspired Floral Design",
     "Handcrafted & Reusable",
@@ -63,7 +63,7 @@ const products = [
   fullDesc: "Bring blessings and positive energy into your home with this beautifully handcrafted Swami Samarth Fur Wool Rangoli. Featuring the sacred silhouette of Swami Samarth seated in meditation against a vibrant lotus and halo-inspired design, this 36 × 36 inch rangoli creates a serene and devotional atmosphere. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, spiritual spaces, festivals, and special occasions.",
 
   features: [
-    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Swami Samarth Spiritual Design",
     "Handcrafted & Reusable",
@@ -89,7 +89,7 @@ const products = [
   fullDesc: "Invoke divine blessings with this beautifully handcrafted Shivling Lotus Fur Wool Rangoli. Featuring a sacred Shivling, crescent moon, vibrant pink lotus, and radiant floral border, this 36 × 36 inch rangoli symbolizes devotion, positivity, and spiritual energy. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, Mahashivratri celebrations, festive decorations, and home entrances.",
 
   features: [
-    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Sacred Shivling & Lotus Design",
     "Handcrafted & Reusable",
@@ -142,7 +142,7 @@ const products = [
   fullDesc: "Add a touch of tradition and elegance to your home with this Lotus Radiance Fur Wool Rangoli. Designed with beautifully layered pink lotus petals and a colorful mandala-inspired center, this handcrafted décor piece is made from premium fur wool. It is reusable, durable, and perfect for pooja rooms, entrances, Diwali, weddings, festivals, and special occasions.",
 
   features: [
-    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Ideal for Pooja Rooms, Festivals & Home Décor"
@@ -552,7 +552,7 @@ const products = [
 {
   id: 23,
   name: "Lotus Garden Fur Wool Rangoli",
-  price: 1499,
+  price: 699,
   emoji: "🪷",
   tag: "New Arrival",
   isBestSeller: false,
@@ -564,7 +564,7 @@ const products = [
   fullDesc: "Bring serenity and elegance into your home with this Lotus Garden Fur Wool Rangoli. Designed with a large blooming lotus surrounded by graceful lotus buds on vibrant green stems, this handcrafted rangoli is made from premium fur wool. The bright orange circular background beautifully highlights the floral design, making it ideal for pooja rooms, festivals, entrances, weddings, housewarming ceremonies, and traditional home décor. Reusable, durable, and crafted with intricate detailing for a premium finish.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Beautiful Lotus Garden Design",
@@ -593,7 +593,7 @@ const products = [
   fullDesc: "Enhance your festive celebrations with this beautifully handcrafted Hibiscus Bloom Fur Wool Rangoli. Showcasing a stunning arrangement of vibrant hibiscus flowers complemented by colorful floral accents and lush green detailing, this premium fur wool rangoli brings elegance and traditional charm to any space. Designed for pooja rooms, Ganesh Chaturthi, Diwali, housewarming ceremonies, temple entrances, and festive décor, it is reusable, durable, and crafted with exceptional attention to detail for a rich and premium finish.",
 
   features: [
-    "Size: 48 × 36 inches (4 ft × 3 ft)",
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Elegant Hibiscus Floral Design",
     "Handcrafted & Reusable",
@@ -610,7 +610,7 @@ const products = [
 {
   id: 25,
   name: "Red Lotus Backdrop Fur Wool Rangoli",
-  price: 1499,
+  price: 699,
   emoji: "🪷",
   tag: "Best Seller",
   isBestSeller: true,
@@ -622,7 +622,7 @@ const products = [
   fullDesc: "Transform your festive celebrations with this stunning Red Lotus Backdrop Fur Wool Rangoli. Featuring a magnificent blooming red lotus with lush green leaves, this handcrafted masterpiece is made from premium fur wool to create an elegant backdrop for Lord Ganesha, temples, pooja mandaps, weddings, housewarming ceremonies, and festive decorations. Reusable, durable, and intricately crafted, it adds a rich traditional charm to every celebration.",
 
   features: [
-    "Size: 48 × 48 inches (4 ft × 4 ft)",
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
     "Material: Premium Fur Wool",
     "Grand Red Lotus Backdrop Design",
     "Handcrafted & Reusable",
@@ -639,7 +639,7 @@ const products = [
 {
   id: 26,
   name: "Lotus Garden Backdrop Fur Wool Rangoli",
-  price: 1499,
+  price: 1299,
   emoji: "🪷",
   tag: "Best Seller",
   isBestSeller: true,
@@ -651,7 +651,7 @@ const products = [
   fullDesc: "Enhance your festive celebrations with this beautifully handcrafted Lotus Garden Backdrop Fur Wool Rangoli. Featuring three vibrant blooming lotus flowers surrounded by lush green leaves on a rich golden backdrop, this premium fur wool creation adds a graceful and devotional touch to any space. Perfect as a backdrop for Lord Ganesha, pooja mandaps, temples, housewarming ceremonies, weddings, and festive home décor. Crafted with premium fur wool, it is reusable, durable, and designed to create a stunning traditional ambiance.",
 
   features: [
-    "Size: 48 × 72 inches (4 ft × 6 ft)",
+    "Size: 30 × 36 inches (2.5 ft × 3 ft)",
     "Material: Premium Fur Wool",
     "Three Lotus Floral Backdrop Design",
     "Handcrafted & Reusable",
@@ -668,7 +668,7 @@ const products = [
 {
   id: 27,
   name: "Shivling Lotus Backdrop Fur Wool Rangoli",
-  price: 1499,
+  price: 699,
   emoji: "🔱",
   tag: "Best Seller",
   isBestSeller: true,
@@ -680,7 +680,7 @@ const products = [
   fullDesc: "Create a divine spiritual ambiance with this beautifully handcrafted Shivling Lotus Backdrop Fur Wool Rangoli. Featuring a majestic Shivling adorned with sacred Tripundra, a vibrant pink lotus backdrop, Trishul-inspired elements, and a hibiscus flower, this premium fur wool masterpiece symbolizes devotion, purity, and divine blessings. Ideal as a backdrop for pooja mandaps, temples, Mahashivratri celebrations, Shravan month, housewarming ceremonies, and festive home décor. Crafted using premium fur wool, it is reusable, durable, and designed to make every celebration truly auspicious.",
 
   features: [
-    "Size: 48 × 48 inches (4 ft × 4 ft)",
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
     "Material: Premium Fur Wool",
     "Shivling & Lotus Backdrop Design",
     "Handcrafted & Reusable",
@@ -697,7 +697,7 @@ const products = [
 {
   id: 28,
   name: "Light Pink Lotus Fur Wool Rangoli",
-  price: 499,
+  price: 199,
   emoji: "🪷",
   tag: "New Arrival",
   isBestSeller: false,
@@ -709,7 +709,7 @@ const products = [
   fullDesc: "Add a touch of elegance and serenity to your home with this Light Pink Lotus Fur Wool Rangoli. Featuring a graceful blooming lotus with soft light pink petals and vibrant green leaves, this handcrafted rangoli is made from premium fur wool for a rich and luxurious finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, temples, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home decoration.",
 
   features: [
-    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Light Pink Lotus Design",
     "Handcrafted & Reusable",
@@ -724,7 +724,7 @@ const products = [
 {
   id: 29,
   name: "Dark Pink Lotus Fur Wool Rangoli",
-  price: 499,
+  price: 199,
   emoji: "🪷",
   tag: "New Arrival",
   isBestSeller: false,
@@ -736,7 +736,7 @@ const products = [
   fullDesc: "Bring elegance and vibrance to your home with this Dark Pink Lotus Fur Wool Rangoli. Featuring a beautifully blooming lotus with rich dark pink petals and lush green leaves, this handcrafted rangoli is made from premium fur wool for a luxurious finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, temples, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home decoration.",
 
   features: [
-    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Dark Pink Lotus Design",
     "Handcrafted & Reusable",
@@ -751,7 +751,7 @@ const products = [
 {
   id: 30,
   name: "Dual Tone Lotus Fur Wool Rangoli",
-  price: 699,
+  price: 250,
   emoji: "🪷",
   tag: "New Arrival",
   isBestSeller: false,
@@ -763,7 +763,7 @@ const products = [
   fullDesc: "Enhance your home with this beautifully handcrafted Dual Tone Lotus Fur Wool Rangoli. Featuring a striking lotus design with rich red and soft pink petals outlined in white fur wool, this unique rangoli creates a vibrant and elegant look. The decorative hanging tassels add a traditional touch, making it perfect for pooja rooms, temple entrances, Ganesh Chaturthi, Diwali, housewarming ceremonies, and festive home décor. Crafted from premium fur wool, it is reusable, durable, and designed to elevate every celebration.",
 
   features: [
-    "Size: 30 × 24 inches (2.5 ft × 2 ft)",
+    "Size: 15 × 15 inches (1.25 ft × 1.25 ft)",
     "Material: Premium Fur Wool",
     "Dual Tone Lotus Design",
     "Handcrafted & Reusable",
@@ -778,7 +778,7 @@ const products = [
 {
   id: 31,
   name: "Orange Kalash Fur Wool Rangoli",
-  price: 499,
+  price: 199,
   emoji: "🪔",
   tag: "New Arrival",
   isBestSeller: false,
@@ -790,7 +790,7 @@ const products = [
   fullDesc: "Welcome prosperity and auspiciousness into your home with this Orange Kalash Fur Wool Rangoli. Featuring a traditional orange kalash adorned with sacred mango leaves, a coconut, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Reusable, durable, and lightweight, it is ideal for pooja rooms, Ganesh Chaturthi, Diwali, Varalakshmi Vratham, Navratri, housewarming ceremonies, and festive home decoration.",
 
   features: [
-    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Size: 12 × 18 inches (1 ft × 1.5 ft)",
     "Material: Premium Fur Wool",
     "Traditional Orange Kalash Design",
     "Handcrafted & Reusable",
@@ -805,7 +805,7 @@ const products = [
 {
   id: 32,
   name: "Yellow Kalash Fur Wool Rangoli",
-  price: 499,
+  price: 150,
   emoji: "🏺",
   tag: "New Arrival",
   isBestSeller: false,
@@ -817,7 +817,7 @@ const products = [
   fullDesc: "Invite prosperity and positive energy into your home with this Yellow Kalash Fur Wool Rangoli. Designed with a traditional yellow kalash, sacred mango leaves, a coconut, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool for a vibrant and elegant finish. Reusable, durable, and lightweight, it is perfect for pooja rooms, Varalakshmi Vratham, Ganesh Chaturthi, Diwali, Navratri, housewarming ceremonies, and festive home decoration.",
 
   features: [
-    "Size: 24 × 18 inches (2 ft × 1.5 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Traditional Yellow Kalash Design",
     "Handcrafted & Reusable",
@@ -832,7 +832,7 @@ const products = [
 {
   id: 33,
   name: "Half Flower Fur Wool Rangoli",
-  price: 299,
+  price: 199,
   priceNote: "Set of 2 half flower rangolis",
   emoji: "🌼",
   tag: "New Arrival",
@@ -845,7 +845,7 @@ const products = [
   fullDesc: "Enhance your home décor with this Half Flower Fur Wool Rangoli. Featuring a vibrant half-flower design in bright yellow and orange shades with a bold black outline, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Designed especially for staircases, entrances, doorway corners, pooja rooms, festive celebrations, and housewarming ceremonies, it is reusable, durable, and easy to place, adding a traditional charm to every occasion.",
 
   features: [
-    "Size: 18 × 12 inches (1.5 ft × 1 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft) Half Flower Design",
     "Material: Premium Fur Wool",
     "Half Flower Design",
     "Handcrafted & Reusable",
@@ -860,7 +860,8 @@ const products = [
 {
   id: 34,
   name: "Four Flower Set Fur Wool Rangoli",
-  price: 999,
+  price: 499,
+  priceNote: "Set of 4 flower rangolis",
   emoji: "🌼",
   tag: "New Arrival",
   isBestSeller: false,
@@ -872,7 +873,7 @@ const products = [
   fullDesc: "Decorate your home with this elegant Four Flower Corner Set Fur Wool Rangoli. Featuring four vibrant floral corner pieces connected by graceful green swirl patterns, this handcrafted rangoli creates a stunning decorative frame for diyas, lamps, kalash, idols, and pooja setups. Made from premium fur wool, it is reusable, durable, and ideal for Diwali, Ganesh Chaturthi, housewarming ceremonies, weddings, and festive home décor.",
 
   features: [
-    "Each Flower: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Each Flower: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Four Flower Corner Set Design",
     "Handcrafted & Reusable",
@@ -887,7 +888,7 @@ const products = [
 {
   id: 35,
   name: "Lotus Floral Corner Fur Wool Rangoli",
-  price: 299,
+  price: 1299,
   priceNote: "Set of 4 corner rangolis",
   emoji: "🌸",
   tag: "New Arrival",
@@ -900,7 +901,7 @@ const products = [
   fullDesc: "Enhance your festive décor with this Lotus Floral Corner Fur Wool Rangoli. Featuring a vibrant floral mandala, graceful lotus petals, and decorative corner accents, this handcrafted rangoli is made from premium fur wool for a rich and elegant finish. Lightweight, reusable, and durable, it is ideal for entrances, pooja rooms, stages, staircases, weddings, and festive celebrations.",
 
   features: [
-    "Size: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Size: 18 × 18 inches (1.5 ft × 1.5 ft) each corner piece",
     "Material: Premium Fur Wool",
     "Lotus Floral Corner Design",
     "Handcrafted & Reusable",
@@ -915,19 +916,20 @@ const products = [
 {
   id: 36,
   name: "Marigold Flower Pair Fur Wool Rangoli",
-  price: 1599,
+  price: 299,
+  priceNote: "Set of 2 flower rangolis",
   emoji: "🌼",
   tag: "New Arrival",
   isBestSeller: false,
   isNew: true,
-  isMostLoved: false,
+  isMostLoved: true,
 
   shortDesc: "Beautiful flower-shaped fur wool rangoli available in multiple vibrant color combinations.",
 
   fullDesc: "Brighten your home with this beautifully handcrafted Marigold Flower Pair Fur Wool Rangoli. Featuring two matching floral designs with layered petals and rich color combinations, this reusable rangoli is made from premium fur wool for a soft, elegant, and vibrant finish. Perfect for entrances, pooja rooms, living spaces, festivals, weddings, and traditional home décor. Choose your favorite color combination below.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Available in Multiple Color Combinations",
@@ -970,10 +972,10 @@ const products = [
 {
   id: 37,
   name: "Shivling Lotus Fur Wool Rangoli",
-  price: 1599,
+  price: 399,
   emoji: "🪷",
   tag: "New Arrival",
-  isBestSeller: false,
+  isBestSeller: true,
   isNew: true,
   isMostLoved: false,
 
@@ -982,7 +984,7 @@ const products = [
   fullDesc: "Bring a divine and traditional touch to your home with this beautifully handcrafted Shivling Lotus Fur Wool Rangoli. Featuring a detailed black Shivling with sacred markings, a graceful blue and white arch, and a vibrant pink lotus base, this rangoli creates a peaceful and devotional atmosphere. Made with premium fur wool, it is reusable, durable, and perfect for pooja rooms, entrances, festivals, and special occasions.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 18 × 18 inches (1.5 ft × 1.5 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Detailed Shivling & Lotus Design",
@@ -997,7 +999,7 @@ const products = [
 {
   id: 38,
   name: "Ardhanarishvara Fur Wool Rangoli",
-  price: 1599,
+  price: 1499,
   emoji: "🕉️",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1025,19 +1027,19 @@ const products = [
 {
   id: 39,
   name: "Sankranti Festive Rangoli",
-  price: 1599,
+  price: 3999,
   emoji: "🌾",
   tag: "New Arrival",
   isBestSeller: false,
   isNew: true,
-  isMostLoved: false,
+  isMostLoved: true,
 
   shortDesc: "Traditional Sankranti-themed fur wool rangoli featuring a festive woman, harvest decorations, and colorful kites.",
 
   fullDesc: "Celebrate the vibrant spirit of Sankranti with this beautifully handcrafted Sankranti Festive Rangoli. Featuring a traditional woman in a beautiful saree holding a decorated pooja thali, colorful kites, festive floral decorations, and auspicious Sankranti elements, this rangoli beautifully captures the joy and traditions of the harvest festival. Made from premium fur wool, it is reusable, durable, and perfect for Sankranti celebrations, entrances, pooja spaces, and festive home décor.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 48 × 48 inches (4 ft × 4 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Traditional Sankranti Theme",
@@ -1054,7 +1056,7 @@ const products = [
 {
   id: 40,
   name: "Floral Bloom Fur Wool Rangoli",
-  price: 1599,
+  price: 699,
   emoji: "🌸",
   tag: "New Arrival",
   isBestSeller: true,
@@ -1066,7 +1068,7 @@ const products = [
   fullDesc: "Brighten your home with this beautifully handcrafted Floral Bloom Fur Wool Rangoli. Featuring layered floral petals in pink, white, and green with a vibrant center, this elegant rangoli adds a graceful and festive touch to entrances, pooja rooms, and living spaces. Made from premium fur wool, it is reusable, durable, and perfect for festive home décor.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Floral Bloom Design",
@@ -1082,7 +1084,7 @@ const products = [
 {
   id: 41,
   name: "Festive Floral Mandala Fur Wool Rangoli",
-  price: 1799,
+  price: 699,
   emoji: "🌺",
   tag: "New Arrival",
   isBestSeller: true,
@@ -1094,7 +1096,7 @@ const products = [
   fullDesc: "Brighten your home with this beautifully handcrafted Festive Floral Mandala Fur Wool Rangoli. Featuring multiple layers of colorful petals in vibrant orange, red, yellow, and green, this intricate mandala design creates a stunning traditional look. Made from premium fur wool, it is reusable, durable, and perfect for entrances, pooja rooms, festivals, and special occasions.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Floral Mandala Design",
@@ -1111,7 +1113,8 @@ const products = [
 {
   id: 42,
   name: "Sunshine Floral Fur Wool Rangoli",
-  price: 1799,
+  price: 699,
+  priceNote: "Set of 8 leaves and 1 center flower",
   emoji: "🌼",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1123,7 +1126,7 @@ const products = [
   fullDesc: "Bring a cheerful festive touch to your home with this beautifully handcrafted Sunshine Floral Fur Wool Rangoli. Featuring a vibrant orange and yellow central flower surrounded by detailed green leaves and decorative floral motifs, this design creates a fresh and traditional look. Made from premium fur wool, it is reusable, durable, and perfect for entrances, pooja rooms, festivals, and special occasions.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft) center flower, 6 inches (1.5 ft) leaves",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Floral & Leaf Design",
@@ -1140,7 +1143,7 @@ const products = [
 {
   id: 43,
   name: "Floral Peacock Arch Fur Wool Rangoli",
-  price: 1899,
+  price: 399,
   emoji: "🦚",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1152,7 +1155,7 @@ const products = [
   fullDesc: "Create a stunning festive entrance with this beautifully handcrafted Floral Peacock Arch Fur Wool Rangoli. Designed in an elegant arch shape, it features two colorful peacocks surrounded by vibrant green foliage, decorative flowers, and a graceful orange border. Made from premium fur wool, this reusable and durable rangoli is perfect for decorating entrances, doorways, pooja spaces, and festive occasions.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 18 × 21 inches (1.5 ft × 1.75 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Elegant Arch-Shaped Design",
@@ -1169,7 +1172,7 @@ const products = [
 {
   id: 44,
   name: "Lotus Peacock Arch Fur Wool Rangoli",
-  price: 1899,
+  price: 399,
   emoji: "🦚",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1181,7 +1184,7 @@ const products = [
   fullDesc: "Add a graceful traditional touch to your home with this beautifully handcrafted Lotus Peacock Arch Fur Wool Rangoli. Featuring two elegant blue peacocks, vibrant floral accents, curved green foliage, and a layered pink lotus centerpiece, this arch-shaped design creates a stunning festive display. Made from premium fur wool, it is reusable, durable, and perfect for entrances, doorways, pooja spaces, and festive celebrations.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 18 × 21 inches (1.5 ft × 1.75 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Elegant Arch-Shaped Design",
@@ -1198,7 +1201,7 @@ const products = [
 {
   id: 45,
   name: "Peacock Floral Arch Fur Wool Rangoli",
-  price: 1899,
+  price: 399,
   emoji: "🦚",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1210,7 +1213,7 @@ const products = [
   fullDesc: "Enhance your entrance with this beautifully handcrafted Peacock Floral Arch Fur Wool Rangoli. Featuring two graceful blue peacocks, vibrant pink and orange flowers, curved green foliage, and a charming floral centerpiece, this arch-shaped rangoli creates an elegant and festive look. Made from premium fur wool, it is reusable, durable, and perfect for doorways, entrances, pooja spaces, and festive celebrations.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 18 × 21 inches (1.5 ft × 1.75 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Elegant Arch-Shaped Design",
@@ -1227,7 +1230,7 @@ const products = [
 {
   id: 46,
   name: "Blush Peacock Bloom Fur Wool Rangoli",
-  price: 1899,
+  price: 399,
   emoji: "🌸",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1239,7 +1242,7 @@ const products = [
   fullDesc: "Bring a graceful festive charm to your home with this beautifully handcrafted Blush Peacock Bloom Fur Wool Rangoli. Featuring twin peacock motifs, lush green curved detailing, colorful floral accents, and a striking pink bloom centerpiece, this unique design is perfect for entrances, doorways, pooja spaces, and festive décor. Crafted with premium fur wool, it is reusable, durable, and designed to add a vibrant traditional touch to your home.",
 
   features: [
-    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Size: 18 × 21 inches (1.5 ft × 1.75 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Elegant Peacock-Inspired Design",
@@ -1255,19 +1258,20 @@ const products = [
 {
   id: 47,
   name: "Marigold Diya Flower Border Fur Wool Rangoli",
-  price: 1699,
+  price: 149,
+  priceNote: "Each separate flower rangoli",
   emoji: "🌼",
   tag: "New Arrival",
   isBestSeller: false,
   isNew: true,
   isMostLoved: false,
 
-  shortDesc: "Vibrant orange floral border rangoli with green leaves and diya accents, perfect for decorating entrances and pathways.",
+  shortDesc: "Vibrant orange floral rangoli with green leaves and diya accents, perfect for decorating entrances and pathways.",
 
   fullDesc: "Brighten your home with this beautifully handcrafted Marigold Diya Flower Border Fur Wool Rangoli. Designed with a repeating row of vibrant orange flowers, lush green leaves, and diya holders at the center of each bloom, this border-style rangoli creates a warm and festive pathway décor. Made with premium fur wool, it is reusable, durable, and ideal for entrances, hallways, balconies, pooja spaces, and festive occasions.",
 
   features: [
-    "Size: 36 × 72 inches (3 ft × 6 ft)",
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Border-Style Rangoli Design",
@@ -1284,7 +1288,7 @@ const products = [
 {
   id: 48,
   name: "Royal Mandala Pathway Fur Wool Rangoli",
-  price: 1499,
+  price: 1999,
   emoji: "🪷",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1296,7 +1300,7 @@ const products = [
   fullDesc: "Add a graceful traditional touch to your home with this beautifully handcrafted Royal Mandala Pathway Fur Wool Rangoli. Featuring a sequence of vibrant circular mandala motifs connected along a vertical pathway and finished with a bold heart-shaped floral element, this design is perfect for entrances, pooja spaces, hallways, and festive décor. Crafted with premium fur wool, it is reusable, durable, and easy to arrange.",
 
   features: [
-    "Size: 24 × 72 inches (2 ft × 6 ft)",
+    "Size: 18 × 60 inches (1.5 ft × 5 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Vertical Border Rangoli Design",
@@ -1313,7 +1317,7 @@ const products = [
 {
   id: 49,
   name: "Peacock Welcome Floral Border Fur Wool Rangoli",
-  price: 2499,
+  price: 3999,
   emoji: "🦚",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1325,7 +1329,7 @@ const products = [
   fullDesc: "Welcome guests in traditional style with this beautifully handcrafted Peacock Welcome Floral Border Fur Wool Rangoli. Featuring a graceful peacock with colorful feather detailing, pink lotus flowers, festive kalash motifs, and a decorative welcome panel, this long vertical design adds a rich cultural touch to entrances and doorways. Made with premium fur wool, it is reusable, durable, and perfect for festive occasions, pooja spaces, weddings, and traditional celebrations.",
 
   features: [
-    "Size: 24 × 72 inches (2 ft × 6 ft)",
+    "Size: 24 × 120 inches (2 ft × 10 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Long Vertical Border Design",
@@ -1342,7 +1346,7 @@ const products = [
 {
   id: 50,
   name: "Rainbow Mandala Leaf Border Fur Wool Rangoli",
-  price: 1799,
+  price: 3999,
   emoji: "🌈",
   tag: "New Arrival",
   isBestSeller: false,
@@ -1354,7 +1358,7 @@ const products = [
   fullDesc: "Brighten your entrance with this beautifully handcrafted Rainbow Mandala Leaf Border Fur Wool Rangoli. Featuring a striking sequence of colorful concentric circular motifs, vibrant orange and yellow floral accents, and layered green leaves, this long border design creates a lively and elegant festive look. Crafted with premium fur wool, it is reusable, durable, and perfect for entrances, hallways, pooja spaces, and festive decorations.",
 
   features: [
-    "Size: 24 × 72 inches (2 ft × 6 ft)",
+    "Size: 24 × 120 inches (2 ft × 10 ft)",
     "Material: Premium Fur Wool",
     "Handcrafted & Reusable",
     "Vertical Border Rangoli Design",
