@@ -470,7 +470,7 @@
       .btn-detail-cart,.btn-buy-now{font-size:0.85rem;padding:0.8rem 1rem;}
 
       /* Gallery slider */
-      .gallery-slider-wrap{max-height:300px;}
+      .gallery-slider-wrap{max-height:260px;}
 
       /* Cart sidebar */
       .cart-sidebar{max-width:100%;}
@@ -1119,7 +1119,7 @@
             <button class="qty-btn" onclick="changeQty(1)">+</button>
           </div>
         </div>
-        <div class="detail-actions">
+        <div class="detail-actions" id="detailActions">
   <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
   <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
   <button class="wishlist-heart-btn" id="detailHeartBtn" style="position:static;width:44px;height:44px;font-size:1.3rem;flex-shrink:0;" onclick="toggleWishlist(currentProductId)" aria-label="Toggle wishlist">♡</button>
@@ -1149,7 +1149,7 @@
     </div>
   </div>
   <footer><p>© 2025 <strong>DK Creations</strong> — Handcrafted Fur Woolen Rangolis. Made with ❤️ in Pune. · <a href="mailto:thedkcreations@gmail.com" style="color:var(--gold-light);text-decoration:none;">thedkcreations@gmail.com</a></p></footer>
-/div><!-- end #page-product -->
+</div><!-- end #page-product -->
 
 <script src="products.js"></script>
 
@@ -1590,7 +1590,7 @@ function renderProducts() {
     const bg = gradients[(p.id - 1) % gradients.length];
     const cardImages = getGalleryImages(p);
     const imgHtml = cardImages.length > 0
-      ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}"/>`
+      ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}" onerror="this.outerHTML='<div class=\\'product-card-placeholder\\' style=\\'background:${bg}\\'>${p.emoji}<p>${p.tag}</p></div>'"/>`
       : `<div class="product-card-placeholder" style="background:${bg}">${p.emoji}<p>${p.tag}</p></div>`;
     const badge = p.isBestSeller ? '<span style="position:absolute;top:10px;left:10px;background:var(--gold);color:var(--maroon-deep);font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">🏆 BEST SELLER</span>' :
                   p.isNew        ? '<span style="position:absolute;top:10px;left:10px;background:var(--maroon);color:white;font-size:0.68rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:10px;letter-spacing:1px;z-index:2;">🆕 NEW</span>' :
@@ -1644,8 +1644,11 @@ function showPage(page) {
     document.body.style.overflow = 'hidden';
     const infoBar = document.getElementById('infoBar');
     if (infoBar) infoBar.style.display = 'none';
+    // Sticky bar visibility is now handled by setupStickyBarObserver() —
+    // it only appears once the inline Add to Cart/Buy Now buttons scroll out of view,
+    // so the two are never shown at the same time.
     const stickyBar = document.getElementById('stickyBuyBar');
-if (stickyBar) stickyBar.style.display = window.innerWidth <= 480 ? 'block' : 'none';
+    if (stickyBar) stickyBar.style.display = 'none';
   } else {
     const prod = document.getElementById('page-product');
     prod.classList.remove('active');
@@ -1657,6 +1660,7 @@ if (stickyBar) stickyBar.style.display = window.innerWidth <= 480 ? 'block' : 'n
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + page).classList.add('active');
     window.scrollTo({ top:0, behavior:'smooth' });
+    if (_stickyBarObserver) { _stickyBarObserver.disconnect(); _stickyBarObserver = null; }
   }
 }
 
@@ -1668,6 +1672,7 @@ function closeProd() {
   if (infoBar) infoBar.style.display = '';
   const stickyBar = document.getElementById('stickyBuyBar');
   if (stickyBar) stickyBar.style.display = 'none';
+  if (_stickyBarObserver) { _stickyBarObserver.disconnect(); _stickyBarObserver = null; }
   const home = document.getElementById('page-home');
   if (!home.classList.contains('active')) home.classList.add('active');
 }
@@ -1697,6 +1702,7 @@ function openProduct(id) {
   syncHeartButtons(id);
   trackRecentlyViewed(id);
   renderRelatedProducts(id);
+  setupStickyBarObserver();
   setTimeout(initStarPicker, 50);
 }
 
@@ -1749,7 +1755,7 @@ function renderGallery(p) {
   // Build slides strip
   main.innerHTML = `<div class="gallery-slides" id="gallerySlides">${
     galleryImages.map(src =>
-      `<img class="gallery-slide" src="${src}" alt="${p.name}"/>`
+      `<img class="gallery-slide" src="${src}" alt="${p.name}" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\\'gallery-slide-placeholder\\'><span style=\\'font-size:4rem\\'>${p.emoji}</span></div>')"/>`
     ).join('')
   }</div>`;
 
@@ -1914,6 +1920,22 @@ function removeImage(pid, idx) {
 
 // ── QTY ──
 function changeQty(d) { detailQty = Math.max(1, detailQty + d); document.getElementById('detailQty').textContent = detailQty; }
+
+// Shows the fixed bottom "Add to Cart / Buy Now" bar only once the inline
+// buttons have scrolled out of view — so only one set of buttons is ever visible.
+let _stickyBarObserver = null;
+function setupStickyBarObserver() {
+  const target = document.getElementById('detailActions');
+  const stickyBar = document.getElementById('stickyBuyBar');
+  if (!target || !stickyBar) return;
+  if (_stickyBarObserver) _stickyBarObserver.disconnect();
+  if (window.innerWidth > 480) { stickyBar.style.display = 'none'; return; }
+  _stickyBarObserver = new IntersectionObserver((entries) => {
+    const visible = entries[0].isIntersecting;
+    stickyBar.style.display = visible ? 'none' : 'block';
+  }, { root: document.getElementById('page-product'), threshold: 0 });
+  _stickyBarObserver.observe(target);
+}
 
 // ── CART STATE HELPERS ──
 function getCartQty(id) {
@@ -2154,7 +2176,7 @@ function closeWishlist() {
 function buildMiniCard(p) {
   const cardImages = getGalleryImages(p);
   const imgHtml = cardImages.length > 0
-    ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}"/>`
+    ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}" onerror="this.outerHTML='<div class=\\'product-card-placeholder\\' style=\\'background:linear-gradient(135deg,#8B2A3A,#C9960C)\\'>${p.emoji}<p>${p.tag}</p></div>'"/>`
     : `<div class="product-card-placeholder" style="background:linear-gradient(135deg,#8B2A3A,#C9960C)">${p.emoji}<p>${p.tag}</p></div>`;
   const reviews = allReviews[p.id] || [];
   const avgRating = getAvgRating(p);
@@ -2811,9 +2833,6 @@ async function postReply(scope, reviewId) {
   showToast('Reply posted successfully! ✅');
 }
 
-function escHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
 function escHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
