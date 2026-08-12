@@ -155,7 +155,7 @@
     .gallery-thumbs{display:flex;gap:0.6rem;flex-wrap:wrap;}
     .gallery-thumb{width:72px;height:72px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color 0.2s;background:linear-gradient(135deg,#f0e0c8,#e8c99a);display:flex;align-items:center;justify-content:center;font-size:1.8rem;}
     .gallery-thumb.active{border-color:var(--gold);}
-    .gallery-thumb img{width:100%;height:100%;object-fit:cover;font-size:0.6rem;color:transparent;}
+    .gallery-thumb img{width:100%;height:100%;object-fit:cover;}
 
     /* IMAGE UPLOAD UI */
     .upload-section{margin-top:0.8rem;}
@@ -239,7 +239,7 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
     .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
     .form-group label{font-size:0.82rem;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.5px;}
-    .form-group input,.form-group select,.form-group textarea{padding:0.7rem 0.9rem;border:2px solid var(--cream-dark);border-radius:4px;font-family:'Nunito',sans-serif;font-size: 16px;color:var(--text);background:var(--cream);transition:border-color 0.2s;outline:none;}
+    .form-group input,.form-group select,.form-group textarea{padding:0.7rem 0.9rem;border:2px solid var(--cream-dark);border-radius:4px;font-family:'Nunito',sans-serif;font-size:16px;color:var(--text);background:var(--cream);transition:border-color 0.2s;outline:none;}
     .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
     .form-group input.error,.form-group select.error{border-color:#c0392b;}
     .error-msg{font-size:0.78rem;color:#c0392b;margin-top:0.2rem;}
@@ -348,13 +348,7 @@
     .rating-bar-row{display:flex;align-items:center;gap:0.6rem;font-size:0.8rem;color:var(--text-soft);}
     .rating-bar-track{flex:1;height:8px;background:var(--cream-dark);border-radius:4px;overflow:hidden;}
     .rating-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:4px;transition:width 0.5s;}
-     .search-bar-wrap{display:flex;align-items:center;gap:0.5rem;max-width:420px;margin:0 auto 1.2rem;padding:0.55rem 1rem;border-radius:24px;border:2px solid var(--maroon);background:var(--white);transition:box-shadow 0.2s;}
-.search-bar-wrap:focus-within{box-shadow:0 0 0 3px rgba(139,42,58,0.15);}
-.search-icon{font-size:0.9rem;opacity:0.6;flex-shrink:0;}
-.search-input{flex:1;border:none;outline:none;font-family:'Nunito',sans-serif;font-size:0.9rem;color:var(--maroon);background:transparent;min-width:0;}
-.search-input::placeholder{color:var(--text-soft);}
-.search-clear-btn{border:none;background:none;cursor:pointer;color:var(--text-soft);font-size:0.85rem;flex-shrink:0;padding:0.1rem 0.3rem;line-height:1;}
-.search-clear-btn:hover{color:var(--maroon);}
+
     /* SORT DROPDOWN */
     .sort-bar{display:flex;align-items:center;justify-content:center;gap:0.7rem;margin-bottom:2rem;}
     .sort-bar-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);}
@@ -504,9 +498,7 @@
       .form-group label{font-size:0.78rem;}
       .form-group input,.form-group select,.form-group textarea{font-size:16px;}
       .btn-pay{font-size:0.92rem;}
-/* Search bar */
-.search-bar-wrap{max-width:100%;margin:0 1rem 1rem;padding:0.5rem 0.9rem;}
-.search-input{font-size:16px;}
+
       /* Sort bar */
       .sort-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
       .price-filter-trigger{font-size:0.78rem;padding:0.4rem 0.9rem;}
@@ -596,53 +588,6 @@
     .mobile-menu.open{display:flex;}
     .mobile-menu-link{padding:1rem 6%;color:var(--cream);font-size:0.95rem;font-weight:600;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.07);transition:background 0.2s;}
     .mobile-menu-link:hover{background:rgba(255,255,255,0.08);color:var(--gold-light);}
-    /* WISHLIST HEART ON CARD */
-.wishlist-heart-btn{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.92);border:none;display:flex;align-items:center;justify-content:center;font-size:1.05rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:transform 0.15s,background 0.2s;color:#c0392b;}
-.wishlist-heart-btn:hover{transform:scale(1.12);}
-.wishlist-heart-btn.active{background:#c0392b;color:#fff;}
-.product-card{position:relative;}
-/* WISHLIST NAV BUTTON */
-.wishlist-btn{background:none;border:2px solid var(--gold);color:var(--gold-light);padding:0.5rem 0.9rem;border-radius:4px;font-weight:700;font-size:0.88rem;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:background 0.2s,color 0.2s;}
-.wishlist-btn:hover{background:var(--gold);color:var(--maroon-deep);}
-.wishlist-count{background:var(--maroon);color:white;border-radius:50%;width:20px;height:20px;font-size:0.72rem;display:flex;align-items:center;justify-content:center;font-weight:700;font-variant-numeric:lining-nums tabular-nums;}
-.mobile-wishlist-btn{background:none;border:2px solid var(--gold);color:var(--gold-light);padding:0.45rem 0.7rem;border-radius:4px;font-weight:700;font-size:0.85rem;cursor:pointer;display:flex;align-items:center;gap:0.35rem;}
-/* WISHLIST SIDEBAR (mirrors cart sidebar) */
-.wishlist-sidebar{position:fixed;top:0;right:-440px;width:100%;max-width:440px;height:100vh;background:var(--white);z-index:400;display:flex;flex-direction:column;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 30px rgba(0,0,0,0.2);}
-.wishlist-sidebar.open{right:0;}
-.wishlist-header{background:var(--maroon-deep);color:white;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
-.wishlist-header h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;}
-.wishlist-close{background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;}
-.wishlist-items{flex:1;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:1rem;}
-.wishlist-empty{text-align:center;padding:3rem 1rem;color:var(--text-soft);}
-.wishlist-empty .empty-icon{font-size:3rem;margin-bottom:1rem;}
-.wishlist-item{display:flex;gap:1rem;background:var(--cream);border-radius:8px;padding:0.9rem;align-items:center;}
-.wishlist-item-icon{width:60px;height:60px;background:linear-gradient(135deg,#f0e0c8,#e8c99a);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;overflow:hidden;}
-.wishlist-item-icon img{width:100%;height:100%;object-fit:cover;}
-.wishlist-item-info{flex:1;}
-.wishlist-item-info h4{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--maroon-deep);margin-bottom:0.2rem;cursor:pointer;}
-.wishlist-item-price{font-weight:700;color:var(--maroon);font-size:0.9rem;margin-bottom:0.5rem;}
-.wishlist-item-actions{display:flex;gap:0.5rem;}
-.wishlist-item-actions .btn-add-cart{padding:0.4rem 0.7rem;font-size:0.75rem;}
-.wishlist-item-remove{background:none;border:none;color:#c0392b;font-size:1.1rem;cursor:pointer;padding:0.2rem;align-self:flex-start;}
-/* FLOATING WHATSAPP BUTTON */
-.whatsapp-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);z-index:250;cursor:pointer;text-decoration:none;animation:wa-pulse 2.4s infinite;}
-.whatsapp-float svg{width:30px;height:30px;}
-@keyframes wa-pulse{0%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0.55);}70%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0);}}
-@media (max-width:600px){.whatsapp-float{width:52px;height:52px;bottom:16px;right:16px;}.whatsapp-float svg{width:26px;height:26px;}}
-/* PRODUCT STRIPS: New Arrivals / Most Loved / Recently Viewed / Related */
-.product-strip{display:flex;gap:1.2rem;overflow-x:auto;padding:0.5rem 5% 1.5rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
-.product-strip::-webkit-scrollbar{height:8px;}
-.product-strip::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
-.product-strip .mini-card{flex:0 0 220px;scroll-snap-align:start;}
-@media (max-width:600px){.product-strip .mini-card{flex:0 0 165px;}.product-strip .mini-card .product-card-img,.product-strip .mini-card .product-card-placeholder{height:130px;}}
-.related-products-section{padding:2.5rem 0 0;}
-.related-products-section h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--maroon-deep);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--cream-dark);}
-.related-products-section .product-strip{padding:0.5rem 0 1rem;}
-/* TRUST BADGES IN CHECKOUT */
-.trust-badges-row{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin:1rem 0 0.3rem;padding:0.8rem;background:var(--cream-dark);border-radius:8px;}
-.trust-badge{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:var(--text-soft);}
-.trust-badge .trust-badge-icon{font-size:1rem;}
-@media(max-width:480px){.trust-badges-row{gap:0.7rem;padding:0.6rem;}.trust-badge{font-size:0.7rem;}}
   </style>
 </head>
 <body>
@@ -687,13 +632,11 @@
     <li><a onclick="showPage('home');scrollToSection('contact')">Contact</a></li>
     <li><a onclick="openTrackOrder()">Track Order</a></li>
     <li><a onclick="handleAccountClick()" id="navAccountLink">👤 Login</a></li>
-<li><button class="wishlist-btn" onclick="openWishlist()">♡ Wishlist <span class="wishlist-count" id="wishlistCount">0</span></button></li>
-<li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
+    <li><button class="cart-btn" onclick="openCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
   </ul>
   <!-- Mobile right side: cart + hamburger -->
   <div class="mobile-nav-right">
-  <button class="mobile-wishlist-btn" onclick="openWishlist()">♡ <span class="wishlist-count" id="wishlistCountMobile">0</span></button>
-  <button class="cart-btn mobile-cart-btn" onclick="openCart()">🛒 <span class="cart-count" id="cartCountMobile">0</span></button>
+    <button class="cart-btn mobile-cart-btn" onclick="openCart()">🛒 <span class="cart-count" id="cartCountMobile">0</span></button>
     <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -705,9 +648,8 @@
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('how-to-order')">📋 How to Order</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('about')">🌸 About Us</a>
   <a class="mobile-menu-link" onclick="closeMobileMenu();showPage('home');scrollToSection('contact')">📞 Contact</a>
-<a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
-<a class="mobile-menu-link" onclick="closeMobileMenu();openWishlist()">♡ Wishlist</a>
-<a class="mobile-menu-link" id="mobileAccountLink" onclick="closeMobileMenu();handleAccountClick()">👤 Login</a>  
+  <a class="mobile-menu-link" onclick="closeMobileMenu();openTrackOrder()">📦 Track Order</a>
+  <a class="mobile-menu-link" id="mobileAccountLink" onclick="closeMobileMenu();handleAccountClick()">👤 Login</a>
 </div>
 
 <!-- CART -->
@@ -727,14 +669,7 @@
     <button class="btn-checkout" onclick="openCheckout()">Proceed to Checkout →</button>
   </div>
 </div>
-<!-- WISHLIST -->
-<div class="cart-overlay" id="wishlistOverlay" onclick="closeWishlist()"></div>
-<div class="wishlist-sidebar" id="wishlistSidebar">
-  <div class="wishlist-header"><h3>♡ Your Wishlist</h3><button class="wishlist-close" onclick="closeWishlist()">✕</button></div>
-  <div class="wishlist-items" id="wishlistItems">
-    <div class="wishlist-empty"><div class="empty-icon">💗</div><p>Your wishlist is empty.<br/>Tap the heart on any product to save it here.</p></div>
-  </div>
-</div>
+
 <!-- CHECKOUT MODAL -->
 <div class="modal-overlay" id="checkoutModal">
   <div class="modal">
@@ -821,45 +756,12 @@
   </section>
   <div class="gold-divider">✦ ✦ ✦</div>
 
-  <div class="search-bar-wrap">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="productSearchInput" class="search-input" placeholder="Search products… (e.g. lotus, peacock, diya)" oninput="handleSearchInput(this.value)"/>
-    <button class="search-clear-btn" id="searchClearBtn" onclick="clearSearch()" style="display:none;" aria-label="Clear search">✕</button>
-  </div>
-
-<!-- RECENTLY VIEWED -->
-<section id="recentlyViewedSection" style="display:none;">
-  <div class="products-header">
-    <span class="section-label">Welcome Back</span>
-    <h2 class="section-title">Recently Viewed</h2>
-  </div>
-  <div class="product-strip" id="recentlyViewedStrip"></div>
-</section>
-
-<!-- NEW ARRIVALS -->
-<section id="newArrivalsSection">
-  <div class="products-header">
-    <span class="section-label">Just In</span>
-    <h2 class="section-title">🆕 New Arrivals</h2>
-  </div>
-  <div class="product-strip" id="newArrivalsStrip"></div>
-</section>
-
-<!-- MOST LOVED -->
-<section id="mostLovedSection">
-  <div class="products-header">
-    <span class="section-label">Customer Favorites</span>
-    <h2 class="section-title">💗 Most Loved</h2>
-  </div>
-  <div class="product-strip" id="mostLovedStrip"></div>
-</section>
   <section id="products">
     <div class="products-header">
       <span class="section-label">Our Collection</span>
       <h2 class="section-title">Handcrafted Fur Woolen Rangolis</h2>
       <p class="section-sub">Click any product to view all images and details.</p>
     </div>
-    
     <div class="sort-bar">
       <span class="sort-bar-label">Sort by:</span>
       <div class="sort-dropdown-wrap" id="sortDropdown">
@@ -1115,10 +1017,9 @@
           </div>
         </div>
         <div class="detail-actions">
-  <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
-  <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
-  <button class="wishlist-heart-btn" id="detailHeartBtn" style="position:static;width:44px;height:44px;font-size:1.3rem;flex-shrink:0;" onclick="toggleWishlist(currentProductId)" aria-label="Toggle wishlist">♡</button>
-</div>
+          <button class="btn-detail-cart" id="detailCartBtn" onclick="addFromDetail()">🛒 Add to Cart</button>
+          <button class="btn-buy-now" onclick="buyNow()">Buy Now →</button>
+        </div>
 
 <!-- PER-PRODUCT REVIEWS -->
         <div class="reviews-section" id="productReviewsSection">
@@ -1132,29 +1033,572 @@
             <textarea class="review-text-input" id="reviewText" placeholder="Share your experience with this product…"></textarea>
             <button class="btn-submit-review" onclick="submitProductReview()">Submit Review</button>
           </div>
-         <div class="reviews-list" id="productReviewsList"></div>
-        </div>
-
-        <!-- RELATED PRODUCTS -->
-        <div class="related-products-section" id="relatedProductsSection">
-          <h3>You May Also Like</h3>
-          <div class="product-strip" id="relatedProductsStrip"></div>
+          <div class="reviews-list" id="productReviewsList"></div>
         </div>
       </div>
     </div>
   </div>
   <footer><p>© 2025 <strong>DK Creations</strong> — Handcrafted Fur Woolen Rangolis. Made with ❤️ in Pune. · <a href="mailto:thedkcreations@gmail.com" style="color:var(--gold-light);text-decoration:none;">thedkcreations@gmail.com</a></p></footer>
-/div><!-- end #page-product -->
-
-<script src="products.js"></script>
+</div><!-- end #page-product -->
 
 <script>
+// ── PRODUCTS DATA ──
+const products = [
+{
+  id: 1,
+  name: "Lotus Bloom Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted lotus floral design made with premium fur wool. Perfect for pooja rooms, living spaces, and festive decorations.",
+
+  fullDesc: "Enhance your home décor with this elegant Lotus Bloom Fur Wool Rangoli featuring vibrant pink lotus flowers and lush green leaves. Handcrafted with premium fur wool, this 36 × 36 inch decorative piece is reusable, durable, and ideal for pooja rooms, festivals, entrances, and gifting.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Home & Festive Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img1.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img1-2.jpg"]},
+  {
+  id: 2,
+  name: "Royal Peacock Floral Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🌸",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Vibrant peacock-inspired floral rangoli handcrafted with premium fur wool. Perfect for festive décor, pooja rooms, and special occasions.",
+
+  fullDesc: "Add a grand festive touch to your home with this Royal Peacock Floral Fur Wool Rangoli. Featuring colorful peacock-feather motifs, layered floral petals, and intricate handcrafted detailing, this stunning 36 × 36 inch rangoli creates a beautiful centerpiece for pooja rooms, entrances, living spaces, and celebrations. Made from premium fur wool, it is reusable, durable, and designed to brighten every festive occasion with elegance and charm.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Peacock-Inspired Floral Design",
+    "Handcrafted & Reusable",
+    "Vibrant Multicolor Pattern",
+    "Ideal for Festivals & Home Décor",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img2.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img2-2.jpg"]},
+  {
+  id: 3,
+  name: "Swami Samarth Lotus Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🪷",
+  tag: "Best Seller",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Divine Swami Samarth silhouette with a radiant lotus backdrop, handcrafted in premium fur wool for spiritual and festive décor.",
+
+  fullDesc: "Bring blessings and positive energy into your home with this beautifully handcrafted Swami Samarth Fur Wool Rangoli. Featuring the sacred silhouette of Swami Samarth seated in meditation against a vibrant lotus and halo-inspired design, this 36 × 36 inch rangoli creates a serene and devotional atmosphere. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, spiritual spaces, festivals, and special occasions.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Swami Samarth Spiritual Design",
+    "Handcrafted & Reusable",
+    "Vibrant Lotus & Halo Pattern",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img3.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img3-2.jpg"]},
+ {
+  id: 4,
+  name: "Shivling Lotus Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🔱",
+  tag: "Best Seller",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Sacred Shivling design with a blooming lotus and radiant floral border, handcrafted in premium fur wool for spiritual décor.",
+
+  fullDesc: "Invoke divine blessings with this beautifully handcrafted Shivling Lotus Fur Wool Rangoli. Featuring a sacred Shivling, crescent moon, vibrant pink lotus, and radiant floral border, this 36 × 36 inch rangoli symbolizes devotion, positivity, and spiritual energy. Made from premium fur wool, it is reusable, durable, and perfect for pooja rooms, Mahashivratri celebrations, festive decorations, and home entrances.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Sacred Shivling & Lotus Design",
+    "Handcrafted & Reusable",
+    "Bright Multicolor Pattern",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img5.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img5-2.jpg"]},
+  {
+  id: 5,
+  name: "Vitthal Rukmini Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🙏",
+  tag: "Best Seller",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Divine Vitthal-inspired design handcrafted with premium fur wool, bringing devotion and traditional charm to your home décor.",
+
+  fullDesc: "Celebrate the blessings of Lord Vitthal with this beautifully handcrafted Vitthal Fur Wool Rangoli. Featuring the iconic form of Vitthal adorned with traditional ornaments and vibrant colors, this 36 × 36 inch rangoli adds a spiritual and festive touch to pooja rooms, entrances, and celebration spaces. Made from premium fur wool, it is reusable, durable, and perfect for Ashadhi Ekadashi, Kartiki Ekadashi, festivals, and devotional décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Sacred Vitthal Design",
+    "Handcrafted & Reusable",
+    "Vibrant Traditional Colors",
+    "Ideal for Pooja Rooms & Festivals",
+    "Durable & Long-lasting",
+    "Pan India Delivery"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img4.jpg", "https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img4-2.jpg"]
+},
+{
+  id: 6,
+  name: "Lotus Radiance Fur Wool Rangoli",
+  price: 999,
+  emoji: "🌸",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus rangoli with a vibrant mandala center, crafted from premium fur wool for festive and home décor.",
+
+  fullDesc: "Add a touch of tradition and elegance to your home with this Lotus Radiance Fur Wool Rangoli. Designed with beautifully layered pink lotus petals and a colorful mandala-inspired center, this handcrafted décor piece is made from premium fur wool. It is reusable, durable, and perfect for pooja rooms, entrances, Diwali, weddings, festivals, and special occasions.",
+
+  features: [
+    "Size: 36 * 36 inches (3 ft * 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Pooja Rooms, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img6.jpg"]
+},
+{
+  id: 7,
+  name: "Peacock Tabla Fur Wool Rangoli",
+  price: 699,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted peacock and tabla-inspired fur wool rangoli, perfect for adding a traditional touch to your home décor.",
+
+  fullDesc: "Bring elegance and cultural charm to your home with this Peacock Tabla Fur Wool Rangoli. Featuring a vibrant peacock, traditional tabla-inspired design, and decorative floral border, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for pooja rooms, festive celebrations, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img7.png"]
+},
+{
+  id: 8,
+  name: "Floral Corner Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌻",
+  tag: "New Arrival",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted corner rangoli featuring vibrant floral patterns, perfect for entrances and festive home décor.",
+
+  fullDesc: "Enhance the beauty of your entrance with this Floral Corner Fur Wool Rangoli. Designed with colorful sunflower-inspired motifs, lotus petals, and a decorative circular pattern, this handcrafted rangoli is made from premium fur wool. Its unique corner design makes it ideal for doorways, pooja rooms, festive celebrations, housewarming ceremonies, and everyday home décor.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft) (Corner Design)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Entrances, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img8.png",]
+},
+{
+  id: 9,
+  name: "Lotus Blossom Duo Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "Most Loved",
+  isBestSeller: true,
+  isNew: false,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted rangoli featuring a large central floral motif surrounded by elegant lotus blooms for a graceful festive look.",
+
+  fullDesc: "Enhance your home décor with this Lotus Blossom Duo Fur Wool Rangoli, featuring a large blooming flower at the center encircled by lush green leaves and six beautifully crafted lotus flowers in two complementary sizes. Handcrafted using premium fur wool, this reusable and durable rangoli adds elegance to pooja rooms, entrances, festivals, weddings, and special occasions.",
+
+  features: [
+    "Center Flower: 12 × 12 inches (1 ft × 1 ft)",
+    "Outer Lotus Flowers: 6 × 6 inches (0.5 ft × 0.5 ft) each",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Rooms, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img9.png"]
+},
+{
+  id: 10,
+  name: "Suswagatam Peacock Fur Wool Rangoli",
+  price: 699,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted 'Suswagatam' fur wool rangoli featuring a peacock, musical drums, and vibrant floral elements to warmly welcome your guests.",
+
+  fullDesc: "Welcome your guests in traditional style with this Suswagatam Peacock Fur Wool Rangoli. Designed with an elegant peacock, decorative musical drums, colorful peacock feathers, and the 'Suswagatam' welcome message, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for entrances, pooja rooms, festivals, weddings, housewarming ceremonies, and special occasions.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Ideal for Entrances, Housewarming, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img10.png"]
+},
+{
+  id: 11,
+  name: "Radiant Floral Fur Wool Rangoli",
+  price: 499,
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Elegant handcrafted floral fur wool rangoli featuring vibrant layered petals and lush green accents for a timeless decorative look.",
+
+  fullDesc: "Brighten your home with this Radiant Floral Fur Wool Rangoli, beautifully handcrafted with colorful layered petals surrounding a striking pink floral center. Made from premium fur wool, this reusable and durable rangoli is perfect for pooja rooms, living spaces, festive celebrations, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img16.png"]
+},
+{
+  id: 12,
+  name: "Sunflower Bloom Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌼",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Simple and elegant handcrafted floral fur wool rangoli featuring vibrant yellow petals, perfect for everyday and festive décor.",
+
+  fullDesc: "Add a cheerful touch to your home with this Sunflower Bloom Fur Wool Rangoli. Featuring eight beautifully crafted yellow petals with a vibrant floral center, this handcrafted rangoli is made from premium fur wool. Lightweight, reusable, and durable, it is ideal for pooja rooms, entrances, festivals, and daily home decoration.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Home, Pooja Rooms & Festive Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img17.png",]
+},
+{
+  id: 13,
+  name: "Rainbow Petal Fur Wool Rangoli",
+  price: 299,
+  emoji: "🌈",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Compact handcrafted floral fur wool rangoli featuring vibrant rainbow petals, perfect for small spaces and festive décor.",
+
+  fullDesc: "Brighten your home with this Rainbow Petal Fur Wool Rangoli. Featuring six colorful overlapping petals surrounding a vibrant circular center, this handcrafted rangoli is made from premium fur wool. Lightweight, reusable, and durable, it's perfect for pooja rooms, tabletops, entrances, festive celebrations, and everyday home decoration.",
+
+  features: [
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Small Spaces, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img18.png",]
+},
+{
+  id: 14,
+  name: "Peacock Arch Fur Wool Rangoli",
+  price: 999,
+  emoji: "🦚",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted peacock arch fur wool rangoli, perfect for decorating pooja setups, plates, kalash, and festive displays.",
+
+  fullDesc: "Add a touch of tradition and elegance to your celebrations with this Peacock Arch Fur Wool Rangoli. Featuring two vibrant peacocks connected by a graceful arch with a decorative floral centerpiece, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for decorating pooja plates, kalash, diyas, idols, temples, and festive occasions.",
+
+  features: [
+    "Size: 30 × 18 inches (2.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Décor, Kalash, Diyas & Festivals"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img19.png"],
+},
+{
+  id: 15,
+  name: "Color Bloom Fur Wool Rangoli",
+  price: 699,
+  emoji: "🌺",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Vibrant handcrafted floral fur wool rangoli featuring colorful layered petals for an elegant festive look.",
+
+  fullDesc: "Brighten your home with this Color Bloom Fur Wool Rangoli, featuring beautifully layered floral patterns in vibrant shades of yellow, pink, blue, purple, and green. Handcrafted using premium fur wool, this reusable and durable rangoli is perfect for pooja rooms, living spaces, festive celebrations, weddings, housewarming ceremonies, and gifting.",
+
+  features: [
+    "Size: 24 × 24 inches (2 ft × 2 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Pooja Rooms & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img20.png"],
+},
+{
+  id: 16,
+  name: "Lotus Arch Fur Wool Rangoli",
+  price: 499,
+  emoji: "🪷",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted lotus arch fur wool rangoli designed to beautifully enhance pooja setups and festive decorations.",
+
+  fullDesc: "Create a divine ambiance with this Lotus Arch Fur Wool Rangoli. Featuring a graceful lotus-inspired arch with vibrant pink petals, decorative green leaves, and an auspicious Swastik symbol, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for framing idols, kalash, diyas, pooja mandaps, temples, and festive celebrations.",
+
+  features: [
+    "Size: 15 × 15 inches Square (1.25 ft × 1.25 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Pooja Mandaps, Idols, Kalash & Festivals"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img21.png"],
+},
+{
+  id: 17,
+  name: "Heart Bloom Fur Wool Rangoli",
+  price: 299,
+  emoji: "💖",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Charming handcrafted heart-shaped floral fur wool rangoli, perfect for adding warmth and elegance to your home décor.",
+
+  fullDesc: "Celebrate love and creativity with this Heart Bloom Fur Wool Rangoli. Designed with alternating red and pink heart-shaped petals surrounding a vibrant floral center, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for festivals, anniversaries, Valentine's Day, birthdays, pooja rooms, and everyday home decoration.",
+
+  features: [
+    "Size: 12 × 12 inches (1 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Festivals, Special Occasions & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img22.png"],
+},
+{
+  id: 18,
+  name: "Decorative Fur Wool Wall Hanging",
+  price: 899,
+  emoji: "🧵",
+  tag: "New Arrival",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: false,
+
+  shortDesc: "Beautiful handcrafted decorative fur wool wall hanging featuring a vibrant geometric design to elevate your home décor.",
+
+  fullDesc: "Enhance your interiors with this Decorative Fur Wool Wall Hanging, featuring a striking geometric pattern handcrafted using premium fur wool. Reusable, durable, and easy to hang, it adds a traditional yet elegant touch to living rooms, pooja rooms, hallways, balconies, entrances, and festive decorations.",
+
+  features: [
+    "Size: 48 × 12 inches (4 ft × 1 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Wall Décor, Home Interiors & Festive Decoration"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img23.png"],
+},
+{
+  id: 19,
+  name: "Morya Ganesha Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🐘",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted Ganesha-themed fur wool rangoli featuring eight artistic Lord Ganesha motifs surrounding a vibrant 'Morya' centerpiece.",
+
+  fullDesc: "Celebrate the blessings of Lord Ganesha with this Morya Ganesha Fur Wool Rangoli. Featuring eight intricately designed Ganesha motifs arranged around a vibrant central 'Morya' design with a blooming lotus, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for Ganesh Chaturthi, pooja rooms, temples, festivals, housewarming ceremonies, and spiritual home décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Ganesh Chaturthi, Pooja Rooms & Festive Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img25.jpg"],
+},
+{
+  id: 20,
+  name: "Veena Melody Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🎼",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Beautiful handcrafted Veena-inspired fur wool rangoli featuring a lotus backdrop and peacock feather, symbolizing art, music, and wisdom.",
+
+  fullDesc: "Celebrate the beauty of Indian culture with this Veena Melody Fur Wool Rangoli. Featuring an elegant veena placed over a vibrant lotus-inspired floral design with a decorative peacock feather, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is perfect for Saraswati Pooja, Vasant Panchami, music rooms, pooja rooms, festivals, and traditional home décor.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Saraswati Pooja, Festivals & Home Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img24.png"],
+},
+{
+  id: 21,
+  name: "Govinda Namam Fur Wool Rangoli",
+  price: 1499,
+  emoji: "🛕",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Sacred handcrafted Govinda Namam fur wool rangoli featuring a vibrant floral border, perfect for spiritual and festive décor.",
+
+  fullDesc: "Bring divine blessings into your home with this Govinda Namam Fur Wool Rangoli. Featuring the sacred Govinda Namam symbol beautifully surrounded by vibrant floral petals, this handcrafted rangoli is made from premium fur wool. Reusable and durable, it is ideal for pooja rooms, temples, Vaikunta Ekadashi, Sri Venkateswara Swamy celebrations, housewarming ceremonies, and festive occasions.",
+
+  features: [
+    "Size: 36 × 36 inches (3 ft × 3 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Perfect for Temples, Pooja Rooms & Spiritual Décor"
+  ],
+
+  images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/img26.png"],
+},
+{
+  id: 22,
+  name: "Floral Corner Rangoli Set",
+  price: 499,
+  emoji: "🌼",
+  tag: "Most Loved",
+  isBestSeller: false,
+  isNew: true,
+  isMostLoved: true,
+
+  shortDesc: "Elegant handcrafted floral corner rangoli set with a matching center spiral, available in multiple vibrant color combinations.",
+
+  fullDesc: "Decorate your home beautifully with this handcrafted Floral Corner Rangoli Set. The set includes four floral corner pieces and one matching spiral centerpiece, making it perfect for framing pooja areas, entrances, stages, or festive decorations. Crafted from premium fur wool, it is reusable, durable, and available in multiple attractive color combinations to match your décor.",
+
+  features: [
+    "Corner Pieces: 18 × 18 inches (1.5 ft × 1.5 ft) each",
+    "Center Rangoli: 18 × 18 inches (1.5 ft × 1.5 ft)",
+    "Material: Premium Fur Wool",
+    "Handcrafted & Reusable",
+    "Available in Multiple Color Combinations",
+    "Ideal for Home & Festive Décor"
+  ],
+
+  images: [],
+
+  variants: [
+    {
+      color: "Orange & Yellow",
+      desc: "A bright orange and yellow combination that brings warmth and festive elegance to any space.",
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000ac7071fb80ccb5e1dd94e4e5.png"]
+    },
+    {
+      color: "Red & Green",
+      desc: "A rich red and green color combination offering a bold and premium festive appearance.",
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000f7207206b64b0d17cb797191.png"]
+    },
+    {
+      color: "Red & White",
+      desc: "A classic red and white combination with green accents, perfect for traditional celebrations.",
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-00000000812471fab81f865f4de6c821.png"]
+    },
+    {
+      color: "Orange & Green",
+      desc: "A vibrant orange and green combination inspired by festive floral decorations and traditional décor.",
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-0000000062287207a4961d571c890731.png"]
+    },
+    {
+      color: "Orange & Pink",
+      desc: "A cheerful orange and pink combination that adds a colorful and elegant touch to festive decorations.",
+      images: ["https://iiczbrqexcfshmkwwxuv.supabase.co/storage/v1/object/public/product-images/file-0000000005707207ae24c5711baf3cb2.png"]
+    }
+  ]
+},
+];
+
 // ── STATE ──
 let cart = [];
 let currentProductId = null;
 let detailQty = 1;
-let wishlist = JSON.parse(localStorage.getItem('dkWishlist') || '[]');
-let recentlyViewed = JSON.parse(localStorage.getItem('dkRecentlyViewed') || '[]');
 
 // ╔══════════════════════════════════════════════════════════════╗
 // ║  PAYMENT FLOW — now verified server-side via /api functions  ║
@@ -1372,14 +1816,12 @@ async function openMyOrders() {
     }
     const statusLabels = { paid: '✅ Confirmed', processing: '🧵 Being Handcrafted', shipped: '🚚 Shipped', delivered: '📦 Delivered', cancelled: '❌ Cancelled' };
     body.innerHTML = data.map(o => `
-      <div style="background:var(--cream-dark);border-radius:8px;padding:1.2rem 1.2rem 1rem;margin-bottom:0.8rem;">
-        ${renderOrderTracker(o.status)}
-        <div style="border-top:1px solid rgba(107,26,42,0.15);margin-top:1.1rem;padding-top:0.9rem;">
-          <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${o.order_id}</strong></p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${o.items}</p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${o.total}</p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(o.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
-        </div>
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;margin-bottom:0.8rem;">
+        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.3rem;">${statusLabels[o.status] || o.status}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${o.order_id}</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${o.items}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${o.total}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(o.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
       </div>`).join('');
   } catch (e) {
     body.innerHTML = '<p style="text-align:center;color:#c0392b;">Could not load your orders. Please try again.</p>';
@@ -1391,36 +1833,6 @@ function closeMyOrders() { document.getElementById('myOrdersModal').classList.re
 
 // ── SORT STATE ──
 let currentSort = 'default';
-
-// ── SEARCH STATE ──
-let currentSearch = '';
-function handleSearchInput(val) {
-  currentSearch = val.trim().toLowerCase();
-  document.getElementById('searchClearBtn').style.display = currentSearch ? 'inline-block' : 'none';
-  toggleFeaturedRowsForSearch();
-  renderProducts();
-}
-function clearSearch() {
-  currentSearch = '';
-  document.getElementById('productSearchInput').value = '';
-  document.getElementById('searchClearBtn').style.display = 'none';
-  toggleFeaturedRowsForSearch();
-  renderProducts();
-}
-// Hides New Arrivals / Most Loved / Recently Viewed while actively searching,
-// so the search results don't feel disconnected from unrelated rows above.
-function toggleFeaturedRowsForSearch() {
-  const hide = currentSearch.length > 0;
-  const newArrivals = document.getElementById('newArrivalsSection');
-  const mostLoved = document.getElementById('mostLovedSection');
-  const recentlyViewed = document.getElementById('recentlyViewedSection');
-  if (newArrivals) newArrivals.style.display = hide ? 'none' : '';
-  if (mostLoved) mostLoved.style.display = hide ? 'none' : '';
-  if (recentlyViewed) {
-    if (hide) recentlyViewed.style.display = 'none';
-    else renderRecentlyViewed(); // restores correct show/hide state based on actual history
-  }
-}
 
 // ── PRICE FILTER STATE ──
 const PRICE_FILTER_MIN = 0;
@@ -1554,27 +1966,17 @@ function getSortedProducts() {
   }
   // Apply price range filter on top of whichever sort/filter is active
   list = list.filter(p => p.price >= appliedPriceMin && p.price <= appliedPriceMax);
-if (currentSearch) {
-  list = list.filter(p =>
-    (p.name || '').toLowerCase().includes(currentSearch) ||
-    (p.shortDesc || '').toLowerCase().includes(currentSearch) ||
-    (p.fullDesc || '').toLowerCase().includes(currentSearch)
-  );
-}
-return list;
+  return list;
 }
 
 // ── RENDER PRODUCTS ──
 function renderProducts() {
   const sorted = getSortedProducts();
   const grid = document.getElementById('productsGrid');
- if (sorted.length === 0) {
-  const msg = currentSearch
-    ? `No products found matching "${currentSearch}". Try a different search term.`
-    : 'No products found in this category.';
-  grid.innerHTML = `<p style="text-align:center;color:var(--text-soft);padding:3rem;font-size:1rem;">${msg}</p>`;
-  return;
-}
+  if (sorted.length === 0) {
+    grid.innerHTML = '<p style="text-align:center;color:var(--text-soft);padding:3rem;font-size:1rem;">No products found in this category.</p>';
+    return;
+  }
   const gradients = [
     'linear-gradient(135deg,#8B2A3A,#C9960C)',
     'linear-gradient(135deg,#1a4a6b,#0c8b7a)',
@@ -1607,13 +2009,10 @@ function renderProducts() {
     const cartQty = getCartQty(p.id);
     const cartBtnLabel = cartQty > 0 ? `✓ In Cart (${cartQty})` : '+ Cart';
     const cartBtnClass = cartQty > 0 ? 'btn-add-cart added' : 'btn-add-cart';
-     const wlActive = isWishlisted(p.id);
-    const heartTop = topRatedBadge ? 50 : 10;
     return `
       <div class="product-card" onclick="openProduct(${p.id})" style="position:relative;">
         ${badge}
         ${topRatedBadge}
-        <button class="wishlist-heart-btn${wlActive ? ' active' : ''}" id="heartBtn${p.id}" style="top:${heartTop}px;" onclick="event.stopPropagation();toggleWishlist(${p.id})" aria-label="Toggle wishlist">${wlActive ? '♥' : '♡'}</button>
         ${imgHtml}
         <div class="product-info">
           <h3>${p.name}</h3>
@@ -1640,7 +2039,7 @@ function showPage(page) {
     const infoBar = document.getElementById('infoBar');
     if (infoBar) infoBar.style.display = 'none';
     const stickyBar = document.getElementById('stickyBuyBar');
-if (stickyBar) stickyBar.style.display = window.innerWidth <= 480 ? 'block' : 'none';
+    if (stickyBar) stickyBar.style.display = window.innerWidth <= 480 ? 'block' : 'none';
   } else {
     const prod = document.getElementById('page-product');
     prod.classList.remove('active');
@@ -1689,9 +2088,6 @@ function openProduct(id) {
   renderProductReviews(id);
   showPage('product');
   syncDetailButtons();
-  syncHeartButtons(id);
-  trackRecentlyViewed(id);
-  renderRelatedProducts(id);
   setTimeout(initStarPicker, 50);
 }
 
@@ -2053,179 +2449,6 @@ function removeFromCart(key) {
 }
 function openCart() { document.getElementById('cartSidebar').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
 function closeCart() { document.getElementById('cartSidebar').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
-// ── WISHLIST ──
-function isWishlisted(id) { return wishlist.includes(id); }
-
-function saveWishlist() { localStorage.setItem('dkWishlist', JSON.stringify(wishlist)); }
-
-function toggleWishlist(id) {
-  if (id == null) return;
-  const idx = wishlist.indexOf(id);
-  const p = products.find(x => x.id === id);
-  if (idx > -1) {
-    wishlist.splice(idx, 1);
-    showToast(`${p ? p.name : 'Item'} removed from wishlist`);
-  } else {
-    wishlist.push(id);
-    showToast(`${p ? p.name : 'Item'} added to wishlist ♥`);
-  }
-  saveWishlist();
-  updateWishlistUI();
-  syncHeartButtons(id);
-  renderNewArrivals();
-  renderMostLoved();
-  renderRecentlyViewed();
-  if (currentProductId != null) renderRelatedProducts(currentProductId);
-}
-
-function syncHeartButtons(id) {
-  const active = isWishlisted(id);
-  const cardBtn = document.getElementById('heartBtn' + id);
-  if (cardBtn) { cardBtn.classList.toggle('active', active); cardBtn.textContent = active ? '♥' : '♡'; }
-  if (currentProductId === id) {
-    const detailBtn = document.getElementById('detailHeartBtn');
-    if (detailBtn) { detailBtn.classList.toggle('active', active); detailBtn.textContent = active ? '♥' : '♡'; }
-  }
-}
-
-function updateWishlistUI() {
-  const count = wishlist.length;
-  const countEl = document.getElementById('wishlistCount');
-  if (countEl) countEl.textContent = count;
-  const countElMob = document.getElementById('wishlistCountMobile');
-  if (countElMob) countElMob.textContent = count;
-  renderWishlist();
-}
-
-function renderWishlist() {
-  const el = document.getElementById('wishlistItems');
-  if (!el) return;
-  const items = wishlist.map(id => products.find(p => p.id === id)).filter(Boolean);
-  if (items.length === 0) {
-    el.innerHTML = `<div class="wishlist-empty"><div class="empty-icon">💗</div><p>Your wishlist is empty.<br/>Tap the heart on any product to save it here.</p></div>`;
-    return;
-  }
-  el.innerHTML = items.map(p => {
-    const imgList = getGalleryImages(p);
-    const imgHtml = imgList.length > 0
-      ? `<img src="${imgList[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">`
-      : (p.emoji || '💗');
-    return `
-      <div class="wishlist-item">
-        <div class="wishlist-item-icon">${imgHtml}</div>
-        <div class="wishlist-item-info">
-          <h4 onclick="closeWishlist();openProduct(${p.id})">${p.name}</h4>
-          <div class="wishlist-item-price">₹${p.price}</div>
-          <div class="wishlist-item-actions">
-            <button class="btn-add-cart" onclick="moveWishlistToCart(${p.id})">+ Add to Cart</button>
-          </div>
-        </div>
-        <button class="wishlist-item-remove" onclick="toggleWishlist(${p.id})" aria-label="Remove from wishlist">🗑</button>
-      </div>`;
-  }).join('');
-}
-
-function moveWishlistToCart(id) {
-  addToCart(id, 1);
-  openCart();
-  closeWishlist();
-}
-
-function openWishlist() {
-  document.getElementById('wishlistSidebar').classList.add('open');
-  document.getElementById('wishlistOverlay').classList.add('open');
-}
-function closeWishlist() {
-  document.getElementById('wishlistSidebar').classList.remove('open');
-  document.getElementById('wishlistOverlay').classList.remove('open');
-}
-// ── SHARED MINI CARD (used by New Arrivals / Most Loved / Recently Viewed / Related) ──
-function buildMiniCard(p) {
-  const cardImages = getGalleryImages(p);
-  const imgHtml = cardImages.length > 0
-    ? `<img class="product-card-img" src="${cardImages[0]}" alt="${p.name}"/>`
-    : `<div class="product-card-placeholder" style="background:linear-gradient(135deg,#8B2A3A,#C9960C)">${p.emoji}<p>${p.tag}</p></div>`;
-  const reviews = allReviews[p.id] || [];
-  const avgRating = getAvgRating(p);
-  const fullStars = Math.round(avgRating);
-  const starsHtml = reviews.length > 0
-    ? `<div class="card-stars"><span class="card-stars-val">${'★'.repeat(fullStars)}${'☆'.repeat(5-fullStars)}</span><span class="card-stars-count">(${reviews.length})</span></div>`
-    : `<div class="card-stars"><span class="card-stars-val" style="color:#ccc">☆☆☆☆☆</span><span class="card-stars-count">No reviews yet</span></div>`;
-  const wlActive = isWishlisted(p.id);
-  return `
-    <div class="product-card mini-card" onclick="openProduct(${p.id})">
-      <button class="wishlist-heart-btn${wlActive ? ' active' : ''}" style="top:10px;" onclick="event.stopPropagation();toggleWishlist(${p.id})" aria-label="Toggle wishlist">${wlActive ? '♥' : '♡'}</button>
-      ${imgHtml}
-      <div class="product-info">
-        <h3>${p.name}</h3>
-        ${starsHtml}
-        <div class="product-footer">
-          <div class="price"><span>₹</span>${p.price}</div>
-          <div class="product-actions" onclick="event.stopPropagation()">
-            <button class="btn-view" onclick="openProduct(${p.id})">View</button>
-            <button class="btn-add-cart" onclick="addToCart(${p.id},1)">+ Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
-// ── NEW ARRIVALS: most recently added products (highest id = added last) ──
-function getNewArrivals(limit = 6) {
-  return [...products].sort((a, b) => b.id - a.id).slice(0, limit);
-}
-function renderNewArrivals() {
-  const el = document.getElementById('newArrivalsStrip');
-  if (!el) return;
-  el.innerHTML = getNewArrivals(6).map(buildMiniCard).join('');
-}
-
-// ── MOST LOVED: uses your existing isMostLoved flag, ranked by rating ──
-function getMostLoved(limit = 6) {
-  let list = products.filter(p => p.isMostLoved);
-  if (list.length < 3) list = [...products];
-  return [...list].sort((a, b) => getAvgRating(b) - getAvgRating(a)).slice(0, limit);
-}
-function renderMostLoved() {
-  const el = document.getElementById('mostLovedStrip');
-  if (!el) return;
-  el.innerHTML = getMostLoved(6).map(buildMiniCard).join('');
-}
-
-// ── RECENTLY VIEWED: tracked in localStorage, updated every time a product opens ──
-function trackRecentlyViewed(id) {
-  recentlyViewed = recentlyViewed.filter(x => x !== id);
-  recentlyViewed.unshift(id);
-  recentlyViewed = recentlyViewed.slice(0, 10);
-  localStorage.setItem('dkRecentlyViewed', JSON.stringify(recentlyViewed));
-  renderRecentlyViewed();
-}
-function renderRecentlyViewed() {
-  const section = document.getElementById('recentlyViewedSection');
-  const el = document.getElementById('recentlyViewedStrip');
-  if (!el || !section) return;
-  const items = recentlyViewed.map(id => products.find(p => p.id === id)).filter(Boolean);
-  if (items.length === 0) { section.style.display = 'none'; return; }
-  section.style.display = 'block';
-  el.innerHTML = items.map(buildMiniCard).join('');
-}
-
-// ── RELATED PRODUCTS: same tag as current product, falls back to others if not enough matches ──
-function getRelatedProducts(id, limit = 4) {
-  const current = products.find(p => p.id === id);
-  if (!current) return [];
-  let related = products.filter(p => p.id !== id && p.tag === current.tag);
-  if (related.length < limit) {
-    const extra = products.filter(p => p.id !== id && p.tag !== current.tag);
-    related = related.concat(extra);
-  }
-  return related.slice(0, limit);
-}
-function renderRelatedProducts(id) {
-  const el = document.getElementById('relatedProductsStrip');
-  if (!el) return;
-  el.innerHTML = getRelatedProducts(id, 4).map(buildMiniCard).join('');
-}
 
 // ── CHECKOUT MODAL ──
 function openCheckout() {
@@ -2275,11 +2498,6 @@ function openCheckout() {
       </div>
       <div class="form-group"><label>Pincode *</label><input type="text" id="f_pincode" placeholder="6-digit pincode" maxlength="6"/><span class="error-msg" id="e_pincode"></span></div>
     </div>
-    <div class="trust-badges-row">
-      <span class="trust-badge"><span class="trust-badge-icon">🔒</span> Secure Payments via Razorpay</span>
-      <span class="trust-badge"><span class="trust-badge-icon">🧵</span> Handmade in Pune</span>
-      <span class="trust-badge"><span class="trust-badge-icon">🚚</span> Ships in 2–3 Days</span>
-    </div>
     <button class="btn-pay" id="payBtn" onclick="validateAndPay()">🔒 Pay ₹${total} Securely</button>
     <p class="secure-note">🔒 Secured by Razorpay · UPI · Cards · Netbanking</p>
   `;
@@ -2295,47 +2513,6 @@ function openTrackOrder() {
 }
 function closeTrackOrder() {
   document.getElementById('trackOrderModal').classList.remove('open');
-}
-
-function renderOrderTracker(status) {
-  if (status === 'cancelled') {
-    return `
-      <div style="text-align:center;padding:0.6rem 0;">
-        <div style="font-size:1.8rem;">❌</div>
-        <p style="font-weight:800;color:#c0392b;margin-top:0.3rem;">Order Cancelled</p>
-      </div>`;
-  }
-
-  const steps = [
-    { key: 'paid',       label: 'Order Placed', icon: '✅' },
-    { key: 'processing', label: 'Processing',   icon: '🧵' },
-    { key: 'shipped',    label: 'Shipped',       icon: '🚚' },
-    { key: 'delivered',  label: 'Delivered',     icon: '📦' }
-  ];
-  const order = steps.map(s => s.key);
-  const currentIndex = Math.max(order.indexOf(status), 0);
-
-  return `
-    <div style="display:flex;align-items:flex-start;">
-      ${steps.map((s, i) => {
-        const done = i <= currentIndex;
-        const isLast = i === steps.length - 1;
-        return `
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;">
-          <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-            background:${done ? 'var(--maroon)' : '#fff'};
-            border:2px solid ${done ? 'var(--maroon)' : 'var(--cream-dark)'};
-            color:${done ? '#fff' : 'var(--text-soft)'};font-size:1rem;z-index:2;">
-            ${done ? '✓' : ''}
-          </div>
-          ${!isLast ? `<div style="position:absolute;top:17px;left:calc(50% + 17px);width:calc(100% - 34px);height:3px;
-            background:${i < currentIndex ? 'var(--maroon)' : 'var(--cream-dark)'};z-index:1;"></div>` : ''}
-          <p style="font-size:0.72rem;font-weight:${done ? '800' : '600'};margin-top:0.4rem;color:${done ? 'var(--maroon-deep)' : 'var(--text-soft)'};line-height:1.2;">
-            ${s.icon} ${s.label}
-          </p>
-        </div>`;
-      }).join('')}
-    </div>`;
 }
 
 async function submitTrackOrder() {
@@ -2366,14 +2543,12 @@ async function submitTrackOrder() {
       cancelled: '❌ Cancelled'
     };
     resultEl.innerHTML = `
-      <div style="background:var(--cream-dark);border-radius:8px;padding:1.2rem 1.2rem 1rem;">
-        ${renderOrderTracker(data.order.status)}
-        <div style="border-top:1px solid rgba(107,26,42,0.15);margin-top:1.1rem;padding-top:0.9rem;">
-          <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${data.order.order_id}</strong></p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${data.order.items}</p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${data.order.total}</p>
-          <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(data.order.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
-        </div>
+      <div style="background:var(--cream-dark);border-radius:8px;padding:1rem 1.2rem;">
+        <p style="font-weight:800;color:var(--maroon-deep);margin-bottom:0.4rem;">${statusLabels[data.order.status] || data.order.status}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Order ID: <strong>${data.order.order_id}</strong></p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Items: ${data.order.items}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Total: ₹${data.order.total}</p>
+        <p style="font-size:0.85rem;color:var(--text-soft);">Placed on: ${new Date(data.order.created_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}</p>
       </div>`;
   } catch (e) {
     resultEl.innerHTML = '<p style="color:#c0392b;font-size:0.85rem;">Something went wrong. Please try again.</p>';
@@ -2960,12 +3135,8 @@ renderProducts();
 initEmailJS();
 initAuth();
 initStarPicker();
-fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); renderMostLoved(); });
+fetchAllReviews().then(() => { renderOverallReviews(); renderProducts(); });
 initAnnounceBar();
-updateWishlistUI();
-renderNewArrivals();
-renderMostLoved();
-renderRecentlyViewed();
 window.addEventListener('resize', adjustNavTop);
 </script>
 
@@ -2977,9 +3148,5 @@ window.addEventListener('resize', adjustNavTop);
     <button class="sticky-btn-buy" onclick="buyNow()">⚡ Buy Now</button>
   </div>
 </div>
-<!-- FLOATING WHATSAPP BUTTON -->
-<a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/9823512225?text=Hi%20DK%20Creations!%20I%27d%20like%20to%20know%20more%20about%20your%20rangolis." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16.004 3C9.377 3 4 8.373 4 15c0 2.362.687 4.564 1.872 6.416L4 29l7.771-1.82A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.94 0-3.75-.55-5.29-1.5l-.38-.226-4.61 1.08 1.096-4.49-.246-.4A9.71 9.71 0 0 1 5.25 15c0-5.93 4.823-10.75 10.754-10.75S26.75 9.07 26.75 15 21.936 24.75 16.004 24.75zm5.94-8.05c-.325-.163-1.924-.95-2.222-1.058-.298-.108-.516-.163-.734.163-.217.325-.84 1.058-1.03 1.276-.19.217-.38.244-.705.081-.325-.163-1.372-.505-2.613-1.611-.966-.86-1.618-1.923-1.808-2.248-.19-.325-.02-.5.143-.663.146-.146.325-.38.488-.57.163-.19.217-.325.325-.542.108-.217.054-.407-.027-.57-.081-.163-.734-1.767-1.006-2.42-.265-.637-.535-.55-.734-.56l-.625-.011c-.217 0-.57.081-.868.407-.298.325-1.138 1.112-1.138 2.712 0 1.6 1.165 3.146 1.328 3.363.163.217 2.293 3.5 5.556 4.91.776.335 1.382.535 1.854.685.779.248 1.487.213 2.047.129.624-.093 1.924-.786 2.195-1.546.271-.76.271-1.412.19-1.547-.081-.136-.298-.217-.624-.38z"/></svg>
-</a>
 </body>
 </html>
