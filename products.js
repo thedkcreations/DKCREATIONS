@@ -315,7 +315,7 @@ const products = [
 {
   id: 14,
   name: "Peacock Arch Fur Wool Rangoli",
-  price: 999,
+  price: 399,
   emoji: "🦚",
   tag: "Most Loved",
   isBestSeller: false,
