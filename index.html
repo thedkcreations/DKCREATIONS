@@ -1197,9 +1197,12 @@ async function refreshVisitsToday() {
     .from('site_visits')
     .select('*', { count: 'exact', head: true })
     .gte('created_at', startOfDay.toISOString());
+  console.log('visits today result:', { count, error });
   if (!error && typeof count === 'number') {
     const el = document.getElementById('visitsTodayCount');
     if (el) el.textContent = count;
+  } else if (error) {
+    console.error('visits today error:', error.message);
   }
 }
 
