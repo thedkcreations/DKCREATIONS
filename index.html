@@ -652,6 +652,11 @@
 .whatsapp-float svg{width:30px;height:30px;}
 @keyframes wa-pulse{0%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0.55);}70%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 4px 16px rgba(0,0,0,0.25),0 0 0 0 rgba(37,211,102,0);}}
 @media (max-width:600px){.whatsapp-float{width:52px;height:52px;bottom:16px;right:16px;}.whatsapp-float svg{width:26px;height:26px;}}
+/* LIVE VISITOR BADGE */
+.live-visitor-badge{position:fixed;bottom:22px;left:22px;background:var(--maroon-deep);color:var(--cream);font-size:0.78rem;font-weight:700;padding:0.55rem 1rem;border-radius:30px;display:flex;align-items:center;gap:0.5rem;z-index:250;box-shadow:0 4px 16px rgba(0,0,0,0.25);border:1px solid var(--gold);white-space:nowrap;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#25D366;flex-shrink:0;animation:live-pulse 1.6s infinite;}
+@keyframes live-pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}70%{box-shadow:0 0 0 6px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+@media(max-width:480px){.live-visitor-badge{bottom:90px;left:12px;font-size:0.68rem;padding:0.45rem 0.75rem;gap:0.4rem;}}
 /* PRODUCT STRIPS: New Arrivals / Most Loved / Recently Viewed / Related */
 .product-strip{display:flex;gap:1.2rem;overflow-x:auto;padding:0.5rem 5% 1.5rem;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
 .product-strip::-webkit-scrollbar{height:8px;}
@@ -1178,6 +1183,51 @@ let currentProductId = null;
 let detailQty = 1;
 let wishlist = JSON.parse(localStorage.getItem('dkWishlist') || '[]');
 let recentlyViewed = JSON.parse(localStorage.getItem('dkRecentlyViewed') || '[]');
+// ── LIVE VISITOR TRACKING ──
+let dkVisitorId = localStorage.getItem('dkVisitorId');
+if (!dkVisitorId) {
+  dkVisitorId = 'v_' + Math.random().toString(36).slice(2) + Date.now();
+  localStorage.setItem('dkVisitorId', dkVisitorId);
+}
+
+async function refreshVisitsToday() {
+  const startOfDay = new Date();
+  startOfDay.setHours(0, 0, 0, 0);
+  const { count, error } = await supabaseClient
+    .from('site_visits')
+    .select('*', { count: 'exact', head: true })
+    .gte('created_at', startOfDay.toISOString());
+  if (!error && typeof count === 'number') {
+    const el = document.getElementById('visitsTodayCount');
+    if (el) el.textContent = count;
+  }
+}
+
+async function initVisitorTracking() {
+  // Count today's visit once per browser tab session
+  if (!sessionStorage.getItem('dkVisitCounted')) {
+    sessionStorage.setItem('dkVisitCounted', '1');
+    await supabaseClient.from('site_visits').insert({ visitor_id: dkVisitorId });
+  }
+  refreshVisitsToday();
+
+  // Live "currently viewing" count via Supabase Realtime Presence
+  const presenceChannel = supabaseClient.channel('dk-site-presence', {
+    config: { presence: { key: dkVisitorId } }
+  });
+  presenceChannel
+    .on('presence', { event: 'sync' }, () => {
+      const state = presenceChannel.presenceState();
+      const count = Object.keys(state).length || 1;
+      const el = document.getElementById('liveViewersCount');
+      if (el) el.textContent = count;
+    })
+    .subscribe(async (status) => {
+      if (status === 'SUBSCRIBED') {
+        await presenceChannel.track({ online_at: new Date().toISOString() });
+      }
+    });
+}
 
 // ╔══════════════════════════════════════════════════════════════╗
 // ║  PAYMENT FLOW — now verified server-side via /api functions  ║
@@ -3012,6 +3062,7 @@ function refreshOrderSummary() {
 // ── INIT ──
 updatePriceSliderUI(PRICE_FILTER_MIN, PRICE_FILTER_MAX);
 renderProducts();
+initVisitorTracking();
 initEmailJS();
 initAuth();
 initStarPicker();
@@ -3033,6 +3084,11 @@ window.addEventListener('load', adjustNavTop);
     <button class="sticky-btn-cart" onclick="addFromDetail()">🛒 Add to Cart</button>
     <button class="sticky-btn-buy" onclick="buyNow()">⚡ Buy Now</button>
   </div>
+</div>
+<!-- LIVE VISITOR BADGE -->
+<div class="live-visitor-badge" id="liveVisitorBadge">
+  <span class="live-dot"></span>
+  <span id="liveViewersCount">1</span>&nbsp;viewing&nbsp;·&nbsp;<span id="visitsTodayCount">0</span>&nbsp;today
 </div>
 <!-- FLOATING WHATSAPP BUTTON -->
 <a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/9823512225?text=Hi%20DK%20Creations!%20I%27d%20like%20to%20know%20more%20about%20your%20rangolis." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
